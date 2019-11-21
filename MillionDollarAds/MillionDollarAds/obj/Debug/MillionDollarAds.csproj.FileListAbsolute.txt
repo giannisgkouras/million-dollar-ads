@@ -1,0 +1,9 @@
+C:\Users\Vasilis\source\repos\MillionDollarAds\MillionDollarAds\bin\Debug\MillionDollarAds.exe.config
+C:\Users\Vasilis\source\repos\MillionDollarAds\MillionDollarAds\bin\Debug\MillionDollarAds.exe
+C:\Users\Vasilis\source\repos\MillionDollarAds\MillionDollarAds\bin\Debug\MillionDollarAds.pdb
+C:\Users\Vasilis\source\repos\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.csprojAssemblyReference.cache
+C:\Users\Vasilis\source\repos\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.Properties.Resources.resources
+C:\Users\Vasilis\source\repos\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.csproj.GenerateResource.cache
+C:\Users\Vasilis\source\repos\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.csproj.CoreCompileInputs.cache
+C:\Users\Vasilis\source\repos\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.exe
+C:\Users\Vasilis\source\repos\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.pdb
