@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.startup = new System.Windows.Forms.Panel();
+            this.loginButton = new System.Windows.Forms.Button();
+            this.signupButton = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -52,9 +55,6 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.searchBar = new System.Windows.Forms.TextBox();
             this.logo = new System.Windows.Forms.Label();
-            this.login = new System.Windows.Forms.Label();
-            this.signUp = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.startup.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -65,6 +65,8 @@
             // startup
             // 
             this.startup.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.startup.Controls.Add(this.loginButton);
+            this.startup.Controls.Add(this.signupButton);
             this.startup.Controls.Add(this.label13);
             this.startup.Controls.Add(this.panel4);
             this.startup.Controls.Add(this.panel3);
@@ -73,12 +75,42 @@
             this.startup.Controls.Add(this.searchButton);
             this.startup.Controls.Add(this.searchBar);
             this.startup.Controls.Add(this.logo);
-            this.startup.Controls.Add(this.login);
-            this.startup.Controls.Add(this.signUp);
-            this.startup.Location = new System.Drawing.Point(2, 2);
+            this.startup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.startup.Location = new System.Drawing.Point(0, 0);
             this.startup.Name = "startup";
-            this.startup.Size = new System.Drawing.Size(666, 315);
+            this.startup.Size = new System.Drawing.Size(984, 661);
             this.startup.TabIndex = 0;
+            // 
+            // loginButton
+            // 
+            this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginButton.Location = new System.Drawing.Point(792, 3);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(87, 35);
+            this.loginButton.TabIndex = 1;
+            this.loginButton.Text = "Log In";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            // 
+            // signupButton
+            // 
+            this.signupButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signupButton.Location = new System.Drawing.Point(885, 3);
+            this.signupButton.Name = "signupButton";
+            this.signupButton.Size = new System.Drawing.Size(87, 35);
+            this.signupButton.TabIndex = 2;
+            this.signupButton.Text = "Sign Up";
+            this.signupButton.UseVisualStyleBackColor = true;
+            this.signupButton.Click += new System.EventHandler(this.signupButton_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(240, 292);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(115, 13);
+            this.label13.TabIndex = 9;
+            this.label13.Text = "social media goes here";
             // 
             // panel4
             // 
@@ -303,38 +335,11 @@
             this.logo.TabIndex = 2;
             this.logo.Text = "logo goes here";
             // 
-            // login
-            // 
-            this.login.AutoSize = true;
-            this.login.Location = new System.Drawing.Point(558, 4);
-            this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(37, 13);
-            this.login.TabIndex = 1;
-            this.login.Text = "Log In";
-            // 
-            // signUp
-            // 
-            this.signUp.AutoSize = true;
-            this.signUp.Location = new System.Drawing.Point(609, 4);
-            this.signUp.Name = "signUp";
-            this.signUp.Size = new System.Drawing.Size(45, 13);
-            this.signUp.TabIndex = 0;
-            this.signUp.Text = "Sign Up";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(240, 292);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(115, 13);
-            this.label13.TabIndex = 9;
-            this.label13.Text = "social media goes here";
-            // 
             // Arxikh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(672, 316);
+            this.ClientSize = new System.Drawing.Size(984, 661);
             this.Controls.Add(this.startup);
             this.Name = "Arxikh";
             this.Text = "index";
@@ -356,8 +361,6 @@
 
         private System.Windows.Forms.Panel startup;
         private System.Windows.Forms.Label logo;
-        private System.Windows.Forms.Label login;
-        private System.Windows.Forms.Label signUp;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.TextBox searchBar;
         private System.Windows.Forms.Panel panel4;
@@ -381,5 +384,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button loginButton;
+        private System.Windows.Forms.Button signupButton;
     }
 }

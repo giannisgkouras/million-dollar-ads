@@ -15,11 +15,22 @@ namespace MillionDollarAds
         public Arxikh()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            new LoginForm().Show();
+        }
+
+        private void signupButton_Click(object sender, EventArgs e)
+        {
+            new RegistrationForm().Show();
         }
     }
 }

@@ -7,3 +7,32 @@ C:\Users\Vasilis\source\repos\MillionDollarAds\MillionDollarAds\obj\Debug\Millio
 C:\Users\Vasilis\source\repos\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.csproj.CoreCompileInputs.cache
 C:\Users\Vasilis\source\repos\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.exe
 C:\Users\Vasilis\source\repos\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.pdb
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.csprojAssemblyReference.cache
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.Arxikh.resources
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.LoginForm.resources
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.Properties.Resources.resources
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.RegistrationForm.resources
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.csproj.GenerateResource.cache
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.exe
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.pdb
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\MillionDollarAds.exe.config
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\MillionDollarAds.exe
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\MillionDollarAds.pdb
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\FireSharp.dll
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\FireSharp.Serialization.JsonNet.dll
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Newtonsoft.Json.dll
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\RestSharp.dll
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Newtonsoft.Json.xml
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\RestSharp.xml
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.csproj.CopyComplete
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Microsoft.Threading.Tasks.dll
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Microsoft.Threading.Tasks.xml
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.csproj.App.config
