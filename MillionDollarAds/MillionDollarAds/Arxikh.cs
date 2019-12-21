@@ -32,5 +32,10 @@ namespace MillionDollarAds
         {
             new RegistrationForm().Show();
         }
+
+        private void buttonnn_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.startup = new System.Windows.Forms.Panel();
+            this.sidePanel = new System.Windows.Forms.Panel();
+            this.buttonnn = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.homeButton = new System.Windows.Forms.Button();
+            this.topPanel = new System.Windows.Forms.Panel();
             this.loginButton = new System.Windows.Forms.Button();
             this.signupButton = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -56,6 +61,8 @@
             this.searchBar = new System.Windows.Forms.TextBox();
             this.logo = new System.Windows.Forms.Label();
             this.startup.SuspendLayout();
+            this.sidePanel.SuspendLayout();
+            this.topPanel.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -65,8 +72,6 @@
             // startup
             // 
             this.startup.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.startup.Controls.Add(this.loginButton);
-            this.startup.Controls.Add(this.signupButton);
             this.startup.Controls.Add(this.label13);
             this.startup.Controls.Add(this.panel4);
             this.startup.Controls.Add(this.panel3);
@@ -75,16 +80,78 @@
             this.startup.Controls.Add(this.searchButton);
             this.startup.Controls.Add(this.searchBar);
             this.startup.Controls.Add(this.logo);
+            this.startup.Controls.Add(this.sidePanel);
+            this.startup.Controls.Add(this.topPanel);
             this.startup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.startup.Location = new System.Drawing.Point(0, 0);
             this.startup.Name = "startup";
             this.startup.Size = new System.Drawing.Size(984, 661);
             this.startup.TabIndex = 0;
             // 
+            // sidePanel
+            // 
+            this.sidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.sidePanel.Controls.Add(this.buttonnn);
+            this.sidePanel.Controls.Add(this.panel5);
+            this.sidePanel.Controls.Add(this.homeButton);
+            this.sidePanel.Location = new System.Drawing.Point(-7, 0);
+            this.sidePanel.Name = "sidePanel";
+            this.sidePanel.Size = new System.Drawing.Size(205, 658);
+            this.sidePanel.TabIndex = 10;
+            // 
+            // buttonnn
+            // 
+            this.buttonnn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.buttonnn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.buttonnn.FlatAppearance.BorderSize = 0;
+            this.buttonnn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonnn.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonnn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonnn.Location = new System.Drawing.Point(20, 122);
+            this.buttonnn.Name = "buttonnn";
+            this.buttonnn.Size = new System.Drawing.Size(161, 47);
+            this.buttonnn.TabIndex = 13;
+            this.buttonnn.Text = "Exmpl 2";
+            this.buttonnn.UseVisualStyleBackColor = false;
+            this.buttonnn.Click += new System.EventHandler(this.buttonnn_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.panel5.Location = new System.Drawing.Point(7, 69);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(14, 47);
+            this.panel5.TabIndex = 12;
+            // 
+            // homeButton
+            // 
+            this.homeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.homeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.homeButton.FlatAppearance.BorderSize = 0;
+            this.homeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.homeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.homeButton.Location = new System.Drawing.Point(20, 69);
+            this.homeButton.Name = "homeButton";
+            this.homeButton.Size = new System.Drawing.Size(161, 47);
+            this.homeButton.TabIndex = 11;
+            this.homeButton.Text = "Home";
+            this.homeButton.UseVisualStyleBackColor = false;
+            // 
+            // topPanel
+            // 
+            this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.topPanel.Controls.Add(this.loginButton);
+            this.topPanel.Controls.Add(this.signupButton);
+            this.topPanel.Location = new System.Drawing.Point(195, 0);
+            this.topPanel.Name = "topPanel";
+            this.topPanel.Size = new System.Drawing.Size(789, 43);
+            this.topPanel.TabIndex = 11;
+            // 
             // loginButton
             // 
             this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginButton.Location = new System.Drawing.Point(792, 3);
+            this.loginButton.Location = new System.Drawing.Point(606, 5);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(87, 35);
             this.loginButton.TabIndex = 1;
@@ -95,7 +162,7 @@
             // signupButton
             // 
             this.signupButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signupButton.Location = new System.Drawing.Point(885, 3);
+            this.signupButton.Location = new System.Drawing.Point(699, 3);
             this.signupButton.Name = "signupButton";
             this.signupButton.Size = new System.Drawing.Size(87, 35);
             this.signupButton.TabIndex = 2;
@@ -106,7 +173,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(240, 292);
+            this.label13.Location = new System.Drawing.Point(503, 338);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(115, 13);
             this.label13.TabIndex = 9;
@@ -118,7 +185,7 @@
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.label12);
             this.panel4.Controls.Add(this.radioButton4);
-            this.panel4.Location = new System.Drawing.Point(484, 116);
+            this.panel4.Location = new System.Drawing.Point(747, 162);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(121, 90);
             this.panel4.TabIndex = 8;
@@ -167,7 +234,7 @@
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.radioButton3);
-            this.panel3.Location = new System.Drawing.Point(325, 116);
+            this.panel3.Location = new System.Drawing.Point(588, 162);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(121, 90);
             this.panel3.TabIndex = 7;
@@ -216,7 +283,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.radioButton2);
-            this.panel2.Location = new System.Drawing.Point(177, 116);
+            this.panel2.Location = new System.Drawing.Point(440, 162);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(121, 90);
             this.panel2.TabIndex = 6;
@@ -265,7 +332,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Location = new System.Drawing.Point(28, 116);
+            this.panel1.Location = new System.Drawing.Point(291, 162);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(121, 90);
             this.panel1.TabIndex = 5;
@@ -310,7 +377,7 @@
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(342, 63);
+            this.searchButton.Location = new System.Drawing.Point(605, 109);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
             this.searchButton.TabIndex = 4;
@@ -320,7 +387,7 @@
             // 
             // searchBar
             // 
-            this.searchBar.Location = new System.Drawing.Point(200, 65);
+            this.searchBar.Location = new System.Drawing.Point(463, 111);
             this.searchBar.Name = "searchBar";
             this.searchBar.Size = new System.Drawing.Size(136, 20);
             this.searchBar.TabIndex = 3;
@@ -329,7 +396,7 @@
             // logo
             // 
             this.logo.AutoSize = true;
-            this.logo.Location = new System.Drawing.Point(289, 49);
+            this.logo.Location = new System.Drawing.Point(552, 95);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(77, 13);
             this.logo.TabIndex = 2;
@@ -345,6 +412,8 @@
             this.Text = "index";
             this.startup.ResumeLayout(false);
             this.startup.PerformLayout();
+            this.sidePanel.ResumeLayout(false);
+            this.topPanel.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -386,5 +455,10 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button signupButton;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel sidePanel;
+        private System.Windows.Forms.Button homeButton;
+        private System.Windows.Forms.Button buttonnn;
+        private System.Windows.Forms.Panel topPanel;
     }
 }
