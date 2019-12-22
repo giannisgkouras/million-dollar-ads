@@ -35,7 +35,20 @@ namespace MillionDollarAds
 
         private void buttonnn_Click(object sender, EventArgs e)
         {
-            
+            redPanel.Height = exp2Button.Height;
+            redPanel.Top = exp2Button.Top;
+            // exp2Page.BringToFront();
+            exp2Page1.BringToFront();
         }
+
+        private void homeButton_Click(object sender, EventArgs e)
+        {
+            redPanel.Height = homeButton.Height;
+            redPanel.Top = homeButton.Top;
+            homePage1.BringToFront();
+        }
+
+
+       // private MillionDollarAds.View.Exp2Page exp2Page = new View.Exp2Page();
     }
 }
