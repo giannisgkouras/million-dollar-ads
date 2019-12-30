@@ -25,7 +25,8 @@ namespace MillionDollarAds
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            new LoginForm().Show();
+            new LoginForm(this).Show();
+            
         }
 
         private void signupButton_Click(object sender, EventArgs e)
@@ -37,18 +38,31 @@ namespace MillionDollarAds
         {
             redPanel.Height = exp2Button.Height;
             redPanel.Top = exp2Button.Top;
-            // exp2Page.BringToFront();
             exp2Page1.BringToFront();
+            
         }
 
         private void homeButton_Click(object sender, EventArgs e)
         {
+            
             redPanel.Height = homeButton.Height;
             redPanel.Top = homeButton.Top;
             homePage1.BringToFront();
+            //homePage1.homeLabel.Text = "okeeeeee";  in order to work should make homeLabel public from Homepage.cs
+        }
+
+       
+        public Button getLoginButton
+        {
+            get { return loginButton; }
+        }
+
+        public Button getRegisterButton
+        {
+            get { return signupButton; }
         }
 
 
-       // private MillionDollarAds.View.Exp2Page exp2Page = new View.Exp2Page();
+
     }
 }

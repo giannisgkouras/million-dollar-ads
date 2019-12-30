@@ -34,8 +34,14 @@ namespace MillionDollarAds
 
         public static bool IsEqual( User user1, User user2)
         {
-            if (user1 == null || user2 == null) 
+            if (user2 == null) 
             {
+                error = "whattt";
+                return false;
+            }
+            if ( user1 == null)
+            {
+                error = "second wrong";
                 return false;
             }
             if(user1.Username != user2.Username)

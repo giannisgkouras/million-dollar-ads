@@ -29,23 +29,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.homeLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // homeLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(321, 140);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "This is the home page";
+            this.homeLabel.AutoSize = true;
+            this.homeLabel.Location = new System.Drawing.Point(321, 140);
+            this.homeLabel.Name = "homeLabel";
+            this.homeLabel.Size = new System.Drawing.Size(111, 13);
+            this.homeLabel.TabIndex = 0;
+            this.homeLabel.Text = "This is the home page";
             // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.homeLabel);
             this.Name = "HomePage";
             this.Size = new System.Drawing.Size(719, 460);
             this.ResumeLayout(false);
@@ -55,6 +55,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label homeLabel;
     }
 }

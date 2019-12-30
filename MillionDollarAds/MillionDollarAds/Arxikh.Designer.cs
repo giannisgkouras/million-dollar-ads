@@ -143,9 +143,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 661);
-            this.Controls.Add(this.homePage1);
             this.Controls.Add(this.sidePanel);
             this.Controls.Add(this.topPanel);
+            this.Controls.Add(this.homePage1);
             this.Controls.Add(this.exp2Page1);
             this.Name = "Arxikh";
             this.Text = "index";
@@ -156,8 +156,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button loginButton;
-        private System.Windows.Forms.Button signupButton;
+        public System.Windows.Forms.Button loginButton;
+        public System.Windows.Forms.Button signupButton;
         private System.Windows.Forms.Panel redPanel;
         private System.Windows.Forms.Panel sidePanel;
         private System.Windows.Forms.Button homeButton;

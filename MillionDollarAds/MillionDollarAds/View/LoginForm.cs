@@ -21,6 +21,13 @@ namespace MillionDollarAds
             InitializeComponent();
         }
 
+        private Arxikh mainForm = null;
+        public LoginForm(Form callingForm)
+        {
+            mainForm = callingForm as Arxikh;
+            InitializeComponent();
+        }
+
         IFirebaseConfig ifc = new FirebaseConfig()
         {
             AuthSecret = "tLGlHxPJ5x9JSZSPoNKLnSCgmNake8kEP3KYZzta",
@@ -70,6 +77,8 @@ namespace MillionDollarAds
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
+            changeLogInAndRegisterButtons();
+
             if (string.IsNullOrWhiteSpace(usernameTbox.Text) ||
                string.IsNullOrWhiteSpace(passwordTbox.Text)
                )
@@ -77,11 +86,11 @@ namespace MillionDollarAds
                 MessageBox.Show("Παρακαλώ συμπληρώστε όλα τα πεδία");
                 return;
             }
-            else 
-            { 
+            else
+            {
                 FirebaseResponse res = client.Get(@"Users/" + usernameTbox.Text);
                 Debug.WriteLine(res);
-                
+
                 // database result
                 User resUser = new User();
                 resUser = res.ResultAs<User>();
@@ -96,12 +105,26 @@ namespace MillionDollarAds
                 {
                     MessageBox.Show("Επιτυχής σύνδεση!!");
                     //TODO: τι γίνεται όταν συνδεθεί 
+
+
                 }
                 else
                 {
                     User.ShowError();
                 }
             }
+
+        }
+
+        private void changeLogInAndRegisterButtons()
+        {
+            Button loginButton = this.mainForm.getLoginButton;
+            Button registerButton = this.mainForm.getRegisterButton;
+
+            registerButton.Visible = false;
+            loginButton.Text = "Welcome User";
+            loginButton.Width = 175;
+            loginButton.Enabled = false;
         }
     }
 }
