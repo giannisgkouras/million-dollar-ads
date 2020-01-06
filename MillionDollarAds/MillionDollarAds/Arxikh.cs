@@ -32,6 +32,7 @@ namespace MillionDollarAds
         private void signupButton_Click(object sender, EventArgs e)
         {
             new RegistrationForm().Show();
+           
         }
 
         private void buttonnn_Click(object sender, EventArgs e)
@@ -39,7 +40,8 @@ namespace MillionDollarAds
             redPanel.Height = exp2Button.Height;
             redPanel.Top = exp2Button.Top;
             exp2Page1.BringToFront();
-            
+            new AddAdv().Show();
+
         }
 
         private void homeButton_Click(object sender, EventArgs e)
@@ -62,7 +64,16 @@ namespace MillionDollarAds
             get { return signupButton; }
         }
 
+        private void topPanel_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
 
+        private void Arxikh_Load(object sender, EventArgs e)
+        {
+          
+        }
+
+        
     }
 }

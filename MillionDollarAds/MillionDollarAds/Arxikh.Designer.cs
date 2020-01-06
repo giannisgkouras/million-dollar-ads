@@ -101,6 +101,7 @@
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(789, 43);
             this.topPanel.TabIndex = 11;
+            this.topPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.topPanel_Paint);
             // 
             // loginButton
             // 
@@ -149,6 +150,7 @@
             this.Controls.Add(this.exp2Page1);
             this.Name = "Arxikh";
             this.Text = "index";
+            this.Load += new System.EventHandler(this.Arxikh_Load);
             this.sidePanel.ResumeLayout(false);
             this.topPanel.ResumeLayout(false);
             this.ResumeLayout(false);

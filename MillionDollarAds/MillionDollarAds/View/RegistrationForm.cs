@@ -23,7 +23,7 @@ namespace MillionDollarAds
         IFirebaseConfig ifc = new FirebaseConfig()
         {
             AuthSecret = "tLGlHxPJ5x9JSZSPoNKLnSCgmNake8kEP3KYZzta",
-            BasePath = "https://ads1-d054d.firebaseio.com/"
+            BasePath = "https://ads1-d054d.firebaseio.com"
         };
 
         IFirebaseClient client;
@@ -63,10 +63,11 @@ namespace MillionDollarAds
             {
                 Username = usernameTbox.Text,
                 Email = emailTbox.Text,
-                Password = passwordTbox.Text,                 
+                Password = passwordTbox.Text,
+                LastId = 1,
             };
 
-            SetResponse set = client.Set(@"Users/" + usernameTbox.Text+"123", user);
+            SetResponse set = client.Set(@"Users/" + usernameTbox.Text, user);
             
             MessageBox.Show("Η εγγραφή ολοκληρώθηκε!");
         }

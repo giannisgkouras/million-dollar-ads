@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\MillionDollarAds"
+    "\\MillionDollarAds",
+    "\\MillionDollarAds\\MillionDollarAds"
   ],
-  "SelectedNode": "\\MillionDollarAds",
+  "SelectedNode": "\\MillionDollarAds\\MillionDollarAds\\MillionDollarAds.csproj",
   "PreviewInSolutionExplorer": false
 }

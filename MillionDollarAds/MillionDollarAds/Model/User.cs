@@ -12,24 +12,31 @@ namespace MillionDollarAds
         {
         }
 
-        public User(string username, string email, string password, string cpassword)
+        public User(string username, string email, string password, string cpassword, int lastId)
         {
             Username = username;
             Email = email;
             Password = password;
             CPassword = cpassword;
+            LastId = lastId;
         }
 
         public string Username { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public string CPassword { get; set; }
+        public int LastId { get; set; }
 
         private static string error = "Κάτι πήγε στραβά.";
 
         public static void ShowError()
         {
             System.Windows.Forms.MessageBox.Show(error);
+        }
+
+        public static string getUsername(string username)
+        {
+            return username;
         }
 
         public static bool IsEqual( User user1, User user2)

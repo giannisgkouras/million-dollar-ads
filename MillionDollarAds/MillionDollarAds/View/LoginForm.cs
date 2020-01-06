@@ -16,6 +16,10 @@ namespace MillionDollarAds
 {
     public partial class LoginForm : Form
     {
+
+         static string username= "";
+
+
         public LoginForm()
         {
             InitializeComponent();
@@ -77,7 +81,6 @@ namespace MillionDollarAds
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            changeLogInAndRegisterButtons();
 
             if (string.IsNullOrWhiteSpace(usernameTbox.Text) ||
                string.IsNullOrWhiteSpace(passwordTbox.Text)
@@ -103,9 +106,10 @@ namespace MillionDollarAds
 
                 if (User.IsEqual(resUser, currentUser))
                 {
+                    username = resUser.Username;
                     MessageBox.Show("Επιτυχής σύνδεση!!");
                     //TODO: τι γίνεται όταν συνδεθεί 
-
+                    changeLogInAndRegisterButtons();
 
                 }
                 else
@@ -120,11 +124,18 @@ namespace MillionDollarAds
         {
             Button loginButton = this.mainForm.getLoginButton;
             Button registerButton = this.mainForm.getRegisterButton;
+            
 
             registerButton.Visible = false;
-            loginButton.Text = "Welcome User";
+            loginButton.Text = "Welcome "+username;
             loginButton.Width = 175;
-            loginButton.Enabled = false;
+           // loginButton.Enabled = false;
         }
+
+        public static string getUsername
+        {
+            get { return username; }
+        }
+      
     }
 }
