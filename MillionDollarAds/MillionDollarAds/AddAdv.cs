@@ -72,7 +72,7 @@ namespace MillionDollarAds
             }
 
 
-            
+
             if (LoginForm.getUsername == "")
             {
                 button1.Enabled = false;
@@ -80,27 +80,33 @@ namespace MillionDollarAds
             }
             else
             {
-
-                FirebaseResponse response = client.Get(@"Users/"+LoginForm.getUsername);
-
-                User resUser = new User();
-                resUser = response.ResultAs<User>();
-
-                Product product = new Product()
+                if (comboBox1.SelectedItem == null )
                 {
-                    Title= textBox1.Text,
-                    Desc = textBox2.Text,
-                    Image = textBox3.Text,
-                    Price = textBox4.Text,
-                    Id = resUser.LastId.ToString(),
-                };
+                    MessageBox.Show("Πρέπει να επιλέξετε κατηγορία");
+                }
+                else {               
+
+                    FirebaseResponse response = client.Get(@"Users/"+LoginForm.getUsername);
+
+                    User resUser = new User();
+                    resUser = response.ResultAs<User>();
+
+                    Product product = new Product()
+                    {
+                        Title= textBox1.Text,
+                        Desc = textBox2.Text,
+                        Image = textBox3.Text,
+                        Price = textBox4.Text,
+                        Id = resUser.LastId.ToString(),
+                    };
 
             
-                SetResponse setToUserAds = client.Set(@"userAds/" +LoginForm.getUsername+"/"+resUser.LastId, product);
-                SetResponse setToSubCategories = client.Set(@"subCategories/"+comboBox1.Items[comboBox1.SelectedIndex].ToString()+"/" + LoginForm.getUsername + "/" + resUser.LastId, product);
+                    SetResponse setToUserAds = client.Set(@"userAds/" +LoginForm.getUsername+"/"+resUser.LastId, product);
+                    SetResponse setToSubCategories = client.Set(@"subCategories/"+comboBox1.Items[comboBox1.SelectedIndex].ToString()+"/" + LoginForm.getUsername + "/" + resUser.LastId, product);
                 
-                resUser.LastId++;
-                SetResponse updateLastId = client.Set(@"Users/"+LoginForm.getUsername, resUser );
+                    resUser.LastId++;
+                    SetResponse updateLastId = client.Set(@"Users/"+LoginForm.getUsername, resUser );
+                }
             }
         }
 
