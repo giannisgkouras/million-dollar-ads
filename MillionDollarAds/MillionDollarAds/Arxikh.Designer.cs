@@ -37,6 +37,7 @@
             this.signupButton = new System.Windows.Forms.Button();
             this.homePage1 = new MillionDollarAds.View.HomePage();
             this.exp2Page1 = new MillionDollarAds.View.Exp2Page();
+            this.loginPage1 = new MillionDollarAds.View.LoginPage(this);
             this.sidePanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.SuspendLayout();
@@ -101,7 +102,6 @@
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(789, 43);
             this.topPanel.TabIndex = 11;
-            this.topPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.topPanel_Paint);
             // 
             // loginButton
             // 
@@ -139,6 +139,13 @@
             this.exp2Page1.Size = new System.Drawing.Size(771, 603);
             this.exp2Page1.TabIndex = 13;
             // 
+            // loginPage1
+            // 
+            this.loginPage1.Location = new System.Drawing.Point(211, 46);
+            this.loginPage1.Name = "loginPage1";
+            this.loginPage1.Size = new System.Drawing.Size(771, 603);
+            this.loginPage1.TabIndex = 14;
+            // 
             // Arxikh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -148,9 +155,9 @@
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.homePage1);
             this.Controls.Add(this.exp2Page1);
+            this.Controls.Add(this.loginPage1);
             this.Name = "Arxikh";
             this.Text = "index";
-            this.Load += new System.EventHandler(this.Arxikh_Load);
             this.sidePanel.ResumeLayout(false);
             this.topPanel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -167,5 +174,6 @@
         private System.Windows.Forms.Panel topPanel;
         private View.HomePage homePage1;
         private View.Exp2Page exp2Page1;
+        private View.LoginPage loginPage1;
     }
 }

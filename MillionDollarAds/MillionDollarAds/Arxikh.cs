@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MillionDollarAds.View;
 
 namespace MillionDollarAds
 {
     public partial class Arxikh : Form
     {
+        public static User user = null;
         public Arxikh()
         {
             InitializeComponent();
@@ -25,7 +27,9 @@ namespace MillionDollarAds
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            new LoginForm(this).Show();
+            //new LoginForm(this).Show();
+
+            loginPage1.BringToFront();
             
         }
 
@@ -64,16 +68,10 @@ namespace MillionDollarAds
             get { return signupButton; }
         }
 
-        private void topPanel_Paint(object sender, PaintEventArgs e)
+        public HomePage getHomePage
         {
-
+            get { return homePage1; }
         }
-
-        private void Arxikh_Load(object sender, EventArgs e)
-        {
-          
-        }
-
         
     }
 }
