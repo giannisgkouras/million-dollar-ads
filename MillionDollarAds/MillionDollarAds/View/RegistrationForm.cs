@@ -46,7 +46,8 @@ namespace MillionDollarAds
             if (string.IsNullOrWhiteSpace(usernameTbox.Text) &&
                string.IsNullOrWhiteSpace(emailTbox.Text) &&
                string.IsNullOrWhiteSpace(passwordTbox.Text) &&
-               string.IsNullOrWhiteSpace(cPassordTbox.Text))
+               string.IsNullOrWhiteSpace(cPassordTbox.Text) &&
+               string.IsNullOrWhiteSpace(phoneText.Text))
             {
                 MessageBox.Show("Παρακαλώ συμπληρώστε όλα τα πεδία");
                 return;
@@ -64,6 +65,7 @@ namespace MillionDollarAds
                 Username = usernameTbox.Text,
                 Email = emailTbox.Text,
                 Password = passwordTbox.Text,
+                Phone = phoneText.Text,
                 LastId = 1,
             };
 

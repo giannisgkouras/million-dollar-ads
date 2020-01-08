@@ -92,7 +92,7 @@
     <Compile Include="Arxikh.Designer.cs">
       <DependentUpon>Arxikh.cs</DependentUpon>
     </Compile>
-    <Compile Include="Category.cs" />
+    <Compile Include="Model\Category.cs" />
     <Compile Include="AddAdv.cs">
       <SubType>Form</SubType>
     </Compile>

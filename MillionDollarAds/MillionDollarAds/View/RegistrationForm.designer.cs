@@ -37,11 +37,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cPassordTbox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.phoneText = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // registerBtn
             // 
-            this.registerBtn.Location = new System.Drawing.Point(105, 330);
+            this.registerBtn.Location = new System.Drawing.Point(105, 400);
             this.registerBtn.Name = "registerBtn";
             this.registerBtn.Size = new System.Drawing.Size(123, 23);
             this.registerBtn.TabIndex = 10;
@@ -51,7 +53,7 @@
             // 
             // passwordTbox
             // 
-            this.passwordTbox.Location = new System.Drawing.Point(117, 199);
+            this.passwordTbox.Location = new System.Drawing.Point(117, 275);
             this.passwordTbox.Name = "passwordTbox";
             this.passwordTbox.PasswordChar = '*';
             this.passwordTbox.Size = new System.Drawing.Size(100, 20);
@@ -67,7 +69,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(136, 163);
+            this.label2.Location = new System.Drawing.Point(136, 239);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 7;
@@ -100,7 +102,7 @@
             // 
             // cPassordTbox
             // 
-            this.cPassordTbox.Location = new System.Drawing.Point(117, 274);
+            this.cPassordTbox.Location = new System.Drawing.Point(117, 350);
             this.cPassordTbox.Name = "cPassordTbox";
             this.cPassordTbox.PasswordChar = '*';
             this.cPassordTbox.Size = new System.Drawing.Size(100, 20);
@@ -109,17 +111,35 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(108, 245);
+            this.label4.Location = new System.Drawing.Point(108, 321);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 13);
             this.label4.TabIndex = 13;
             this.label4.Text = "Confrim your Passoword";
+            // 
+            // phoneText
+            // 
+            this.phoneText.Location = new System.Drawing.Point(117, 190);
+            this.phoneText.Name = "phoneText";
+            this.phoneText.Size = new System.Drawing.Size(100, 20);
+            this.phoneText.TabIndex = 16;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(146, 163);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Phone";
             // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 499);
+            this.Controls.Add(this.phoneText);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.cPassordTbox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.emailTbox);
@@ -148,5 +168,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox cPassordTbox;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox phoneText;
+        private System.Windows.Forms.Label label5;
     }
 }

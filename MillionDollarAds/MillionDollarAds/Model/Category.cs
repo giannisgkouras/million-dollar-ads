@@ -12,13 +12,14 @@ namespace MillionDollarAds
         {
         }
 
-        public Category(string id,  string title)
+        public Category(string hasFather, string id,  string title)
         {
-            
+            HasFather = hasFather;
             Id = id;
             Title = title;
         }
 
+        public string HasFather { get; set; }
 
         public string Id { get; set; }
 
