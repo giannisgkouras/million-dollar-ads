@@ -2,8 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\MillionDollarAds",
-    "\\MillionDollarAds\\MillionDollarAds"
+    "\\MillionDollarAds\\MillionDollarAds",
+    "\\MillionDollarAds\\MillionDollarAds\\Control",
+    "\\MillionDollarAds\\MillionDollarAds\\Model",
+    "\\MillionDollarAds\\MillionDollarAds\\View"
   ],
-  "SelectedNode": "\\MillionDollarAds\\MillionDollarAds.sln",
+  "SelectedNode": "\\MillionDollarAds\\MillionDollarAds\\View\\RegistrationForm.designer.cs",
   "PreviewInSolutionExplorer": false
 }
