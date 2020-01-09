@@ -32,9 +32,12 @@ namespace MillionDollarAds
         IFirebaseClient client;
 
         FirebaseResponse response;
-        Category category = new Category();
+        //Category category = new Category();
         List<Category> categoriesList = new List<Category>();
         List<Category> subcategoriesList = new List<Category>();
+
+        int categoryCount = 1;
+
         private void Form1_Load(object sender, EventArgs e)
         {
             try
@@ -48,63 +51,64 @@ namespace MillionDollarAds
             }
 
 
-            //Get Categories and set to combobox
-            int counter = 0;
             
-            for (int i=1; i<8; i++)
+            response = client.Get(@"MillionDollarAds/categories/");            
+            List<Category> categories = response.ResultAs<List<Category>>();            
+            int numberOfCategories = categories.Count;
+
+            
+            /*
+            FirebaseResponse response2 = client.Get(@"MillionDollarAds/AdsByCategory/");
+            List<Product> userAds = response2.ResultAs<List<Product>>();
+            int numberOfUserAds = userAds.Count;
+            */
+            
+
+            //Get Categories and set to combobox
+            for (int i=1; i<numberOfCategories; i++)
             {
-                response = client.Get(@"categories/"+i);
-                
-                category = response.ResultAs<Category>();
-                if (category.HasFather == "0")
+                if (categories[i].HasFather == 0)
                 {
-                    categoryCB.Items.Add(category.Title);
+                    categoryCB.Items.Add(categories[i].Title);
                     categoriesList.Add(new Category()
                     {
-                        HasFather = category.HasFather,
-                        Id = category.Id,
-                        Title = category.Title,
+                        HasFather = categories[i].HasFather,
+                        Id = categories[i].Id,
+                        Title = categories[i].Title,
                     });
                 }
 
-                if(category.HasFather != "0")
+                if(categories[i].HasFather != 0)
                 {
                     subcategoriesList.Add(new Category() { 
-                        HasFather = category.HasFather,
-                        Id = category.Id,
-                        Title = category.Title,
+                        HasFather = categories[i].HasFather,
+                        Id = categories[i].Id,
+                        Title = categories[i].Title,
                     });
                 }
-
-               
             }
-
-
         }
-        private string[] getSubCategoriesByFather(string fatherId)
+        private string[] getSubCategoriesByFather(int fatherId)
         {
             return subcategoriesList.Where(sub => sub.HasFather == fatherId).Select(s => s.Title).ToArray();
         }
 
-        int CategoryCounter = 1;
-
+        private int[] getSubCategoryIdByName(string title)
+        {
+            return subcategoriesList.Where(sub => sub.Title == title).Select(c => c.Id).ToArray();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-
-            string selectedCategory="";
 
             if (string.IsNullOrWhiteSpace(textBox1.Text) &&
                 string.IsNullOrWhiteSpace(textBox2.Text) &&
                 string.IsNullOrWhiteSpace(textBox3.Text) &&
                 string.IsNullOrWhiteSpace(textBox4.Text))
-
             {
                 MessageBox.Show("Παρακαλώ συμπληρώστε όλα τα πεδία");
                 return;
             }
 
-
-            
             if (Arxikh.user.Username == "")
             {
                 button1.Enabled = false;
@@ -117,29 +121,27 @@ namespace MillionDollarAds
                     MessageBox.Show("Πρέπει να επιλέξετε τύπο αγγελίας");
                 }
 
-                if (categoryCB.SelectedItem == null )
+                if (categoryCB.SelectedItem == null)
                 {
                     MessageBox.Show("Πρέπει να επιλέξετε κατηγορία");
                 }
 
                 if (categoryCB.SelectedItem != null && subcategoryCB.SelectedItem == null)
                 {
-
                     MessageBox.Show("Πρέπει να επιλέξετε υποκατηγορία");
-
                 }               
 
-                else {               
-
-                    FirebaseResponse response = client.Get(@"Users/"+ Arxikh.user.Username);                    
-
-                    selectedCategory = subcategoryCB.Text;
+                else {
+                    int selectedCategoryId = getSubCategoryIdByName(subcategoryCB.SelectedItem.ToString())[0];
+                    
 
                     string type= "";
+
                     if (saleRB.Checked)
                     {
                         type = saleRB.Text;
                     }
+
                     if (demandRB.Checked)
                     {
                         type = demandRB.Text;
@@ -147,26 +149,27 @@ namespace MillionDollarAds
 
                     Product product = new Product()
                     {
-                        Owner = Arxikh.user.Username,
+                        Owner = Arxikh.user,
                         Title = textBox1.Text,
                         Desc = textBox2.Text,
                         Image = textBox3.Text,
                         Price = textBox4.Text,
-                        Id = Arxikh.user.LastId.ToString(),
+                        Id = Arxikh.user.TotalAds+1,
+                        CategoryId = selectedCategoryId,
                         Type = type,
-                        Date = DateTime.Now.ToString("dd/MM/yyyy HH:mm"),
-
-                        
+                        Date = DateTime.Now.ToString("dd/MM/yyyy HH:mm"),                        
                     };
 
-                    //Γράφει στην βάση την αγγελία του χρήστη
-                    SetResponse setToUserAds = client.Set(@"userAds/" + Arxikh.user.Username + "/"+ Arxikh.user.LastId, product);
+                    //Γράφει στην βάση την αγγελία του χρήστη [userAds/username/ProductId=>product]
+                    SetResponse setToUserAds = client.Set(@"MillionDollarAds/userAds/" + Arxikh.user.Username + "/"+ product.Id, product);
 
-                    //TODO κανει overwrite
-                    SetResponse setToSCategories = client.Set(@"AdsByCategory/"+selectedCategory+"/", product);
+                    //
+                    SetResponse setToAdsByCategory = client.Set(@"MillionDollarAds/AdsByCategory/" + product.CategoryId+"/"+Properties.Settings.Default.catCounter, product);
 
-                    Arxikh.user.LastId++;
-                    SetResponse updateLastId = client.Set(@"Users/"+ Arxikh.user.Username, Arxikh.user);
+                    Arxikh.user.TotalAds++;
+                    SetResponse updateLastId = client.Set(@"MillionDollarAds/Users/" + Arxikh.user.Username, Arxikh.user);
+                    Properties.Settings.Default.catCounter++;
+                    Properties.Settings.Default.Save();
                     
                 }
             }
@@ -190,7 +193,7 @@ namespace MillionDollarAds
         private void categoryCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             subcategoryCB.Items.Clear();
-            string fatherId = categoriesList[categoryCB.SelectedIndex].Id;
+            int fatherId = categoriesList[categoryCB.SelectedIndex].Id;
             foreach (string title in getSubCategoriesByFather(fatherId))
             {
                 if (title != "" || title != null)
@@ -200,9 +203,9 @@ namespace MillionDollarAds
                     subcategoryCB.Visible = true;
                 }
                 else {
-                    this.subcategoryCB.Items.Add(categoriesList[categoryCB.SelectedIndex].Title);
                     subcategorylabel.Visible = false;
                     subcategoryCB.Visible = false;                
+                    this.subcategoryCB.Items.Add(categoriesList[categoryCB.SelectedIndex].Title);
                 }
 
             }

@@ -34,7 +34,7 @@ namespace MillionDollarAds.Control
         public static bool validateLogIn(string username, string password)
         {
             openConnection();
-            FirebaseResponse res = client.Get(@"Users/" + username);
+            FirebaseResponse res = client.Get(@"MillionDollarAds/Users/" + username);
 
             // database result
             User resUser = new User();

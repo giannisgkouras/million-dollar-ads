@@ -12,7 +12,7 @@ namespace MillionDollarAds
         {
         }
 
-        public Product(string owner, string desc, string id, string image, string price, string title, string type, string date)
+        public Product(User owner, string desc, int id, string image, string price, string title, string type, string date , int categoryId)
         {
             Owner = owner;
             Desc = desc;
@@ -22,15 +22,18 @@ namespace MillionDollarAds
             Title = title;
             Type = type;
             Date = date;
+            CategoryId = categoryId;
         }
 
-        public string Owner { get; set; }
+        public User Owner { get; set; }
         public string Desc { get; set; }
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Image { get; set; }
         public string Price { get; set; }
         public string Title { get; set; }
         public string Type { get; set; }
         public string Date { get; set; }
+        public int CategoryId { get; set; }
+        
     }
 }

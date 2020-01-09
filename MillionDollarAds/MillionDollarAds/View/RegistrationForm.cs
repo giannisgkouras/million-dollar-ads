@@ -41,6 +41,24 @@ namespace MillionDollarAds
 
         }
 
+       
+
+
+        private string createUserID()
+        {
+            StringBuilder builder = new StringBuilder();
+            Enumerable
+               .Range(65, 26)
+                .Select(e => ((char)e).ToString())
+                .Concat(Enumerable.Range(97, 26).Select(e => ((char)e).ToString()))
+                .Concat(Enumerable.Range(0, 10).Select(e => e.ToString()))
+                .OrderBy(e => Guid.NewGuid())
+                .Take(11)
+                .ToList().ForEach(e => builder.Append(e));
+            string id = builder.ToString();
+            return id;
+        }
+
         private void registerBtn_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(usernameTbox.Text) &&
@@ -58,7 +76,19 @@ namespace MillionDollarAds
                 return;
             }
 
-            //TODO: ελεγχος αν υπαρχει ηδη το ονομα ή το email
+            // Eλεγχος αν υπαρχει ηδη το ονομα ή το email
+           
+            /*
+            FirebaseResponse response; 
+            if(client.Get(@"Users/" + usernameTbox).StatusCode.Equals())
+            {
+
+            }
+
+            User dbUser = response.ResultAs<User>();
+            */
+
+            
 
             User user = new User()
             {
@@ -66,10 +96,11 @@ namespace MillionDollarAds
                 Email = emailTbox.Text,
                 Password = passwordTbox.Text,
                 Phone = phoneText.Text,
-                LastId = 1,
+                TotalAds = 0,
+                Id = createUserID(),
             };
 
-            SetResponse set = client.Set(@"Users/" + usernameTbox.Text, user);
+            SetResponse set = client.Set(@"MillionDollarAds/Users/" + usernameTbox.Text, user);
             
             MessageBox.Show("Η εγγραφή ολοκληρώθηκε!");
         }

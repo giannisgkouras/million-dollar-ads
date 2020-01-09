@@ -54,7 +54,6 @@ namespace MillionDollarAds
             redPanel.Height = homeButton.Height;
             redPanel.Top = homeButton.Top;
             homePage1.BringToFront();
-            //homePage1.homeLabel.Text = "okeeeeee";  in order to work should make homeLabel public from Homepage.cs
         }
 
        

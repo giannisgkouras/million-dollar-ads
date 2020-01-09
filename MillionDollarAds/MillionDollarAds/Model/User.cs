@@ -12,14 +12,15 @@ namespace MillionDollarAds
         {
         }
 
-        public User(string username, string email, string password, string cpassword, int lastId, string phone)
+        public User(string username, string email, string password, string cpassword, int totalAds, string phone, string id)
         {
             Username = username;
             Email = email;
             Password = password;
             CPassword = cpassword;
-            LastId = lastId;
+            TotalAds = totalAds;
             Phone = phone;
+            Id = id;
         }
 
         public string Username { get; set; }
@@ -27,7 +28,8 @@ namespace MillionDollarAds
         public string Password { get; set; }
         public string CPassword { get; set; }
         public string Phone { get; set; }
-        public int LastId { get; set; }
+        public int TotalAds { get; set; }
+        public string Id { get; set; }
 
         private static string error = "Κάτι πήγε στραβά.";
 
