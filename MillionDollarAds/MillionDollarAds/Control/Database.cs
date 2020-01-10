@@ -81,7 +81,7 @@ namespace MillionDollarAds.Control
         public static bool checkIfUserExists(string username, string password)
         {
             Initialize();
-            string query = "SELECT username,password,contactNumber FROM User WHERE username = '" + username +
+            string query = "SELECT idUser,username,password,contactNumber,email FROM User WHERE username = '" + username +
                 "' AND password = '" + password + "'";
             MySqlCommand cmd = new MySqlCommand(query, connection);
             MySqlDataReader dataReader = cmd.ExecuteReader();
@@ -91,11 +91,17 @@ namespace MillionDollarAds.Control
                 while (dataReader.Read())
                 {
                     Console.WriteLine("EEEEEEEEEEEEEEEEEEEEEEEEE   " + dataReader.GetString(0));
+                    Console.WriteLine("EEEEEEEEEEEEEEEEEEEEEEEEE   " + dataReader.GetString(1));
+                    Console.WriteLine("EEEEEEEEEEEEEEEEEEEEEEEEE   " + dataReader.GetString(2));
+                    Console.WriteLine("EEEEEEEEEEEEEEEEEEEEEEEEE   " + dataReader.GetString(3));
+                    Console.WriteLine("EEEEEEEEEEEEEEEEEEEEEEEEE   " + dataReader.GetString(4));
                     Arxikh.user = new User()
                     {
-                        Username = dataReader.GetString(0),
-                        Password = dataReader.GetString(1),
-                        Phone = dataReader.GetInt32(2)
+                        Id = dataReader.GetInt32(0),
+                        Username = dataReader.GetString(1),
+                        Password = dataReader.GetString(2),
+                        Phone = dataReader.GetInt32(3),
+                        Email = dataReader.GetString(4)
                     };
                 }
             }
@@ -137,15 +143,42 @@ namespace MillionDollarAds.Control
         public static void createNewUser(User newUser)
         {
             Initialize();
-            string query = "insert into user(username,password,contactNumber) values (@username,@password,@contactNumber)";
+            string query = "insert into user(username,password,contactNumber,email) values (@username,@password,@contactNumber,@email)";
             MySqlCommand msc = new MySqlCommand(query, connection);
 
             msc.Parameters.AddWithValue("@username",newUser.Username);
             msc.Parameters.AddWithValue("@password", newUser.Password);
             msc.Parameters.AddWithValue("@contactNumber", newUser.Phone);
+            msc.Parameters.AddWithValue("@email", newUser.Email);
             msc.Prepare();
 
             msc.ExecuteNonQuery();
+        }
+
+        public static List<Category> getAllCategories()
+        {
+            Initialize();
+            string query = "select * from category";
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            List<Category> categories = new List<Category>();
+            Category category = null;
+
+            while (dataReader.HasRows)
+            {
+                while (dataReader.Read())
+                {
+                    category = new Category(dataReader.GetInt32(0), dataReader.GetString(1), dataReader.GetInt32(2));
+                    Console.WriteLine(dataReader.GetInt32(0) + "  "+dataReader.GetString(1) + "  " + dataReader.GetInt32(2));
+                    categories.Add(category);
+                }
+                dataReader.NextResult();
+            }
+
+            dataReader.Close();
+            CloseConnection();
+            
+            return categories;
         }
     }
 }

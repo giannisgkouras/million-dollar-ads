@@ -12,7 +12,7 @@ namespace MillionDollarAds
         {
         }
 
-        public Category(int hasFather, int id,  string title)
+        public Category(int id, string title, int hasFather)
         {
             HasFather = hasFather;
             Id = id;

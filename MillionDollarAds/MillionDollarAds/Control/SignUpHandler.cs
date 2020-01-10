@@ -9,12 +9,13 @@ namespace MillionDollarAds.Control
     public class SignUpHandler
     {
 
-        public int completeRegistration(string username, string password, string confirmPass, string phone)
+        public int completeRegistration(string username, string password, string confirmPass, string phone, string email)
         {
             if (string.IsNullOrWhiteSpace(username)
                 || string.IsNullOrWhiteSpace(password)
                 || string.IsNullOrWhiteSpace(confirmPass)
-                || string.IsNullOrWhiteSpace(phone) )
+                || string.IsNullOrWhiteSpace(phone)
+                || string.IsNullOrWhiteSpace(email) )
             {
                 return 0;
             }
@@ -37,7 +38,8 @@ namespace MillionDollarAds.Control
             {
                 Username = username,
                 Password = password,
-                Phone = phoneNumber
+                Phone = phoneNumber,
+                Email = email
             };
 
             Database.createNewUser(newUser);

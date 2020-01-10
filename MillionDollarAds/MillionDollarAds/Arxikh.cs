@@ -71,6 +71,10 @@ namespace MillionDollarAds
             get { return signUpPage1; }
         }
 
+        public Button getCreateAdButton
+        {
+            get { return createAdButton; }
+        }
         private void button1_Click_1(object sender, EventArgs e)
         {
            // openConnection();
@@ -103,7 +107,7 @@ namespace MillionDollarAds
             {
                 Invoke((MethodInvoker)delegate
                 {
-                    itm = new ListViewItem(new string[] { products.Title, products.Desc, products.Price, products.Image, products.Type, products.Owner.Username, products.Date, });
+                    itm = new ListViewItem(new string[] { products.Title, products.Desc, products.Price, products.Type, products.Owner.Username, products.Date, });
                     listView1.Items.Add(itm);
                 });
             }
@@ -138,6 +142,18 @@ namespace MillionDollarAds
             redPanel.Height = exp2Button.Height;
             redPanel.Top = exp2Button.Top;
             exp2Page1.BringToFront();
+        }
+
+        private void createAdButton_Click(object sender, EventArgs e)
+        {
+            redPanel.Height = createAdButton.Height;
+            redPanel.Top = createAdButton.Top;
+            createAdPage1.BringToFront();
+        }
+
+        private void Arxikh_Load(object sender, EventArgs e)
+        {
+            createAdButton.Visible = false;
         }
     }
 }

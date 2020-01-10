@@ -547,7 +547,6 @@ C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Sy
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.exe.config
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.AddAdv.resources
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.LoginPage.resources
-C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.InsertAd.resources
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Google.Protobuf.dll
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\MySql.Data.dll
@@ -555,5 +554,6 @@ C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Re
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Google.Protobuf.xml
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\MySql.Data.xml
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Renci.SshNet.xml
-C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.csprojAssemblyReference.cache
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.SignUpPage.resources
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.CreateAdPage.resources
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.csprojAssemblyReference.cache

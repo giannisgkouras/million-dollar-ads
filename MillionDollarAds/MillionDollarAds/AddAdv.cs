@@ -152,7 +152,6 @@ namespace MillionDollarAds
                         Owner = Arxikh.user,
                         Title = textBox1.Text,
                         Desc = textBox2.Text,
-                        Image = textBox3.Text,
                         Price = textBox4.Text,
                       //  Id = Arxikh.user.TotalAds+1,
                         CategoryId = selectedCategoryId,

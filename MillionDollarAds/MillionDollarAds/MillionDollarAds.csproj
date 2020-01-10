@@ -122,6 +122,12 @@
     </Compile>
     <Compile Include="Control\LoginHandler.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="View\CreateAdPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\CreateAdPage.Designer.cs">
+      <DependentUpon>CreateAdPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Exp2Page.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -133,12 +139,6 @@
     </Compile>
     <Compile Include="View\HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\InsertAd.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\InsertAd.Designer.cs">
-      <DependentUpon>InsertAd.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -161,14 +161,14 @@
     <EmbeddedResource Include="AddAdv.resx">
       <DependentUpon>AddAdv.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\CreateAdPage.resx">
+      <DependentUpon>CreateAdPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Exp2Page.resx">
       <DependentUpon>Exp2Page.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\InsertAd.resx">
-      <DependentUpon>InsertAd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

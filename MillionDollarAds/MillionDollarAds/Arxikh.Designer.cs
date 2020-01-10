@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.sidePanel = new System.Windows.Forms.Panel();
+            this.createAdButton = new System.Windows.Forms.Button();
             this.exp2Button = new System.Windows.Forms.Button();
             this.redPanel = new System.Windows.Forms.Panel();
             this.homeButton = new System.Windows.Forms.Button();
@@ -42,9 +43,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.homePage1 = new MillionDollarAds.View.HomePage();
             this.exp2Page1 = new MillionDollarAds.View.Exp2Page();
-            this.loginPage1 = new MillionDollarAds.View.LoginPage(this);
-            this.insertAd1 = new MillionDollarAds.View.InsertAd();
-            this.signUpPage1 = new MillionDollarAds.View.SignUpPage(this);
+            this.loginPage1 = new MillionDollarAds.View.LoginPage();
+            this.signUpPage1 = new MillionDollarAds.View.SignUpPage();
+            this.createAdPage1 = new MillionDollarAds.View.CreateAdPage();
             this.sidePanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +53,7 @@
             // sidePanel
             // 
             this.sidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.sidePanel.Controls.Add(this.createAdButton);
             this.sidePanel.Controls.Add(this.exp2Button);
             this.sidePanel.Controls.Add(this.redPanel);
             this.sidePanel.Controls.Add(this.homeButton);
@@ -59,6 +61,22 @@
             this.sidePanel.Name = "sidePanel";
             this.sidePanel.Size = new System.Drawing.Size(205, 658);
             this.sidePanel.TabIndex = 10;
+            // 
+            // createAdButton
+            // 
+            this.createAdButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.createAdButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.createAdButton.FlatAppearance.BorderSize = 0;
+            this.createAdButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createAdButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createAdButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.createAdButton.Location = new System.Drawing.Point(20, 122);
+            this.createAdButton.Name = "createAdButton";
+            this.createAdButton.Size = new System.Drawing.Size(161, 47);
+            this.createAdButton.TabIndex = 14;
+            this.createAdButton.Text = "Create Ad";
+            this.createAdButton.UseVisualStyleBackColor = false;
+            this.createAdButton.Click += new System.EventHandler(this.createAdButton_Click);
             // 
             // exp2Button
             // 
@@ -68,7 +86,7 @@
             this.exp2Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exp2Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exp2Button.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.exp2Button.Location = new System.Drawing.Point(20, 122);
+            this.exp2Button.Location = new System.Drawing.Point(12, 328);
             this.exp2Button.Name = "exp2Button";
             this.exp2Button.Size = new System.Drawing.Size(161, 47);
             this.exp2Button.TabIndex = 13;
@@ -202,19 +220,19 @@
             this.loginPage1.Size = new System.Drawing.Size(771, 603);
             this.loginPage1.TabIndex = 14;
             // 
-            // insertAd1
-            // 
-            this.insertAd1.Location = new System.Drawing.Point(211, 46);
-            this.insertAd1.Name = "insertAd1";
-            this.insertAd1.Size = new System.Drawing.Size(771, 603);
-            this.insertAd1.TabIndex = 15;
-            // 
             // signUpPage1
             // 
             this.signUpPage1.Location = new System.Drawing.Point(211, 46);
             this.signUpPage1.Name = "signUpPage1";
             this.signUpPage1.Size = new System.Drawing.Size(771, 603);
             this.signUpPage1.TabIndex = 3;
+            // 
+            // createAdPage1
+            // 
+            this.createAdPage1.Location = new System.Drawing.Point(211, 46);
+            this.createAdPage1.Name = "createAdPage1";
+            this.createAdPage1.Size = new System.Drawing.Size(771, 603);
+            this.createAdPage1.TabIndex = 21;
             // 
             // Arxikh
             // 
@@ -231,10 +249,11 @@
             this.Controls.Add(this.homePage1);
             this.Controls.Add(this.exp2Page1);
             this.Controls.Add(this.loginPage1);
-            this.Controls.Add(this.insertAd1);
             this.Controls.Add(this.signUpPage1);
+            this.Controls.Add(this.createAdPage1);
             this.Name = "Arxikh";
             this.Text = "index";
+            this.Load += new System.EventHandler(this.Arxikh_Load);
             this.sidePanel.ResumeLayout(false);
             this.topPanel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -253,12 +272,13 @@
         private View.HomePage homePage1;
         private View.Exp2Page exp2Page1;
         private View.LoginPage loginPage1;
-        private View.InsertAd insertAd1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
         private View.SignUpPage signUpPage1;
+        private System.Windows.Forms.Button createAdButton;
+        private View.CreateAdPage createAdPage1;
     }
 }

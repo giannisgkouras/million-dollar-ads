@@ -31,9 +31,10 @@ namespace MillionDollarAds.View
             string password = passwordTextBox.Text;
             string confirmPassword = confirmPassTextBox.Text;
             string phone = phoneTextBox.Text;
+            string email = emailTextBox.Text;
 
             SignUpHandler signUpHandler = new SignUpHandler();
-            int response = signUpHandler.completeRegistration(username, password, confirmPassword, phone);
+            int response = signUpHandler.completeRegistration(username, password, confirmPassword, phone,email);
 
             if ( response == 0)
             {
