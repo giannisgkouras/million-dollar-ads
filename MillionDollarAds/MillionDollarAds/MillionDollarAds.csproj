@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="Firebase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FirebaseDatabase.net.4.0.4\lib\netstandard2.0\Firebase.dll</HintPath>
     </Reference>
@@ -40,6 +43,9 @@
     </Reference>
     <Reference Include="FireSharp.Serialization.JsonNet, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FireSharp.Serialization.JsonNet.1.1.0\lib\net45\FireSharp.Serialization.JsonNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="LiteDB, Version=4.1.4.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
       <HintPath>..\packages\LiteDB.4.1.4\lib\net40\LiteDB.dll</HintPath>
@@ -53,14 +59,26 @@
     <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.18\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp, Version=106.6.10.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.106.6.10\lib\net452\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Net" />
     <Reference Include="System.Net.Http.Extensions, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Extensions.dll</HintPath>
@@ -72,6 +90,7 @@
     <Reference Include="System.Reactive, Version=4.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Reactive.4.0.0\lib\net46\System.Reactive.dll</HintPath>
     </Reference>
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows" />
     <Reference Include="System.Xml.Linq" />
@@ -92,6 +111,8 @@
     <Compile Include="Arxikh.Designer.cs">
       <DependentUpon>Arxikh.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Database.cs" />
+    <Compile Include="Control\SignUpHandler.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="AddAdv.cs">
       <SubType>Form</SubType>
@@ -99,7 +120,6 @@
     <Compile Include="AddAdv.Designer.cs">
       <DependentUpon>AddAdv.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\DbHandler.cs" />
     <Compile Include="Control\LoginHandler.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="View\Exp2Page.cs">
@@ -114,11 +134,11 @@
     <Compile Include="View\HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\LoginForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="View\InsertAd.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\LoginForm.designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <Compile Include="View\InsertAd.Designer.cs">
+      <DependentUpon>InsertAd.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,13 +148,13 @@
     <Compile Include="View\LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\RegistrationForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\RegistrationForm.designer.cs">
-      <DependentUpon>RegistrationForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Model\User.cs" />
+    <Compile Include="View\SignUpPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\SignUpPage.Designer.cs">
+      <DependentUpon>SignUpPage.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Arxikh.resx">
       <DependentUpon>Arxikh.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,8 +167,8 @@
     <EmbeddedResource Include="View\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\InsertAd.resx">
+      <DependentUpon>InsertAd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -162,8 +182,8 @@
     <EmbeddedResource Include="View\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\RegistrationForm.resx">
-      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\SignUpPage.resx">
+      <DependentUpon>SignUpPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

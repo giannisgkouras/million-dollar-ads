@@ -12,23 +12,17 @@ namespace MillionDollarAds
         {
         }
 
-        public User(string username, string email, string password, string cpassword, int totalAds, string phone, string id)
+        public User(string username, string password,int phone, string id)
         {
             Username = username;
-            Email = email;
             Password = password;
-            CPassword = cpassword;
-            TotalAds = totalAds;
             Phone = phone;
             Id = id;
         }
 
         public string Username { get; set; }
-        public string Email { get; set; }
         public string Password { get; set; }
-        public string CPassword { get; set; }
-        public string Phone { get; set; }
-        public int TotalAds { get; set; }
+        public int Phone { get; set; }
         public string Id { get; set; }
 
         private static string error = "Κάτι πήγε στραβά.";

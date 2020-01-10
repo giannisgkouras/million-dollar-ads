@@ -35,9 +35,16 @@
             this.topPanel = new System.Windows.Forms.Panel();
             this.loginButton = new System.Windows.Forms.Button();
             this.signupButton = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.homePage1 = new MillionDollarAds.View.HomePage();
             this.exp2Page1 = new MillionDollarAds.View.Exp2Page();
             this.loginPage1 = new MillionDollarAds.View.LoginPage(this);
+            this.insertAd1 = new MillionDollarAds.View.InsertAd();
+            this.signUpPage1 = new MillionDollarAds.View.SignUpPage(this);
             this.sidePanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +74,7 @@
             this.exp2Button.TabIndex = 13;
             this.exp2Button.Text = "Exmpl 2";
             this.exp2Button.UseVisualStyleBackColor = false;
-            this.exp2Button.Click += new System.EventHandler(this.buttonnn_Click);
+            this.exp2Button.Click += new System.EventHandler(this.exp2Button_Click);
             // 
             // redPanel
             // 
@@ -125,6 +132,55 @@
             this.signupButton.UseVisualStyleBackColor = true;
             this.signupButton.Click += new System.EventHandler(this.signupButton_Click);
             // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(269, 88);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(481, 327);
+            this.listView1.TabIndex = 16;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(802, 194);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(802, 392);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(628, 447);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "label1";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(802, 69);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 20;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // homePage1
             // 
             this.homePage1.Location = new System.Drawing.Point(211, 46);
@@ -146,21 +202,43 @@
             this.loginPage1.Size = new System.Drawing.Size(771, 603);
             this.loginPage1.TabIndex = 14;
             // 
+            // insertAd1
+            // 
+            this.insertAd1.Location = new System.Drawing.Point(211, 46);
+            this.insertAd1.Name = "insertAd1";
+            this.insertAd1.Size = new System.Drawing.Size(771, 603);
+            this.insertAd1.TabIndex = 15;
+            // 
+            // signUpPage1
+            // 
+            this.signUpPage1.Location = new System.Drawing.Point(211, 46);
+            this.signUpPage1.Name = "signUpPage1";
+            this.signUpPage1.Size = new System.Drawing.Size(771, 603);
+            this.signUpPage1.TabIndex = 3;
+            // 
             // Arxikh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 661);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.sidePanel);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.homePage1);
             this.Controls.Add(this.exp2Page1);
             this.Controls.Add(this.loginPage1);
+            this.Controls.Add(this.insertAd1);
+            this.Controls.Add(this.signUpPage1);
             this.Name = "Arxikh";
             this.Text = "index";
             this.sidePanel.ResumeLayout(false);
             this.topPanel.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -175,5 +253,12 @@
         private View.HomePage homePage1;
         private View.Exp2Page exp2Page1;
         private View.LoginPage loginPage1;
+        private View.InsertAd insertAd1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button3;
+        private View.SignUpPage signUpPage1;
     }
 }

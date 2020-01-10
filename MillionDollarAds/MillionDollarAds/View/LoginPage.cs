@@ -33,11 +33,14 @@ namespace MillionDollarAds.View
 
             LoginHandler loginHandler = new LoginHandler(username, password);
 
-            bool accExists = loginHandler.checkAccount();
+            bool accExists = false;
+            accExists =  loginHandler.checkAccount();
 
             if (accExists)
             {
                 changeLogInAndRegisterButtons();
+
+
             }
             else
             {

@@ -19,7 +19,7 @@ namespace MillionDollarAds.Control
 
         public bool checkAccount()
         {
-            return DbHandler.validateLogIn(username, password);
+            return Database.checkIfUserExists(username, password);
         }
 
 

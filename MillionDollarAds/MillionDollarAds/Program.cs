@@ -16,7 +16,8 @@ namespace MillionDollarAds
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Arxikh());
+            var arxiki = new Arxikh();
+            Application.Run( arxiki);
         }
     }
 }

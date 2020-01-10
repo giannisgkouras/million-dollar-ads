@@ -154,7 +154,7 @@ namespace MillionDollarAds
                         Desc = textBox2.Text,
                         Image = textBox3.Text,
                         Price = textBox4.Text,
-                        Id = Arxikh.user.TotalAds+1,
+                      //  Id = Arxikh.user.TotalAds+1,
                         CategoryId = selectedCategoryId,
                         Type = type,
                         Date = DateTime.Now.ToString("dd/MM/yyyy HH:mm"),                        
@@ -166,7 +166,7 @@ namespace MillionDollarAds
                     //
                     SetResponse setToAdsByCategory = client.Set(@"MillionDollarAds/AdsByCategory/" + product.CategoryId+"/"+Properties.Settings.Default.catCounter, product);
 
-                    Arxikh.user.TotalAds++;
+                 //   Arxikh.user.TotalAds++;
                     SetResponse updateLastId = client.Set(@"MillionDollarAds/Users/" + Arxikh.user.Username, Arxikh.user);
                     Properties.Settings.Default.catCounter++;
                     Properties.Settings.Default.Save();
