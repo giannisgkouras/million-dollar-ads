@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MillionDollarAds
 {
-    class Product
+    public class Product
     {
         public Product()
         {

@@ -43,9 +43,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.homePage1 = new MillionDollarAds.View.HomePage();
             this.exp2Page1 = new MillionDollarAds.View.Exp2Page();
-            this.loginPage1 = new MillionDollarAds.View.LoginPage();
-            this.signUpPage1 = new MillionDollarAds.View.SignUpPage();
-            this.createAdPage1 = new MillionDollarAds.View.CreateAdPage();
+            this.loginPage1 = new MillionDollarAds.View.LoginPage(this);
+            this.signUpPage1 = new MillionDollarAds.View.SignUpPage(this);
+            this.createAdPage1 = new MillionDollarAds.View.CreateAdPage(this);
             this.sidePanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.SuspendLayout();

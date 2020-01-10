@@ -111,6 +111,7 @@
     <Compile Include="Arxikh.Designer.cs">
       <DependentUpon>Arxikh.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\AdHandler.cs" />
     <Compile Include="Control\Database.cs" />
     <Compile Include="Control\SignUpHandler.cs" />
     <Compile Include="Model\Category.cs" />

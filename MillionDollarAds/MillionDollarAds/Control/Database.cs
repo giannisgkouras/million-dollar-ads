@@ -180,5 +180,48 @@ namespace MillionDollarAds.Control
             
             return categories;
         }
+            
+        public static int getCategoryIdByName(string title)
+        {
+            Initialize();
+            string query = "select idCategory from category where title = '" + title + "' ";
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+
+            if (dataReader.HasRows)
+            {
+                dataReader.Read();
+                int id = dataReader.GetInt32(0);
+                dataReader.Close();
+                CloseConnection();
+                return id;
+            }
+            else
+            {
+                dataReader.Close();
+                CloseConnection();
+                return 0;
+            }
+
+        }
+
+        public static void insertAd(Product product)
+        {
+            Initialize();
+            string query = "insert into ad(title,description,price,property,creationDate,idUser,idCategory) values (@title,@descritpin, @price,@property,@creationDate ,@idUser,@idCategory)";
+            MySqlCommand msc = new MySqlCommand(query, connection);
+
+            msc.Parameters.AddWithValue("@title", product.Title);
+            msc.Parameters.AddWithValue("@description", product.Desc);
+            msc.Parameters.AddWithValue("@price", product.Price);
+            msc.Parameters.AddWithValue("@property", product.Type);
+            msc.Parameters.AddWithValue("@creationDate", product.Date);
+            msc.Parameters.AddWithValue("@idUser", product.Owner.Id);
+            msc.Parameters.AddWithValue("@idCategory", product.CategoryId);
+            
+            msc.Prepare();
+
+            msc.ExecuteNonQuery();
+        }
     }
 }

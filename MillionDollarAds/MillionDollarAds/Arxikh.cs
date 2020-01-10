@@ -75,6 +75,11 @@ namespace MillionDollarAds
         {
             get { return createAdButton; }
         }
+
+        public CreateAdPage getCreateAdPage
+        {
+            get { return createAdPage1; }
+        }
         private void button1_Click_1(object sender, EventArgs e)
         {
            // openConnection();

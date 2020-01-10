@@ -18,6 +18,13 @@ namespace MillionDollarAds.View
             InitializeComponent();
         }
 
+        Arxikh mainForm;
+        public CreateAdPage(Form callingForm)
+        {
+            mainForm = callingForm as Arxikh;
+            InitializeComponent();
+        }
+
         private void CreateAdPage_Load(object sender, EventArgs e)
         {
             List<Category> categories = null;
@@ -26,12 +33,43 @@ namespace MillionDollarAds.View
 
             for ( int i =0; i< categories.Count; i++)
             {
-                categoryComboBox.Items.Add("   " + cat[i].Title);
+                categoryComboBox.Items.Add(cat[i].Title);
             }
         }
 
         private void createAdButton_Click(object sender, EventArgs e)
         {
+            string title = titleTextBox.Text;
+            string description = descriptionTextBox.Text;
+            string price = priceTextBox.Text;
+            string type = (typeComboBox.SelectedItem as string) ;
+            string category = (categoryComboBox.SelectedItem as string);
+            int categoryId = Database.getCategoryIdByName(category);
+            User owner = Arxikh.user;
+
+            Product product = new Product
+            {
+                Title = title,
+                Desc = description,
+                Price = price,
+                Type = type,
+                CategoryId = categoryId,
+                Date = System.DateTime.Today.ToString("dd/MM/yy"),
+                Owner = owner
+                
+            };
+
+            AdHandler handler = new AdHandler(product);
+
+            if (handler.createAd())
+            {
+                MessageBox.Show("Your ad was created!");
+                this.mainForm.getHomePage.BringToFront();
+            }
+            else
+            {
+                MessageBox.Show("Fill all the fields.");
+            }
 
         }
     }
