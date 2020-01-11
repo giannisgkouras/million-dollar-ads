@@ -260,6 +260,78 @@ namespace MillionDollarAds.Control
 
         }
 
+        public static string getCategoryNameById(int id)
+        {
+            Initialize();
+            string query = "select title from category where idCategory = " + id;
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+
+            if (dataReader.HasRows)
+            {
+                dataReader.Read();
+                string title = dataReader.GetString(0);
+                dataReader.Close();
+                CloseConnection();
+                return title;
+            }
+            else
+            {
+                dataReader.Close();
+                CloseConnection();
+                return "N/A";
+            }
+
+        }
+
+        public static Product getAdbyId(string id)
+        {
+            Initialize();
+            string query = "select * from ad inner join user on user.idUser = ad.idUser where ad.idAd = " + id;
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            Product product = null;
+            User cuser = null;
+
+            if  (dataReader.HasRows)
+            {
+                dataReader.Read();
+                cuser = new User()
+                    {
+                        Id = dataReader.GetInt32(8),
+                        Username = dataReader.GetString(9),
+                        Password = dataReader.GetString(10),
+                        Phone = dataReader.GetInt32(11),
+                        Email = dataReader.GetString(12)
+                    };
+                    product = new Product()
+                    {
+                        Id = dataReader.GetInt32(0),
+                        Title = dataReader.GetString(1),
+                        Desc = dataReader.GetString(2),
+                        Price = dataReader.GetString(3),
+                        Type = dataReader.GetString(4),
+                        Date = dataReader.GetString(5),
+                        CategoryId = dataReader.GetInt32(7),
+                        Owner = cuser
+
+                        /*Owner = new User()
+                        {
+                            Id = dataReader.GetInt32(8),
+                            Username = dataReader.GetString(9),
+                            Phone = dataReader.GetInt32(11),
+                            Email = dataReader.GetString(12)
+                        }*/
+                    };
+                    
+            }
+
+
+            dataReader.Close();
+            CloseConnection();
+
+            return product;
+        }
         public static void insertAd(Product product)
         {
             Initialize();
