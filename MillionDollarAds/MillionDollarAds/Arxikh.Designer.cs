@@ -40,16 +40,14 @@
             this.homeButton = new System.Windows.Forms.Button();
             this.topPanel = new System.Windows.Forms.Panel();
             this.searchButton = new System.Windows.Forms.Button();
-            this.usernameTextBox = new System.Windows.Forms.TextBox();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.signupButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.homePage1 = new MillionDollarAds.View.HomePage();
             this.exp2Page1 = new MillionDollarAds.View.Exp2Page();
-            this.loginPage1 = new MillionDollarAds.View.LoginPage();
-            this.signUpPage1 = new MillionDollarAds.View.SignUpPage();
-            this.createAdPage1 = new MillionDollarAds.View.CreateAdPage();
-            this.chooseCategorypage1 = new MillionDollarAds.View.ChooseCategorypage();
+            this.loginPage1 = new MillionDollarAds.View.LoginPage(this);
+            this.signUpPage1 = new MillionDollarAds.View.SignUpPage(this);
+            this.createAdPage1 = new MillionDollarAds.View.CreateAdPage(this);
             this.sidePanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +66,7 @@
             this.sidePanel.Controls.Add(this.homeButton);
             this.sidePanel.Location = new System.Drawing.Point(0, 0);
             this.sidePanel.Name = "sidePanel";
-            this.sidePanel.Size = new System.Drawing.Size(205, 658);
+            this.sidePanel.Size = new System.Drawing.Size(205, 664);
             this.sidePanel.TabIndex = 10;
             // 
             // sub2
@@ -213,7 +211,7 @@
             // 
             this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.topPanel.Controls.Add(this.searchButton);
-            this.topPanel.Controls.Add(this.usernameTextBox);
+            this.topPanel.Controls.Add(this.searchTextBox);
             this.topPanel.Controls.Add(this.loginButton);
             this.topPanel.Controls.Add(this.signupButton);
             this.topPanel.Location = new System.Drawing.Point(196, 0);
@@ -230,14 +228,15 @@
             this.searchButton.TabIndex = 4;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
-            // usernameTextBox
+            // searchTextBox
             // 
-            this.usernameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameTextBox.Location = new System.Drawing.Point(49, 13);
-            this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(281, 22);
-            this.usernameTextBox.TabIndex = 3;
+            this.searchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTextBox.Location = new System.Drawing.Point(49, 13);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(281, 22);
+            this.searchTextBox.TabIndex = 3;
             // 
             // loginButton
             // 
@@ -260,16 +259,6 @@
             this.signupButton.Text = "Sign Up";
             this.signupButton.UseVisualStyleBackColor = true;
             this.signupButton.Click += new System.EventHandler(this.signupButton_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(802, 392);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // homePage1
             // 
@@ -307,19 +296,11 @@
             this.createAdPage1.Size = new System.Drawing.Size(771, 603);
             this.createAdPage1.TabIndex = 21;
             // 
-            // chooseCategorypage1
-            // 
-            this.chooseCategorypage1.Location = new System.Drawing.Point(211, 45);
-            this.chooseCategorypage1.Name = "chooseCategorypage1";
-            this.chooseCategorypage1.Size = new System.Drawing.Size(771, 603);
-            this.chooseCategorypage1.TabIndex = 22;
-            // 
             // Arxikh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 661);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.sidePanel);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.homePage1);
@@ -327,7 +308,6 @@
             this.Controls.Add(this.loginPage1);
             this.Controls.Add(this.signUpPage1);
             this.Controls.Add(this.createAdPage1);
-            this.Controls.Add(this.chooseCategorypage1);
             this.Name = "Arxikh";
             this.Text = "index";
             this.Load += new System.EventHandler(this.Arxikh_Load);
@@ -349,16 +329,14 @@
         private View.HomePage homePage1;
         private View.Exp2Page exp2Page1;
         private View.LoginPage loginPage1;
-        private System.Windows.Forms.Button button2;
         private View.SignUpPage signUpPage1;
         private System.Windows.Forms.Button createAdButton;
         private View.CreateAdPage createAdPage1;
         public System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.TextBox usernameTextBox;
+        private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button category3;
         private System.Windows.Forms.Button category2;
         private System.Windows.Forms.Button category1;
-        private View.ChooseCategorypage chooseCategorypage1;
         private System.Windows.Forms.Button sub2;
         private System.Windows.Forms.Button sub1;
     }

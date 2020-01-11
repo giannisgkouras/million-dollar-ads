@@ -38,7 +38,6 @@ namespace MillionDollarAds.Control
             try
             {
                 connection.Open();
-                Console.WriteLine("All good");
                 return true;
             }
             catch (MySqlException ex)
@@ -90,11 +89,6 @@ namespace MillionDollarAds.Control
             {
                 while (dataReader.Read())
                 {
-                    Console.WriteLine("EEEEEEEEEEEEEEEEEEEEEEEEE   " + dataReader.GetString(0));
-                    Console.WriteLine("EEEEEEEEEEEEEEEEEEEEEEEEE   " + dataReader.GetString(1));
-                    Console.WriteLine("EEEEEEEEEEEEEEEEEEEEEEEEE   " + dataReader.GetString(2));
-                    Console.WriteLine("EEEEEEEEEEEEEEEEEEEEEEEEE   " + dataReader.GetString(3));
-                    Console.WriteLine("EEEEEEEEEEEEEEEEEEEEEEEEE   " + dataReader.GetString(4));
                     Arxikh.user = new User()
                     {
                         Id = dataReader.GetInt32(0),
@@ -169,7 +163,6 @@ namespace MillionDollarAds.Control
                 while (dataReader.Read())
                 {
                     category = new Category(dataReader.GetInt32(0), dataReader.GetString(1), dataReader.GetInt32(2));
-                    Console.WriteLine(dataReader.GetInt32(0) + "  "+dataReader.GetString(1) + "  " + dataReader.GetInt32(2));
                     categories.Add(category);
                 }
                 dataReader.NextResult();
@@ -195,7 +188,6 @@ namespace MillionDollarAds.Control
                 while (dataReader.Read())
                 {
                     subCategory = new Category(dataReader.GetInt32(0), dataReader.GetString(1), dataReader.GetInt32(2));
-                    Console.WriteLine(dataReader.GetInt32(0) + "  " + dataReader.GetString(1) + "  " + dataReader.GetInt32(2));
                     subCategories.Add(subCategory);
                 }
                 dataReader.NextResult();

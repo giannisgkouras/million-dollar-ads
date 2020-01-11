@@ -41,8 +41,14 @@
     <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="LiteDB, Version=4.1.4.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
       <HintPath>..\packages\LiteDB.4.1.4\lib\net40\LiteDB.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
@@ -107,16 +113,11 @@
     </Compile>
     <Compile Include="Control\AdHandler.cs" />
     <Compile Include="Control\Database.cs" />
+    <Compile Include="Control\SearchHandler.cs" />
     <Compile Include="Control\SignUpHandler.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Control\LoginHandler.cs" />
     <Compile Include="Model\Product.cs" />
-    <Compile Include="View\ChooseCategorypage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\ChooseCategorypage.Designer.cs">
-      <DependentUpon>ChooseCategorypage.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\CreateAdPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -152,9 +153,6 @@
     </Compile>
     <EmbeddedResource Include="Arxikh.resx">
       <DependentUpon>Arxikh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ChooseCategorypage.resx">
-      <DependentUpon>ChooseCategorypage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CreateAdPage.resx">
       <DependentUpon>CreateAdPage.cs</DependentUpon>

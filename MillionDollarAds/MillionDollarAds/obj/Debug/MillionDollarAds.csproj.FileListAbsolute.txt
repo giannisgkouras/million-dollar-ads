@@ -695,3 +695,7 @@ C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDo
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.pdb
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.ChooseCategorypage.resources
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.csprojAssemblyReference.cache
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Lucene.Net.dll
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Lucene.Net.pdb
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Lucene.Net.xml

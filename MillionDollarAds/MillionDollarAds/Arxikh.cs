@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MillionDollarAds.View;
 
 using MillionDollarAds.Control;
+using Lucene.Net.Documents;
 
 namespace MillionDollarAds
 {
@@ -42,6 +43,7 @@ namespace MillionDollarAds
             refreshAllAds();
             redPanel.Height = homeButton.Height;
             redPanel.Top = homeButton.Top;
+            homePage1.Initialize();
             homePage1.BringToFront();
         }
         public int getCategoryId
@@ -64,11 +66,6 @@ namespace MillionDollarAds
             get {
                 homePage1.Initialize(); 
                 return homePage1; }
-        }
-
-        public ChooseCategorypage getChooseCategoryPage
-        {
-            get { return chooseCategorypage1; }
         }
 
         public LoginPage getLoginPage
@@ -295,7 +292,6 @@ namespace MillionDollarAds
         private void category2_Click(object sender, EventArgs e)
         {
             selectedCategoryId = Database.getCategoryIdByName(category2.Text);
-            
             category2.Location = new Point(20, 175);
             category1.Location = new Point(20, 371);
             category3.Location = new Point(20, 424);
@@ -387,6 +383,45 @@ namespace MillionDollarAds
             int id = Database.getCategoryIdByName(sub2.Text);
             refreshAllAdsBySubCategory(id);
             homePage1.BringToFront();
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            SearchHandler.createIndex();
+            
+
+            List<Document> list = null;
+            list = SearchHandler.searchViaTextInTitle(searchTextBox.Text, homePage1.getListViewHomePage);
+
+            List<Category> categories = Database.getAllCategories();
+            Category[] categoriesArray = categories.ToArray();
+            Category category = null;
+
+            if (list == null)
+                MessageBox.Show("No result found.");
+            else
+            {
+                foreach (Document doc in list)
+                {
+
+                    Product products = Database.getAdbyId(doc.GetField("ad_id").StringValue);
+
+                    for (int i = 0; i < categories.Count; i++)
+                    {
+                        if (products.CategoryId == categoriesArray[i].Id)
+                        {
+                            category = categoriesArray[i];
+                        }
+                    }
+
+                    ListViewItem itm;
+                    itm = new ListViewItem(new string[] { products.Id.ToString(), products.Title, products.Desc, products.Price, products.Type, category.Title, products.Date, });
+                    //itm = new ListViewItem(new string[] { doc.GetField("ad_id").StringValue, doc.GetField("ad_title").StringValue });
+                    homePage1.getListViewHomePage.Items.Add(itm);
+                    Console.WriteLine(doc.GetField("ad_id").StringValue + "     aaaaaaaaaa      " + doc.GetField("ad_title").StringValue);
+                }
+            }
+
         }
     }
 }
