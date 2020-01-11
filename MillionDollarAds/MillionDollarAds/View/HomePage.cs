@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MillionDollarAds.Control;
 
 namespace MillionDollarAds.View
 
@@ -16,6 +17,7 @@ namespace MillionDollarAds.View
         public HomePage()
         {
             InitializeComponent();
+            Initialize();
         }
 
         public ListView getListViewHomePage
@@ -25,7 +27,57 @@ namespace MillionDollarAds.View
 
         private void showAdButton_Click(object sender, EventArgs e)
         {
+            string id = null;
+            showAdPanel.Visible = true;
 
+            if (listViewHomePage.SelectedItems.Count > 0)
+            {
+                id = listViewHomePage.SelectedItems[0].SubItems[0].Text;
+            }
+            else
+            {
+                MessageBox.Show("Choose an ad.");
+                return;
+            }
+
+            AdHandler handler = new AdHandler();
+            Product product = handler.getSelectedAd(id);
+
+            titleTextBox.Text = product.Title;
+            descriptionTextBox.Text = product.Desc;
+            priceTextBox.Text = product.Price;
+            typeTextBox.Text = product.Type;
+            categoryTextBox.Text = Database.getCategoryNameById( Convert.ToInt32(product.CategoryId) );
+            dateTextBox.Text = product.Date;
+
+            ownerTextBox.Text = product.Owner.Username;
+            phoneTextBox.Text = product.Owner.Phone.ToString();
+            emailTextBox.Text = product.Owner.Email;
+
+        }
+
+        public void Initialize()
+        {
+            showAdPanel.Visible = false;
+            titleTextBox.ReadOnly = true;
+            categoryTextBox.ReadOnly = true;
+            priceTextBox.ReadOnly = true;
+            descriptionTextBox.ReadOnly = true;
+            ownerTextBox.ReadOnly = true;
+            phoneTextBox.ReadOnly = true;
+            emailTextBox.ReadOnly = true;
+            typeTextBox.ReadOnly = true;
+            dateTextBox.ReadOnly = true;
+
+            titleTextBox.Text = "";
+            descriptionTextBox.Text = "";
+            priceTextBox.Text = "";
+            typeTextBox.Text = "";
+            categoryTextBox.Text = "";
+            dateTextBox.Text = "";
+            ownerTextBox.Text = "";
+            phoneTextBox.Text = "";
+            emailTextBox.Text = "";
         }
     }
 }

@@ -31,5 +31,10 @@ namespace MillionDollarAds.Control
 
                 return true;
         }
+
+        public Product getSelectedAd(string id)
+        {
+            return Database.getAdbyId(id);
+        }
     }
 }
