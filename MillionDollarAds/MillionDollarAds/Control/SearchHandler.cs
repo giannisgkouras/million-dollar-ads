@@ -44,6 +44,9 @@ namespace MillionDollarAds.Control
                 document.Add(new Field("ad_id", product.Id.ToString(), Lucene.Net.Documents.Field.Store.YES,
                                                                     Lucene.Net.Documents.Field.Index.ANALYZED,
                                                                     Lucene.Net.Documents.Field.TermVector.YES));
+                document.Add(new Field("ad_desc", product.Desc, Lucene.Net.Documents.Field.Store.YES,
+                                                                    Lucene.Net.Documents.Field.Index.ANALYZED,
+                                                                    Lucene.Net.Documents.Field.TermVector.YES));
 
 
                 //add the documents in the writer
@@ -90,7 +93,7 @@ namespace MillionDollarAds.Control
             StandardAnalyzer analyzer = new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30);
 
 
-            MultiFieldQueryParser queryParser = new MultiFieldQueryParser(Lucene.Net.Util.Version.LUCENE_30, new string[] { "ad_id", "ad_title" }, analyzer);
+            MultiFieldQueryParser queryParser = new MultiFieldQueryParser(Lucene.Net.Util.Version.LUCENE_30, new string[] { "ad_id", "ad_title","ad_desc" }, analyzer);
             //The queryParser defines which fields are to be used for the search
 
 
