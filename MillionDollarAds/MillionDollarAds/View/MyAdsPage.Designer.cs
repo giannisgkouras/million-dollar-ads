@@ -1,6 +1,6 @@
 ﻿namespace MillionDollarAds.View
 {
-    partial class Exp2Page
+    partial class MyAdsPage
     {
         /// <summary> 
         /// Required designer variable.

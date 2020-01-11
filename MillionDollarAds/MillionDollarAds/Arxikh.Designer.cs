@@ -35,7 +35,7 @@
             this.category2 = new System.Windows.Forms.Button();
             this.category1 = new System.Windows.Forms.Button();
             this.createAdButton = new System.Windows.Forms.Button();
-            this.exp2Button = new System.Windows.Forms.Button();
+            this.myAdsButton = new System.Windows.Forms.Button();
             this.redPanel = new System.Windows.Forms.Panel();
             this.homeButton = new System.Windows.Forms.Button();
             this.topPanel = new System.Windows.Forms.Panel();
@@ -45,11 +45,10 @@
             this.signupButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.homePage1 = new MillionDollarAds.View.HomePage();
-            this.exp2Page1 = new MillionDollarAds.View.Exp2Page();
-            this.loginPage1 = new MillionDollarAds.View.LoginPage();
-            this.signUpPage1 = new MillionDollarAds.View.SignUpPage();
-            this.createAdPage1 = new MillionDollarAds.View.CreateAdPage();
-            this.chooseCategorypage1 = new MillionDollarAds.View.ChooseCategorypage();
+            this.exp2Page1 = new MillionDollarAds.View.MyAdsPage();
+            this.loginPage1 = new MillionDollarAds.View.LoginPage(this);
+            this.signUpPage1 = new MillionDollarAds.View.SignUpPage(this);
+            this.createAdPage1 = new MillionDollarAds.View.CreateAdPage(this);
             this.sidePanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +62,7 @@
             this.sidePanel.Controls.Add(this.category2);
             this.sidePanel.Controls.Add(this.category1);
             this.sidePanel.Controls.Add(this.createAdButton);
-            this.sidePanel.Controls.Add(this.exp2Button);
+            this.sidePanel.Controls.Add(this.myAdsButton);
             this.sidePanel.Controls.Add(this.redPanel);
             this.sidePanel.Controls.Add(this.homeButton);
             this.sidePanel.Location = new System.Drawing.Point(0, 0);
@@ -169,21 +168,22 @@
             this.createAdButton.UseVisualStyleBackColor = false;
             this.createAdButton.Click += new System.EventHandler(this.createAdButton_Click);
             // 
-            // exp2Button
+            // myAdsButton
             // 
-            this.exp2Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.exp2Button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.exp2Button.FlatAppearance.BorderSize = 0;
-            this.exp2Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exp2Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exp2Button.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.exp2Button.Location = new System.Drawing.Point(20, 602);
-            this.exp2Button.Name = "exp2Button";
-            this.exp2Button.Size = new System.Drawing.Size(161, 47);
-            this.exp2Button.TabIndex = 13;
-            this.exp2Button.Text = "Exmpl 2";
-            this.exp2Button.UseVisualStyleBackColor = false;
-            this.exp2Button.Click += new System.EventHandler(this.exp2Button_Click);
+            this.myAdsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.myAdsButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.myAdsButton.FlatAppearance.BorderSize = 0;
+            this.myAdsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.myAdsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myAdsButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.myAdsButton.Location = new System.Drawing.Point(20, 602);
+            this.myAdsButton.Name = "myAdsButton";
+            this.myAdsButton.Size = new System.Drawing.Size(161, 47);
+            this.myAdsButton.TabIndex = 13;
+            this.myAdsButton.Text = "My Ads";
+            this.myAdsButton.UseVisualStyleBackColor = false;
+            this.myAdsButton.Visible = false;
+            this.myAdsButton.Click += new System.EventHandler(this.myAdsButton_Click);
             // 
             // redPanel
             // 
@@ -269,7 +269,6 @@
             this.button2.TabIndex = 18;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // homePage1
             // 
@@ -307,13 +306,6 @@
             this.createAdPage1.Size = new System.Drawing.Size(771, 603);
             this.createAdPage1.TabIndex = 21;
             // 
-            // chooseCategorypage1
-            // 
-            this.chooseCategorypage1.Location = new System.Drawing.Point(211, 45);
-            this.chooseCategorypage1.Name = "chooseCategorypage1";
-            this.chooseCategorypage1.Size = new System.Drawing.Size(771, 603);
-            this.chooseCategorypage1.TabIndex = 22;
-            // 
             // Arxikh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,7 +319,6 @@
             this.Controls.Add(this.loginPage1);
             this.Controls.Add(this.signUpPage1);
             this.Controls.Add(this.createAdPage1);
-            this.Controls.Add(this.chooseCategorypage1);
             this.Name = "Arxikh";
             this.Text = "index";
             this.Load += new System.EventHandler(this.Arxikh_Load);
@@ -344,10 +335,10 @@
         private System.Windows.Forms.Panel redPanel;
         private System.Windows.Forms.Panel sidePanel;
         private System.Windows.Forms.Button homeButton;
-        private System.Windows.Forms.Button exp2Button;
+        private System.Windows.Forms.Button myAdsButton;
         private System.Windows.Forms.Panel topPanel;
         private View.HomePage homePage1;
-        private View.Exp2Page exp2Page1;
+        private View.MyAdsPage exp2Page1;
         private View.LoginPage loginPage1;
         private System.Windows.Forms.Button button2;
         private View.SignUpPage signUpPage1;
@@ -358,7 +349,6 @@
         private System.Windows.Forms.Button category3;
         private System.Windows.Forms.Button category2;
         private System.Windows.Forms.Button category1;
-        private View.ChooseCategorypage chooseCategorypage1;
         private System.Windows.Forms.Button sub2;
         private System.Windows.Forms.Button sub1;
     }

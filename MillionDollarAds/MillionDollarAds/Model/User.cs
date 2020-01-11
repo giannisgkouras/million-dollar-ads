@@ -40,6 +40,11 @@ namespace MillionDollarAds
             return username;
         }
 
+        public static int getUserId(int userId)
+        {
+            return userId;
+        }
+
         public static bool IsEqual( User user1, User user2)
         {
             if (user2 == null) 

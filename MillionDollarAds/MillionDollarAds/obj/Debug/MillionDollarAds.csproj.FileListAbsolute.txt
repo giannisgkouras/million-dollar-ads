@@ -684,7 +684,6 @@ C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDo
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.exe.config
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.Arxikh.resources
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.CreateAdPage.resources
-C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.Exp2Page.resources
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.HomePage.resources
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.Properties.Resources.resources
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.LoginPage.resources
@@ -693,5 +692,5 @@ C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDo
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.csproj.CopyComplete
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.exe
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.pdb
-C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.ChooseCategorypage.resources
+C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.MyAdsPage.resources
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.csprojAssemblyReference.cache

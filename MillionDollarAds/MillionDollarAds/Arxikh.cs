@@ -59,6 +59,11 @@ namespace MillionDollarAds
             get { return signupButton; }
         }
 
+        public Button getMyAdsButton
+        {
+            get { return myAdsButton; }
+        }
+
         public HomePage getHomePage
         {
             get {
@@ -66,10 +71,6 @@ namespace MillionDollarAds
                 return homePage1; }
         }
 
-        public ChooseCategorypage getChooseCategoryPage
-        {
-            get { return chooseCategorypage1; }
-        }
 
         public LoginPage getLoginPage
         {
@@ -91,12 +92,8 @@ namespace MillionDollarAds
             get { return createAdPage1; }
         }
 
-        private void exp2Button_Click(object sender, EventArgs e)
-        {
-            redPanel.Height = exp2Button.Height;
-            redPanel.Top = exp2Button.Top;
-            exp2Page1.BringToFront();
-        }
+       
+
 
         private void createAdButton_Click(object sender, EventArgs e)
         {
@@ -108,6 +105,7 @@ namespace MillionDollarAds
         private void Arxikh_Load(object sender, EventArgs e)
         {
             createAdButton.Visible = false;
+            myAdsButton.Visible = false;
         }
 
         private void homePage1_Load(object sender, EventArgs e)
@@ -235,6 +233,38 @@ namespace MillionDollarAds
             var list = new List<Product>();
 
             List<Product> allProducts = Database.getAllProductsBySubCategory(categoryId);
+
+            listView.Columns.Add("Title", 100);
+            listView.Columns.Add("Description", 200);
+            listView.Columns.Add("Price", 100);
+            listView.Columns.Add("Type", 100);
+            listView.Columns.Add("Date", 100);
+
+            ListViewItem itm;
+
+            foreach (Product products in allProducts)
+            {
+                Invoke((MethodInvoker)delegate
+                {
+                    itm = new ListViewItem(new string[] { products.Title, products.Desc, products.Price, products.Type, products.Date, });
+                    listView.Items.Add(itm);
+                });
+            }
+        }
+
+        public void refreshAllAdsByUser(int userId)
+        {
+            ListView listView = homePage1.getListViewHomePage;
+            listView.Items.Clear();
+            listView.Columns.Clear();
+
+            listView.View = System.Windows.Forms.View.Details;
+            listView.GridLines = true;
+            listView.FullRowSelect = true;
+
+            var list = new List<Product>();
+
+            List<Product> allProducts = Database.getAllProductsByUser(userId);
 
             listView.Columns.Add("Title", 100);
             listView.Columns.Add("Description", 200);
@@ -386,6 +416,16 @@ namespace MillionDollarAds
             // subCategories = Database.getSubCategoriesByFather(selectedCategoryId);
             int id = Database.getCategoryIdByName(sub2.Text);
             refreshAllAdsBySubCategory(id);
+            homePage1.BringToFront();
+        }
+
+        private void myAdsButton_Click(object sender, EventArgs e)
+        {
+            redPanel.Height = sub1.Height;
+            redPanel.Top = sub1.Top;
+
+           
+            refreshAllAdsByUser(user.Id);
             homePage1.BringToFront();
         }
     }

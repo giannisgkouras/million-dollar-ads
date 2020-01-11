@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MillionDollarAds.View
 {
-    public partial class Exp2Page : UserControl
+    public partial class MyAdsPage : UserControl
     {
-        public Exp2Page()
+        public MyAdsPage()
         {
             InitializeComponent();
         }

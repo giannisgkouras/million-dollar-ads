@@ -111,23 +111,17 @@
     <Compile Include="Model\Category.cs" />
     <Compile Include="Control\LoginHandler.cs" />
     <Compile Include="Model\Product.cs" />
-    <Compile Include="View\ChooseCategorypage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\ChooseCategorypage.Designer.cs">
-      <DependentUpon>ChooseCategorypage.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\CreateAdPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\CreateAdPage.Designer.cs">
       <DependentUpon>CreateAdPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Exp2Page.cs">
+    <Compile Include="View\MyAdsPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Exp2Page.Designer.cs">
-      <DependentUpon>Exp2Page.cs</DependentUpon>
+    <Compile Include="View\MyAdsPage.Designer.cs">
+      <DependentUpon>MyAdsPage.cs</DependentUpon>
     </Compile>
     <Compile Include="View\HomePage.cs">
       <SubType>UserControl</SubType>
@@ -153,14 +147,11 @@
     <EmbeddedResource Include="Arxikh.resx">
       <DependentUpon>Arxikh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ChooseCategorypage.resx">
-      <DependentUpon>ChooseCategorypage.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\CreateAdPage.resx">
       <DependentUpon>CreateAdPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Exp2Page.resx">
-      <DependentUpon>Exp2Page.cs</DependentUpon>
+    <EmbeddedResource Include="View\MyAdsPage.resx">
+      <DependentUpon>MyAdsPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
