@@ -15,8 +15,6 @@ C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\Mi
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\MillionDollarAds.exe.config
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\MillionDollarAds.exe
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\MillionDollarAds.pdb
-C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\FireSharp.dll
-C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\FireSharp.Serialization.JsonNet.dll
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Newtonsoft.Json.dll
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\RestSharp.dll
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Newtonsoft.Json.xml
@@ -545,7 +543,6 @@ C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Fi
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\LiteDB.xml
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\System.Reactive.xml
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.exe.config
-C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.AddAdv.resources
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.LoginPage.resources
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Google.Protobuf.dll

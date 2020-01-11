@@ -8,11 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MillionDollarAds.View;
-using FireSharp.Config;
-using FireSharp.Response;
-using FireSharp.Interfaces;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+
+using MillionDollarAds.Control;
 
 namespace MillionDollarAds
 {
@@ -39,7 +36,7 @@ namespace MillionDollarAds
 
         private void homeButton_Click(object sender, EventArgs e)
         {
-            
+            refreshAllAds();
             redPanel.Height = homeButton.Height;
             redPanel.Top = homeButton.Top;
             homePage1.BringToFront();
@@ -80,47 +77,10 @@ namespace MillionDollarAds
         {
             get { return createAdPage1; }
         }
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-           // openConnection();
-            listView1.View = System.Windows.Forms.View.Details;
-            listView1.GridLines = true;
-            listView1.FullRowSelect = true;
-
-           // FirebaseResponse response = client.Get(@"MillionDollarAds/AdsByCategory/8");
-
-            //dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
-            var list = new List<Product>();
-
-           // foreach (var item in data)
-            //{
-           //     list.Add(JsonConvert.DeserializeObject<Product>(((JProperty)item).Value.ToString()));
-           // }
-
-
-            listView1.Columns.Add("Title", 100);
-            listView1.Columns.Add("Description", 200);
-            listView1.Columns.Add("Price",100);
-            listView1.Columns.Add("Image",100);
-            listView1.Columns.Add("Type",100);
-            listView1.Columns.Add("Owner", 100);
-            listView1.Columns.Add("Date", 100);
-
-            ListViewItem itm;
-
-            foreach (Product products in list)
-            {
-                Invoke((MethodInvoker)delegate
-                {
-                    itm = new ListViewItem(new string[] { products.Title, products.Desc, products.Price, products.Type, products.Owner.Username, products.Date, });
-                    listView1.Items.Add(itm);
-                });
-            }
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
-  
+  /*
             string title = null;
             string desc = null;
 
@@ -134,12 +94,7 @@ namespace MillionDollarAds
             else
             {
                 MessageBox.Show("Choose an ad");
-            }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Control.Database.Initialize();
+            }*/
         }
 
         private void exp2Button_Click(object sender, EventArgs e)
@@ -159,6 +114,43 @@ namespace MillionDollarAds
         private void Arxikh_Load(object sender, EventArgs e)
         {
             createAdButton.Visible = false;
+        }
+
+        private void homePage1_Load(object sender, EventArgs e)
+        {
+            refreshAllAds();
+        }
+
+        public void refreshAllAds()
+        {
+            ListView showAllAds = homePage1.getListViewHomePage;
+            showAllAds.Items.Clear();
+            showAllAds.Columns.Clear();
+
+            showAllAds.View = System.Windows.Forms.View.Details;
+            showAllAds.GridLines = true;
+            showAllAds.FullRowSelect = true;
+
+            var list = new List<Product>();
+
+            List<Product> allProducts = Database.getAllProducts();
+
+            showAllAds.Columns.Add("Title", 100);
+            showAllAds.Columns.Add("Description", 200);
+            showAllAds.Columns.Add("Price", 100);
+            showAllAds.Columns.Add("Type", 100);
+            showAllAds.Columns.Add("Date", 100);
+
+            ListViewItem itm;
+
+            foreach (Product products in allProducts)
+            {
+                Invoke((MethodInvoker)delegate
+                {
+                    itm = new ListViewItem(new string[] { products.Title, products.Desc, products.Price, products.Type, products.Date, });
+                    showAllAds.Items.Add(itm);
+                });
+            }
         }
     }
 }

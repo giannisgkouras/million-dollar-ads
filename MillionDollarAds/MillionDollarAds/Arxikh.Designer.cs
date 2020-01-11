@@ -36,16 +36,14 @@
             this.topPanel = new System.Windows.Forms.Panel();
             this.loginButton = new System.Windows.Forms.Button();
             this.signupButton = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.homePage1 = new MillionDollarAds.View.HomePage();
             this.exp2Page1 = new MillionDollarAds.View.Exp2Page();
-            this.loginPage1 = new MillionDollarAds.View.LoginPage(this);
-            this.signUpPage1 = new MillionDollarAds.View.SignUpPage(this);
-            this.createAdPage1 = new MillionDollarAds.View.CreateAdPage(this);
+            this.loginPage1 = new MillionDollarAds.View.LoginPage();
+            this.signUpPage1 = new MillionDollarAds.View.SignUpPage();
+            this.createAdPage1 = new MillionDollarAds.View.CreateAdPage();
+            this.usernameTextBox = new System.Windows.Forms.TextBox();
+            this.searchButton = new System.Windows.Forms.Button();
             this.sidePanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.SuspendLayout();
@@ -121,6 +119,8 @@
             // topPanel
             // 
             this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.topPanel.Controls.Add(this.searchButton);
+            this.topPanel.Controls.Add(this.usernameTextBox);
             this.topPanel.Controls.Add(this.loginButton);
             this.topPanel.Controls.Add(this.signupButton);
             this.topPanel.Location = new System.Drawing.Point(196, 0);
@@ -150,26 +150,6 @@
             this.signupButton.UseVisualStyleBackColor = true;
             this.signupButton.Click += new System.EventHandler(this.signupButton_Click);
             // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(269, 88);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(481, 327);
-            this.listView1.TabIndex = 16;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(802, 194);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(802, 392);
@@ -180,31 +160,13 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(628, 447);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "label1";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(802, 69);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // homePage1
             // 
             this.homePage1.Location = new System.Drawing.Point(211, 46);
             this.homePage1.Name = "homePage1";
             this.homePage1.Size = new System.Drawing.Size(771, 603);
             this.homePage1.TabIndex = 12;
+            this.homePage1.Load += new System.EventHandler(this.homePage1_Load);
             // 
             // exp2Page1
             // 
@@ -234,16 +196,30 @@
             this.createAdPage1.Size = new System.Drawing.Size(771, 603);
             this.createAdPage1.TabIndex = 21;
             // 
+            // usernameTextBox
+            // 
+            this.usernameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameTextBox.Location = new System.Drawing.Point(49, 13);
+            this.usernameTextBox.Name = "usernameTextBox";
+            this.usernameTextBox.Size = new System.Drawing.Size(281, 22);
+            this.usernameTextBox.TabIndex = 3;
+            // 
+            // searchButton
+            // 
+            this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchButton.Location = new System.Drawing.Point(351, 4);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(87, 35);
+            this.searchButton.TabIndex = 4;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            // 
             // Arxikh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 661);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.sidePanel);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.homePage1);
@@ -256,8 +232,8 @@
             this.Load += new System.EventHandler(this.Arxikh_Load);
             this.sidePanel.ResumeLayout(false);
             this.topPanel.ResumeLayout(false);
+            this.topPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -272,13 +248,11 @@
         private View.HomePage homePage1;
         private View.Exp2Page exp2Page1;
         private View.LoginPage loginPage1;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
         private View.SignUpPage signUpPage1;
         private System.Windows.Forms.Button createAdButton;
         private View.CreateAdPage createAdPage1;
+        public System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.TextBox usernameTextBox;
     }
 }

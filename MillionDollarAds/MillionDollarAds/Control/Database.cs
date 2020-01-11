@@ -180,6 +180,61 @@ namespace MillionDollarAds.Control
             
             return categories;
         }
+
+        public static List<Product> getAllProducts()
+        {
+            Initialize();
+            string query = "select * from ad inner join user on user.idUser = ad.idUser";
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            List<Product> allProducts = new List<Product>();
+            Product product = null;
+            User cuser = null;
+
+            while (dataReader.HasRows)
+            {
+                while (dataReader.Read())
+                {
+                    cuser = new User()
+                    {
+                        Id = dataReader.GetInt32(8),
+                        Username = dataReader.GetString(9),
+                        Password = dataReader.GetString(10),
+                        Phone = dataReader.GetInt32(11),
+                        Email = dataReader.GetString(12)
+                    };
+                    product = new Product()
+                    {
+                        Id = dataReader.GetInt32(0),
+                        Title = dataReader.GetString(1),
+                        Desc = dataReader.GetString(2),
+                        Price = dataReader.GetString(3),
+                        Type = dataReader.GetString(4),
+                        Date = dataReader.GetString(5),
+                        CategoryId = dataReader.GetInt32(7),
+                        Owner = cuser
+                
+                
+                    /*Owner = new User()
+                    {
+                        Id = dataReader.GetInt32(8),
+                        Username = dataReader.GetString(9),
+                        Phone = dataReader.GetInt32(11),
+                        Email = dataReader.GetString(12)
+                    }*/
+                    };
+
+                    allProducts.Add(product);
+                }
+                    dataReader.NextResult();
+            }
+            
+
+            dataReader.Close();
+            CloseConnection();
+
+            return allProducts;
+        }
             
         public static int getCategoryIdByName(string title)
         {
@@ -208,7 +263,7 @@ namespace MillionDollarAds.Control
         public static void insertAd(Product product)
         {
             Initialize();
-            string query = "insert into ad(title,description,price,property,creationDate,idUser,idCategory) values (@title,@descritpin, @price,@property,@creationDate ,@idUser,@idCategory)";
+            string query = "insert into ad(title,description,price,property,creationDate,idUser,idCategory) values (@title,@description, @price,@property,@creationDate ,@idUser,@idCategory)";
             MySqlCommand msc = new MySqlCommand(query, connection);
 
             msc.Parameters.AddWithValue("@title", product.Title);

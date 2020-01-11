@@ -17,5 +17,15 @@ namespace MillionDollarAds.View
         {
             InitializeComponent();
         }
+
+        public ListView getListViewHomePage
+        {
+            get { return listViewHomePage; }
+        }
+
+        private void showAdButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

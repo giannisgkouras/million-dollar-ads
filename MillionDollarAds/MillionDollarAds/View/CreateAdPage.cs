@@ -63,7 +63,12 @@ namespace MillionDollarAds.View
 
             if (handler.createAd())
             {
+                Database.insertAd(product);
                 MessageBox.Show("Your ad was created!");
+                clearAllFields();
+
+
+                this.mainForm.refreshAllAds();
                 this.mainForm.getHomePage.BringToFront();
             }
             else
@@ -71,6 +76,15 @@ namespace MillionDollarAds.View
                 MessageBox.Show("Fill all the fields.");
             }
 
+        }
+
+        private void clearAllFields()
+        {
+            titleTextBox.Text = "";
+            descriptionTextBox.Text = "";
+            priceTextBox.Text = "";
+            typeComboBox.SelectedItem = null;
+            categoryComboBox.SelectedItem = null; 
         }
     }
 }
