@@ -32,6 +32,8 @@
             this.listViewHomePage = new System.Windows.Forms.ListView();
             this.showAdButton = new System.Windows.Forms.Button();
             this.showAdPanel = new System.Windows.Forms.Panel();
+            this.dateTextBox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.phoneTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.emailTextBox = new System.Windows.Forms.TextBox();
@@ -48,8 +50,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dateTextBox = new System.Windows.Forms.TextBox();
             this.showAdPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,6 +97,25 @@
             this.showAdPanel.Name = "showAdPanel";
             this.showAdPanel.Size = new System.Drawing.Size(755, 309);
             this.showAdPanel.TabIndex = 3;
+            // 
+            // dateTextBox
+            // 
+            this.dateTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTextBox.Location = new System.Drawing.Point(618, 151);
+            this.dateTextBox.Name = "dateTextBox";
+            this.dateTextBox.Size = new System.Drawing.Size(65, 22);
+            this.dateTextBox.TabIndex = 29;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(476, 151);
+            this.label9.Name = "label9";
+            this.label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label9.Size = new System.Drawing.Size(145, 29);
+            this.label9.TabIndex = 28;
+            this.label9.Text = "Date Posted";
             // 
             // phoneTextBox
             // 
@@ -248,25 +267,6 @@
             this.label3.Size = new System.Drawing.Size(61, 29);
             this.label3.TabIndex = 12;
             this.label3.Text = "Title";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(476, 151);
-            this.label9.Name = "label9";
-            this.label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label9.Size = new System.Drawing.Size(145, 29);
-            this.label9.TabIndex = 28;
-            this.label9.Text = "Date Posted";
-            // 
-            // dateTextBox
-            // 
-            this.dateTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTextBox.Location = new System.Drawing.Point(618, 151);
-            this.dateTextBox.Name = "dateTextBox";
-            this.dateTextBox.Size = new System.Drawing.Size(65, 22);
-            this.dateTextBox.TabIndex = 29;
             // 
             // HomePage
             // 

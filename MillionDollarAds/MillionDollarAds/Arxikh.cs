@@ -201,7 +201,7 @@ namespace MillionDollarAds
             var list = new List<Product>();
 
             List<Product> allProducts = Database.getAllProductsByCategory(fathersId);
-
+            listView.Columns.Add("Id", 25);
             listView.Columns.Add("Title", 100);
             listView.Columns.Add("Description", 200);
             listView.Columns.Add("Price", 100);
@@ -214,7 +214,7 @@ namespace MillionDollarAds
             {
                 Invoke((MethodInvoker)delegate
                 {
-                    itm = new ListViewItem(new string[] { products.Title, products.Desc, products.Price, products.Type, products.Date, });
+                    itm = new ListViewItem(new string[] { products.Id.ToString(), products.Title, products.Desc, products.Price, products.Type, products.Date, });
                     listView.Items.Add(itm);
                 });
             }
@@ -246,7 +246,7 @@ namespace MillionDollarAds
             {
                 Invoke((MethodInvoker)delegate
                 {
-                    itm = new ListViewItem(new string[] { products.Title, products.Desc, products.Price, products.Type, products.Date, });
+                    itm = new ListViewItem(new string[] { products.Id.ToString(), products.Title, products.Desc, products.Price, products.Type, products.Date, });
                     listView.Items.Add(itm);
                 });
             }
@@ -278,7 +278,7 @@ namespace MillionDollarAds
             {
                 Invoke((MethodInvoker)delegate
                 {
-                    itm = new ListViewItem(new string[] { products.Title, products.Desc, products.Price, products.Type, products.Date, });
+                    itm = new ListViewItem(new string[] { products.Id.ToString(), products.Title, products.Desc, products.Price, products.Type, products.Date, });
                     listView.Items.Add(itm);
                 });
             }

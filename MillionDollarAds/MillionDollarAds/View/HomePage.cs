@@ -42,7 +42,7 @@ namespace MillionDollarAds.View
 
             AdHandler handler = new AdHandler();
             Product product = handler.getSelectedAd(id);
-
+            
             titleTextBox.Text = product.Title;
             descriptionTextBox.Text = product.Desc;
             priceTextBox.Text = product.Price;
@@ -79,5 +79,6 @@ namespace MillionDollarAds.View
             phoneTextBox.Text = "";
             emailTextBox.Text = "";
         }
+
     }
 }
