@@ -181,6 +181,32 @@ namespace MillionDollarAds.Control
             return categories;
         }
 
+        public static List<Category> getSubCategoriesByFather(int fathersId)
+        {
+            Initialize();
+            string query = "select * from category where hasFather="+fathersId;
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            List<Category> subCategories = new List<Category>();
+            Category subCategory = null;
+
+            while (dataReader.HasRows)
+            {
+                while (dataReader.Read())
+                {
+                    subCategory = new Category(dataReader.GetInt32(0), dataReader.GetString(1), dataReader.GetInt32(2));
+                    Console.WriteLine(dataReader.GetInt32(0) + "  " + dataReader.GetString(1) + "  " + dataReader.GetInt32(2));
+                    subCategories.Add(subCategory);
+                }
+                dataReader.NextResult();
+            }
+
+            dataReader.Close();
+            CloseConnection();
+
+            return subCategories;
+        }
+
         public static List<Product> getAllProducts()
         {
             Initialize();
@@ -235,7 +261,119 @@ namespace MillionDollarAds.Control
 
             return allProducts;
         }
-            
+
+        public static List<Product> getAllProductsByCategory(int fathersId)
+        {
+            Initialize();
+            string query = "select * from ad inner join user on user.idUser = ad.idUser inner join category on category.idCategory = ad.idCategory and category.hasFather =" + fathersId;
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            List<Product> allProducts = new List<Product>();
+            Product product = null;
+            User cuser = null;
+
+            while (dataReader.HasRows)
+            {
+                while (dataReader.Read())
+                {
+                    cuser = new User()
+                    {
+                        Id = dataReader.GetInt32(8),
+                        Username = dataReader.GetString(9),
+                        Password = dataReader.GetString(10),
+                        Phone = dataReader.GetInt32(11),
+                        Email = dataReader.GetString(12)
+                    };
+
+                    product = new Product()
+                    {
+                        Id = dataReader.GetInt32(0),
+                        Title = dataReader.GetString(1),
+                        Desc = dataReader.GetString(2),
+                        Price = dataReader.GetString(3),
+                        Type = dataReader.GetString(4),
+                        Date = dataReader.GetString(5),
+                        CategoryId = dataReader.GetInt32(7),
+                        Owner = cuser,
+
+                        /*Owner = new User()
+                        {
+                            Id = dataReader.GetInt32(8),
+                            Username = dataReader.GetString(9),
+                            Phone = dataReader.GetInt32(11),
+                            Email = dataReader.GetString(12)
+                        }*/
+                    };
+
+                    allProducts.Add(product);
+                }
+                dataReader.NextResult();
+            }
+
+
+            dataReader.Close();
+            CloseConnection();
+
+            return allProducts;
+        }
+
+
+        public static List<Product> getAllProductsBySubCategory(int categoryId)
+        {
+            Initialize();
+            string query = "select * from ad inner join user on user.idUser = ad.idUser and ad.idCategory=" + categoryId;
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            List<Product> allProducts = new List<Product>();
+            Product product = null;
+            User cuser = null;
+
+            while (dataReader.HasRows)
+            {
+                while (dataReader.Read())
+                {
+                    cuser = new User()
+                    {
+                        Id = dataReader.GetInt32(8),
+                        Username = dataReader.GetString(9),
+                        Password = dataReader.GetString(10),
+                        Phone = dataReader.GetInt32(11),
+                        Email = dataReader.GetString(12)
+                    };
+
+                    product = new Product()
+                    {
+                        Id = dataReader.GetInt32(0),
+                        Title = dataReader.GetString(1),
+                        Desc = dataReader.GetString(2),
+                        Price = dataReader.GetString(3),
+                        Type = dataReader.GetString(4),
+                        Date = dataReader.GetString(5),
+                        CategoryId = dataReader.GetInt32(7),
+                        Owner = cuser,
+
+                        /*Owner = new User()
+                        {
+                            Id = dataReader.GetInt32(8),
+                            Username = dataReader.GetString(9),
+                            Phone = dataReader.GetInt32(11),
+                            Email = dataReader.GetString(12)
+                        }*/
+                    };
+
+                    allProducts.Add(product);
+                }
+                dataReader.NextResult();
+            }
+
+
+            dataReader.Close();
+            CloseConnection();
+
+            return allProducts;
+        }
+
+
         public static int getCategoryIdByName(string title)
         {
             Initialize();

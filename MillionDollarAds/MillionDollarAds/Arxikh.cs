@@ -16,6 +16,9 @@ namespace MillionDollarAds
     public partial class Arxikh : Form
     {
         public static User user = null;
+        List<Category> categories;
+        List<Category> subCategories;
+        public int selectedCategoryId = 0;
         public Arxikh()
         {
             InitializeComponent();
@@ -41,7 +44,10 @@ namespace MillionDollarAds
             redPanel.Top = homeButton.Top;
             homePage1.BringToFront();
         }
-
+        public int getCategoryId
+        {
+            get { return selectedCategoryId ; }
+        }
        
         public Button getLoginButton
         {
@@ -56,6 +62,11 @@ namespace MillionDollarAds
         public HomePage getHomePage
         {
             get { return homePage1; }
+        }
+
+        public ChooseCategorypage getChooseCategoryPage
+        {
+            get { return chooseCategorypage1; }
         }
 
         public LoginPage getLoginPage
@@ -119,6 +130,32 @@ namespace MillionDollarAds
         private void homePage1_Load(object sender, EventArgs e)
         {
             refreshAllAds();
+            categories = Database.getAllCategories();
+
+            foreach (Category category in categories)
+            {
+                if(category.HasFather == 0)
+                {
+                    switch (category.Id)
+                    {
+                        
+                        case 1:
+                            category1.Text = category.Title;
+                            break;
+
+                        case 2:
+                            category2.Text = category.Title;
+                            break;
+
+                        case 3:
+                            category3.Text = category.Title;
+                            break;
+
+                        default: 
+                            break;
+                    }                    
+                }
+            }           
         }
 
         public void refreshAllAds()
@@ -151,6 +188,205 @@ namespace MillionDollarAds
                     showAllAds.Items.Add(itm);
                 });
             }
+            
+        }
+        public void refreshAllAdsByCategory(int fathersId)
+        {
+            ListView listView = homePage1.getListViewHomePage;
+            listView.Items.Clear();
+            listView.Columns.Clear();
+
+            listView.View = System.Windows.Forms.View.Details;
+            listView.GridLines = true;
+            listView.FullRowSelect = true;
+
+            var list = new List<Product>();
+
+            List<Product> allProducts = Database.getAllProductsByCategory(fathersId);
+
+            listView.Columns.Add("Title", 100);
+            listView.Columns.Add("Description", 200);
+            listView.Columns.Add("Price", 100);
+            listView.Columns.Add("Type", 100);
+            listView.Columns.Add("Date", 100);
+
+            ListViewItem itm;
+
+            foreach (Product products in allProducts)
+            {
+                Invoke((MethodInvoker)delegate
+                {
+                    itm = new ListViewItem(new string[] { products.Title, products.Desc, products.Price, products.Type, products.Date, });
+                    listView.Items.Add(itm);
+                });
+            }
+        }
+
+        public void refreshAllAdsBySubCategory(int categoryId)
+        {
+            ListView listView = homePage1.getListViewHomePage;
+            listView.Items.Clear();
+            listView.Columns.Clear();
+
+            listView.View = System.Windows.Forms.View.Details;
+            listView.GridLines = true;
+            listView.FullRowSelect = true;
+
+            var list = new List<Product>();
+
+            List<Product> allProducts = Database.getAllProductsBySubCategory(categoryId);
+
+            listView.Columns.Add("Title", 100);
+            listView.Columns.Add("Description", 200);
+            listView.Columns.Add("Price", 100);
+            listView.Columns.Add("Type", 100);
+            listView.Columns.Add("Date", 100);
+
+            ListViewItem itm;
+
+            foreach (Product products in allProducts)
+            {
+                Invoke((MethodInvoker)delegate
+                {
+                    itm = new ListViewItem(new string[] { products.Title, products.Desc, products.Price, products.Type, products.Date, });
+                    listView.Items.Add(itm);
+                });
+            }
+        }
+
+
+
+        private void category1_Click(object sender, EventArgs e)
+        {
+            selectedCategoryId = Database.getCategoryIdByName(category1.Text);
+            category1.Location = new Point(20, 175);
+            category2.Location = new Point(20, 371);
+            category3.Location = new Point(20, 424);
+            sub1.Location = new Point(20, 228);
+            sub2.Location = new Point(20, 281);
+            sub1.Visible = true;
+            sub2.Visible = true;
+            redPanel.Height = category1.Height;
+            redPanel.Top = category1.Top;
+            
+            subCategories = Database.getSubCategoriesByFather(Database.getCategoryIdByName(category1.Text));
+            refreshAllAdsByCategory(Database.getCategoryIdByName(category1.Text));        
+            homePage1.BringToFront();
+
+
+     
+            for(int i=0; i<subCategories.Count; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        sub1.Text = subCategories[i].Title;
+                        break;
+                    case 1:
+                        sub2.Text = subCategories[i].Title;
+                        break;
+                    default:
+                        break;                          
+                }
+            }
+
+        }
+
+        private void category2_Click(object sender, EventArgs e)
+        {
+            selectedCategoryId = Database.getCategoryIdByName(category2.Text);
+            
+            category2.Location = new Point(20, 175);
+            category1.Location = new Point(20, 371);
+            category3.Location = new Point(20, 424);
+            sub1.Location = new Point(20, 228);
+            sub2.Location = new Point(20, 281);
+            sub1.Visible = true;
+            sub2.Visible = true;
+            redPanel.Height = category2.Height;
+            redPanel.Top = category2.Top;
+            
+            subCategories = Database.getSubCategoriesByFather(Database.getCategoryIdByName(category2.Text));
+            refreshAllAdsByCategory(Database.getCategoryIdByName(category2.Text));
+            homePage1.BringToFront();
+
+
+
+
+            for (int i = 0; i < subCategories.Count; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        sub1.Text = subCategories[i].Title;
+                        break;
+                    case 1:
+                        sub2.Text = subCategories[i].Title;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        private void category3_Click(object sender, EventArgs e)
+        {
+            selectedCategoryId = Database.getCategoryIdByName(category3.Text);
+
+            category3.Location = new Point(20, 175);
+            category1.Location = new Point(20, 371);
+            category2.Location = new Point(20, 424);
+
+            sub1.Location = new Point(20, 228);
+            sub2.Location = new Point(20, 281);
+            sub1.Visible = true;
+            sub2.Visible = true;
+            redPanel.Height = category3.Height;
+            redPanel.Top = category3.Top;
+
+            subCategories = Database.getSubCategoriesByFather(Database.getCategoryIdByName(category3.Text));
+            refreshAllAdsByCategory(Database.getCategoryIdByName(category3.Text));
+            homePage1.BringToFront();
+
+
+
+            for (int i = 0; i < subCategories.Count; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        sub1.Text = subCategories[i].Title;
+                        break;
+                    case 1:
+                        sub2.Text = subCategories[i].Title;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+        }
+
+        private void sub1_Click_1(object sender, EventArgs e)
+        {
+            //selectedCategoryId = Database.getCategoryIdByName(sub1.Text);
+            redPanel.Height = sub1.Height;
+            redPanel.Top = sub1.Top;
+            //subCategories = Database.getSubCategoriesByFather(selectedCategoryId);
+            int id = Database.getCategoryIdByName(sub1.Text);
+            refreshAllAdsBySubCategory(id);
+            homePage1.BringToFront();
+        }
+
+        private void sub2_Click_1(object sender, EventArgs e)
+        {
+            // selectedCategoryId = Database.getCategoryIdByName(sub2.Text);
+            redPanel.Height = sub2.Height;
+            redPanel.Top = sub2.Top;
+            // subCategories = Database.getSubCategoriesByFather(selectedCategoryId);
+            int id = Database.getCategoryIdByName(sub2.Text);
+            refreshAllAdsBySubCategory(id);
+            homePage1.BringToFront();
         }
     }
 }

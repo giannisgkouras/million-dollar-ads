@@ -111,6 +111,12 @@
     <Compile Include="Model\Category.cs" />
     <Compile Include="Control\LoginHandler.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="View\ChooseCategorypage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ChooseCategorypage.Designer.cs">
+      <DependentUpon>ChooseCategorypage.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\CreateAdPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </Compile>
     <EmbeddedResource Include="Arxikh.resx">
       <DependentUpon>Arxikh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ChooseCategorypage.resx">
+      <DependentUpon>ChooseCategorypage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CreateAdPage.resx">
       <DependentUpon>CreateAdPage.cs</DependentUpon>
