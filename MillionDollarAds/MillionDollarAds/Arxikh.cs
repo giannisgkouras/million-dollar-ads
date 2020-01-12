@@ -532,7 +532,7 @@ namespace MillionDollarAds
             redPanel.Height = myAdsButton.Height;
             redPanel.Top = myAdsButton.Top;
 
-
+            homePage1.Initialize();
             refreshAllAdsByUser(user.Id);
             homePage1.BringToFront();
         }

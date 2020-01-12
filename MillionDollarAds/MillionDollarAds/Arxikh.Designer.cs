@@ -39,15 +39,16 @@
             this.myAdsButton = new System.Windows.Forms.Button();
             this.redPanel = new System.Windows.Forms.Panel();
             this.homeButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.topPanel = new System.Windows.Forms.Panel();
             this.searchButton = new System.Windows.Forms.Button();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.signupButton = new System.Windows.Forms.Button();
             this.homePage1 = new MillionDollarAds.View.HomePage();
-            this.loginPage1 = new MillionDollarAds.View.LoginPage();
-            this.signUpPage1 = new MillionDollarAds.View.SignUpPage();
-            this.createAdPage1 = new MillionDollarAds.View.CreateAdPage();
+            this.loginPage1 = new MillionDollarAds.View.LoginPage(this);
+            this.signUpPage1 = new MillionDollarAds.View.SignUpPage(this);
+            this.createAdPage1 = new MillionDollarAds.View.CreateAdPage(this);
             this.viewHistoryPage1 = new MillionDollarAds.View.ViewHistoryPage();
             this.sidePanel.SuspendLayout();
             this.topPanel.SuspendLayout();
@@ -66,6 +67,7 @@
             this.sidePanel.Controls.Add(this.myAdsButton);
             this.sidePanel.Controls.Add(this.redPanel);
             this.sidePanel.Controls.Add(this.homeButton);
+            this.sidePanel.Controls.Add(this.panel1);
             this.sidePanel.Location = new System.Drawing.Point(0, 0);
             this.sidePanel.Name = "sidePanel";
             this.sidePanel.Size = new System.Drawing.Size(205, 664);
@@ -89,7 +91,7 @@
             // 
             // sub2
             // 
-            this.sub2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.sub2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.sub2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.sub2.FlatAppearance.BorderSize = 0;
             this.sub2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -106,7 +108,7 @@
             // 
             // sub1
             // 
-            this.sub1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.sub1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.sub1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.sub1.FlatAppearance.BorderSize = 0;
             this.sub1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -123,7 +125,7 @@
             // 
             // category3
             // 
-            this.category3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.category3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.category3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.category3.FlatAppearance.BorderSize = 0;
             this.category3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -139,7 +141,7 @@
             // 
             // category2
             // 
-            this.category2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.category2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.category2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.category2.FlatAppearance.BorderSize = 0;
             this.category2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -155,15 +157,15 @@
             // 
             // category1
             // 
-            this.category1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.category1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.category1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.category1.FlatAppearance.BorderSize = 0;
             this.category1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.category1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.category1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.category1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.category1.Location = new System.Drawing.Point(7, 366);
+            this.category1.Location = new System.Drawing.Point(20, 366);
             this.category1.Name = "category1";
-            this.category1.Size = new System.Drawing.Size(198, 47);
+            this.category1.Size = new System.Drawing.Size(158, 47);
             this.category1.TabIndex = 15;
             this.category1.Text = "cat1";
             this.category1.UseVisualStyleBackColor = false;
@@ -225,6 +227,14 @@
             this.homeButton.Text = "Home";
             this.homeButton.UseVisualStyleBackColor = false;
             this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.Location = new System.Drawing.Point(20, 355);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(161, 294);
+            this.panel1.TabIndex = 23;
             // 
             // topPanel
             // 
@@ -359,5 +369,6 @@
         private System.Windows.Forms.Button sub1;
         private System.Windows.Forms.Button viewHistoryButton;
         private View.ViewHistoryPage viewHistoryPage1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
