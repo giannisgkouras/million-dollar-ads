@@ -20,6 +20,7 @@ namespace MillionDollarAds.View
         }
 
         Arxikh mainForm;
+
         public LoginPage(Form callingForm)
         {
             mainForm = callingForm as Arxikh;
@@ -58,7 +59,7 @@ namespace MillionDollarAds.View
             registerButton.Visible = false;
             loginButton.Text = "Welcome " + Arxikh.user.Username;
             loginButton.Width = 175;
-            loginButton.Enabled = false;
+            loginButton.Enabled = true;
             this.mainForm.getHomePage.BringToFront();
         }
     }

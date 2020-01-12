@@ -51,6 +51,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.editAd = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.showAdPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -273,7 +274,7 @@
             // editAd
             // 
             this.editAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editAd.Location = new System.Drawing.Point(621, 18);
+            this.editAd.Location = new System.Drawing.Point(621, 113);
             this.editAd.Name = "editAd";
             this.editAd.Size = new System.Drawing.Size(137, 35);
             this.editAd.TabIndex = 4;
@@ -282,10 +283,22 @@
             this.editAd.Visible = false;
             this.editAd.Click += new System.EventHandler(this.editAd_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(621, 163);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(137, 35);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Print";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.editAd);
             this.Controls.Add(this.showAdPanel);
             this.Controls.Add(this.showAdButton);
@@ -321,5 +334,6 @@
         private System.Windows.Forms.TextBox dateTextBox;
         private System.Windows.Forms.Label label9;
         public System.Windows.Forms.Button editAd;
+        public System.Windows.Forms.Button button1;
     }
 }

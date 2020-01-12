@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MillionDollarAds.Control;
+using System.Drawing.Printing;
 
 namespace MillionDollarAds.View
 
@@ -136,5 +137,31 @@ namespace MillionDollarAds.View
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+           Print();
+        }
+
+        void Print()
+        {
+            PrintDocument PrintDocument = new PrintDocument();
+            PrintDocument.PrintPage += (object sender, PrintPageEventArgs e) =>
+            {
+                Font font = new Font("Arial", 12);
+                float offset = e.MarginBounds.Top;
+                foreach (ListViewItem Item in listViewHomePage.SelectedItems)
+                {
+                    Product p = Database.getAdbyId(Item.Text);
+                    // The 5.0f is to add a small space between lines
+                    offset += (font.GetHeight() + 10.0f);
+                    PointF location = new System.Drawing.PointF(e.MarginBounds.Left, offset);
+                    e.Graphics.DrawString("*** " + p.Title + " ***\t"+p.Desc + "\t" + p.Price + "\t" + p.Owner.Phone + "(" + p.Owner.Email + ")\n", font, Brushes.Black, location);
+                    e.Graphics.DrawString("______________________________________________________________________________\n", font, Brushes.Black, location);
+                    
+                }
+            };
+            PrintDocument.Print();
+        }
     }
 }
