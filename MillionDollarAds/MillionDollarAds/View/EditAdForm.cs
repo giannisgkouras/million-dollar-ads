@@ -27,11 +27,10 @@ namespace MillionDollarAds.View
             productId = p.Id;
 
         }
-        Arxikh mainForm;
-
-        public EditAdForm(Form callingForm)
+        HomePage mainForm;
+        public EditAdForm(HomePage callingForm)
         {
-            mainForm = callingForm as Arxikh;
+            mainForm = callingForm as HomePage;
             InitializeComponent();
         }
 
@@ -60,21 +59,25 @@ namespace MillionDollarAds.View
             if (handler.createAd())
             {
                 Database.updateAd(product, productId);
-                MessageBox.Show("Your ad was updated!");
-
-                /*
-                this.mainForm.refreshAllAds();
-                this.mainForm.getHomePage.BringToFront();
-                */
+                MessageBox.Show("Your ad was updated!");              
             }
             else
             {
                 MessageBox.Show("Fill all the fields.");
             }
-            //categoryTextBox.Text = Database.getCategoryNameById(Convert.ToInt32(product.CategoryId));
-            // dateTextBox.Text = product.Date;
 
 
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            var res = MessageBox.Show(this, "You really want to delete this ad?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
+            {
+                Database.deleteteAd(productId);
+                MessageBox.Show("Your ad removed!");
+            }
+            else return;
         }
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.deleteButton = new System.Windows.Forms.Button();
             this.updateButton = new System.Windows.Forms.Button();
             this.property = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,6 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.title = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.productBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -46,18 +46,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // deleteButton
-            // 
-            this.deleteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.deleteButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.deleteButton.Location = new System.Drawing.Point(452, 364);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(220, 23);
-            this.deleteButton.TabIndex = 20;
-            this.deleteButton.Text = "Delete";
-            this.deleteButton.UseVisualStyleBackColor = false;
             // 
             // updateButton
             // 
@@ -153,6 +141,19 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 21;
             // 
+            // deleteButton
+            // 
+            this.deleteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.deleteButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.deleteButton.Location = new System.Drawing.Point(452, 364);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(220, 23);
+            this.deleteButton.TabIndex = 20;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = false;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
             // productBindingSource1
             // 
             this.productBindingSource1.DataSource = typeof(MillionDollarAds.Product);
@@ -180,6 +181,7 @@
             this.Controls.Add(this.titleTB);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.title);
+            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "EditAdForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditAdForm";
@@ -192,8 +194,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Label property;
         private System.Windows.Forms.Label label4;
@@ -206,5 +206,6 @@
         private System.Windows.Forms.BindingSource productBindingSource1;
         private System.Windows.Forms.BindingSource productBindingSource2;
         private System.Windows.Forms.BindingSource productBindingSource;
+        private System.Windows.Forms.Button deleteButton;
     }
 }

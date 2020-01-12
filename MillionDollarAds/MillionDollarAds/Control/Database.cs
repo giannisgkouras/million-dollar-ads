@@ -551,18 +551,25 @@ namespace MillionDollarAds.Control
         public static void updateAd(Product product, int productId)
         {
             Initialize();
-            string query = "update ad set title = '"+ product.Title+ "', description ='" + product.Desc + "', price = '" + product.Price + "', property = '" + product.Type + "' where idAd =" + productId;
+            string query = "update ad set title = '"+ product.Title+ "', " +
+                "description ='" + product.Desc + "', " +
+                "price = '" + product.Price + "', " +
+                "property = '" + product.Type + "' " +
+                "where idAd =" + productId;
 
 
             MySqlCommand msc = new MySqlCommand(query, connection);
-            /*
-            msc.Parameters.AddWithValue("@title", product.Title);
-            msc.Parameters.AddWithValue("@description", product.Desc);
-            msc.Parameters.AddWithValue("@price", product.Price);
-            msc.Parameters.AddWithValue("@property", product.Type);
-            msc.Parameters.AddWithValue("@creationDate", product.Date);
-            msc.Parameters.AddWithValue("@idUser", product.Owner.Id);
-            msc.Parameters.AddWithValue("@idCategory", product.CategoryId);*/
+
+            msc.Prepare();
+
+            msc.ExecuteNonQuery();
+        }
+
+        public static void deleteteAd(int productId)
+        {
+            Initialize();
+            string query = "delete from ad where idAd =" + productId;
+            MySqlCommand msc = new MySqlCommand(query, connection);
 
             msc.Prepare();
 
