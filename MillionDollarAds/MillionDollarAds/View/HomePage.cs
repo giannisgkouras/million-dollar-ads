@@ -11,23 +11,39 @@ using MillionDollarAds.Control;
 
 namespace MillionDollarAds.View
 
+
+
 {
     public partial class HomePage : UserControl
     {
         public HomePage()
         {
             InitializeComponent();
-            Initialize();
+            Initialize();         
+            
         }
+
+        public string id = null;
 
         public ListView getListViewHomePage
         {
             get { return listViewHomePage; }
         }
+        public Button getEditAdButton
+        {
+            get { return editAd; }
+        }
+
+        public string selectedId = null;
+        public string getSelectedId
+        {
+            get { return id; }
+        }
+       
 
         private void showAdButton_Click(object sender, EventArgs e)
         {
-            string id = null;
+            //string id = null;
             showAdPanel.Visible = true;
 
             if (listViewHomePage.SelectedItems.Count > 0)
@@ -67,7 +83,7 @@ namespace MillionDollarAds.View
             phoneTextBox.ReadOnly = true;
             emailTextBox.ReadOnly = true;
             typeTextBox.ReadOnly = true;
-            dateTextBox.ReadOnly = true;
+            dateTextBox.ReadOnly = true;            
 
             titleTextBox.Text = "";
             descriptionTextBox.Text = "";
@@ -78,6 +94,46 @@ namespace MillionDollarAds.View
             ownerTextBox.Text = "";
             phoneTextBox.Text = "";
             emailTextBox.Text = "";
+        }
+
+           
+        private void listViewHomePage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           // string id = null;
+
+            if (listViewHomePage.SelectedItems.Count > 0)
+            {
+                id = listViewHomePage.SelectedItems[0].SubItems[0].Text;
+            }
+            else
+            {
+                return;
+            }
+
+            AdHandler handler = new AdHandler();
+            Product product = handler.getSelectedAd(id);
+
+            if (Arxikh.user != null && (product.Owner.Id == Arxikh.user.Id))
+            {
+                editAd.Visible = true;
+                selectedId = id;
+            }
+            else
+            {
+                editAd.Visible = false;
+            }
+        }
+
+        private void editAd_Click(object sender, EventArgs e)
+        {
+            if(listViewHomePage.SelectedItems.Count > 0)
+            {
+                ListViewItem item = listViewHomePage.SelectedItems[0];
+                Product p = Database.getAdbyId(item.Text);
+                EditAdForm editAdForm = new EditAdForm(p);
+                editAdForm.Show();
+
+            }
         }
 
     }

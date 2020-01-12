@@ -86,5 +86,6 @@ namespace MillionDollarAds.View
             typeComboBox.SelectedItem = null;
             categoryComboBox.SelectedItem = null; 
         }
+
     }
 }

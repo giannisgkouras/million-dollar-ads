@@ -43,12 +43,10 @@
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.signupButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.homePage1 = new MillionDollarAds.View.HomePage();
-            this.exp2Page1 = new MillionDollarAds.View.MyAdsPage();
             this.loginPage1 = new MillionDollarAds.View.LoginPage(this);
             this.signUpPage1 = new MillionDollarAds.View.SignUpPage(this);
             this.createAdPage1 = new MillionDollarAds.View.CreateAdPage(this);
+            this.homePage1 = new MillionDollarAds.View.HomePage();
             this.sidePanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.SuspendLayout();
@@ -261,30 +259,6 @@
             this.signupButton.UseVisualStyleBackColor = true;
             this.signupButton.Click += new System.EventHandler(this.signupButton_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(802, 392);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // homePage1
-            // 
-            this.homePage1.Location = new System.Drawing.Point(211, 46);
-            this.homePage1.Name = "homePage1";
-            this.homePage1.Size = new System.Drawing.Size(771, 603);
-            this.homePage1.TabIndex = 12;
-            this.homePage1.Load += new System.EventHandler(this.homePage1_Load);
-            // 
-            // exp2Page1
-            // 
-            this.exp2Page1.Location = new System.Drawing.Point(211, 46);
-            this.exp2Page1.Name = "exp2Page1";
-            this.exp2Page1.Size = new System.Drawing.Size(771, 603);
-            this.exp2Page1.TabIndex = 13;
-            // 
             // loginPage1
             // 
             this.loginPage1.Location = new System.Drawing.Point(211, 46);
@@ -306,16 +280,22 @@
             this.createAdPage1.Size = new System.Drawing.Size(771, 603);
             this.createAdPage1.TabIndex = 21;
             // 
+            // homePage1
+            // 
+            this.homePage1.Location = new System.Drawing.Point(211, 46);
+            this.homePage1.Name = "homePage1";
+            this.homePage1.Size = new System.Drawing.Size(771, 603);
+            this.homePage1.TabIndex = 12;
+            this.homePage1.Load += new System.EventHandler(this.homePage1_Load);
+            // 
             // Arxikh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 661);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.sidePanel);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.homePage1);
-            this.Controls.Add(this.exp2Page1);
             this.Controls.Add(this.loginPage1);
             this.Controls.Add(this.signUpPage1);
             this.Controls.Add(this.createAdPage1);
@@ -337,10 +317,7 @@
         private System.Windows.Forms.Button homeButton;
         private System.Windows.Forms.Button myAdsButton;
         private System.Windows.Forms.Panel topPanel;
-        private View.HomePage homePage1;
-        private View.MyAdsPage exp2Page1;
         private View.LoginPage loginPage1;
-        private System.Windows.Forms.Button button2;
         private View.SignUpPage signUpPage1;
         private System.Windows.Forms.Button createAdButton;
         private View.CreateAdPage createAdPage1;
@@ -351,5 +328,6 @@
         private System.Windows.Forms.Button category1;
         private System.Windows.Forms.Button sub2;
         private System.Windows.Forms.Button sub1;
+        private View.HomePage homePage1;
     }
 }

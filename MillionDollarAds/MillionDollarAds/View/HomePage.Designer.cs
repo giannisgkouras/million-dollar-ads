@@ -50,6 +50,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.editAd = new System.Windows.Forms.Button();
             this.showAdPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,14 +59,15 @@
             this.listViewHomePage.HideSelection = false;
             this.listViewHomePage.Location = new System.Drawing.Point(16, 18);
             this.listViewHomePage.Name = "listViewHomePage";
-            this.listViewHomePage.Size = new System.Drawing.Size(496, 232);
+            this.listViewHomePage.Size = new System.Drawing.Size(599, 232);
             this.listViewHomePage.TabIndex = 1;
             this.listViewHomePage.UseCompatibleStateImageBehavior = false;
+            this.listViewHomePage.SelectedIndexChanged += new System.EventHandler(this.listViewHomePage_SelectedIndexChanged);
             // 
             // showAdButton
             // 
             this.showAdButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showAdButton.Location = new System.Drawing.Point(549, 215);
+            this.showAdButton.Location = new System.Drawing.Point(621, 215);
             this.showAdButton.Name = "showAdButton";
             this.showAdButton.Size = new System.Drawing.Size(137, 35);
             this.showAdButton.TabIndex = 2;
@@ -93,24 +95,24 @@
             this.showAdPanel.Controls.Add(this.label2);
             this.showAdPanel.Controls.Add(this.label1);
             this.showAdPanel.Controls.Add(this.label3);
-            this.showAdPanel.Location = new System.Drawing.Point(3, 277);
+            this.showAdPanel.Location = new System.Drawing.Point(3, 273);
             this.showAdPanel.Name = "showAdPanel";
-            this.showAdPanel.Size = new System.Drawing.Size(755, 309);
+            this.showAdPanel.Size = new System.Drawing.Size(755, 327);
             this.showAdPanel.TabIndex = 3;
             // 
             // dateTextBox
             // 
             this.dateTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTextBox.Location = new System.Drawing.Point(618, 151);
+            this.dateTextBox.Location = new System.Drawing.Point(653, 151);
             this.dateTextBox.Name = "dateTextBox";
-            this.dateTextBox.Size = new System.Drawing.Size(65, 22);
+            this.dateTextBox.Size = new System.Drawing.Size(99, 22);
             this.dateTextBox.TabIndex = 29;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(476, 151);
+            this.label9.Location = new System.Drawing.Point(502, 151);
             this.label9.Name = "label9";
             this.label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label9.Size = new System.Drawing.Size(145, 29);
@@ -193,10 +195,10 @@
             // descriptionTextBox
             // 
             this.descriptionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionTextBox.Location = new System.Drawing.Point(149, 105);
+            this.descriptionTextBox.Location = new System.Drawing.Point(13, 130);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(286, 189);
+            this.descriptionTextBox.Size = new System.Drawing.Size(443, 172);
             this.descriptionTextBox.TabIndex = 19;
             // 
             // priceTextBox
@@ -268,10 +270,23 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Title";
             // 
+            // editAd
+            // 
+            this.editAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editAd.Location = new System.Drawing.Point(621, 18);
+            this.editAd.Name = "editAd";
+            this.editAd.Size = new System.Drawing.Size(137, 35);
+            this.editAd.TabIndex = 4;
+            this.editAd.Text = "Edit your ad";
+            this.editAd.UseVisualStyleBackColor = true;
+            this.editAd.Visible = false;
+            this.editAd.Click += new System.EventHandler(this.editAd_Click);
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.editAd);
             this.Controls.Add(this.showAdPanel);
             this.Controls.Add(this.showAdButton);
             this.Controls.Add(this.listViewHomePage);
@@ -305,5 +320,6 @@
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.TextBox dateTextBox;
         private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.Button editAd;
     }
 }

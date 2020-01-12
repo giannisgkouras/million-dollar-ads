@@ -692,5 +692,5 @@ C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDo
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.csproj.CopyComplete
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.exe
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.pdb
-C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.MyAdsPage.resources
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.EditAdForm.resources

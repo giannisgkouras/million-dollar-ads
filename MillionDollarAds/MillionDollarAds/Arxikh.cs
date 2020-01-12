@@ -234,6 +234,7 @@ namespace MillionDollarAds
 
             List<Product> allProducts = Database.getAllProductsBySubCategory(categoryId);
 
+            listView.Columns.Add("Id", 25);
             listView.Columns.Add("Title", 100);
             listView.Columns.Add("Description", 200);
             listView.Columns.Add("Price", 100);
@@ -266,10 +267,12 @@ namespace MillionDollarAds
 
             List<Product> allProducts = Database.getAllProductsByUser(userId);
 
+            listView.Columns.Add("Id", 25);
             listView.Columns.Add("Title", 100);
             listView.Columns.Add("Description", 200);
             listView.Columns.Add("Price", 100);
             listView.Columns.Add("Type", 100);
+            listView.Columns.Add("Category", 100);
             listView.Columns.Add("Date", 100);
 
             ListViewItem itm;
@@ -421,10 +424,8 @@ namespace MillionDollarAds
 
         private void myAdsButton_Click(object sender, EventArgs e)
         {
-            redPanel.Height = sub1.Height;
-            redPanel.Top = sub1.Top;
-
-           
+            redPanel.Height = myAdsButton.Height;
+            redPanel.Top = myAdsButton.Top;           
             refreshAllAdsByUser(user.Id);
             homePage1.BringToFront();
         }

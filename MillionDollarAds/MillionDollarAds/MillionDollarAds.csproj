@@ -117,11 +117,11 @@
     <Compile Include="View\CreateAdPage.Designer.cs">
       <DependentUpon>CreateAdPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\MyAdsPage.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="View\EditAdForm.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\MyAdsPage.Designer.cs">
-      <DependentUpon>MyAdsPage.cs</DependentUpon>
+    <Compile Include="View\EditAdForm.Designer.cs">
+      <DependentUpon>EditAdForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\HomePage.cs">
       <SubType>UserControl</SubType>
@@ -150,8 +150,8 @@
     <EmbeddedResource Include="View\CreateAdPage.resx">
       <DependentUpon>CreateAdPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\MyAdsPage.resx">
-      <DependentUpon>MyAdsPage.cs</DependentUpon>
+    <EmbeddedResource Include="View\EditAdForm.resx">
+      <DependentUpon>EditAdForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
@@ -172,6 +172,7 @@
       <DependentUpon>SignUpPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Product.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
