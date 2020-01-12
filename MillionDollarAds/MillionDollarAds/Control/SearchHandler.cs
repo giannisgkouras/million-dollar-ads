@@ -19,6 +19,9 @@ namespace MillionDollarAds.Control
         public static SimpleFSDirectory dir = new SimpleFSDirectory(new System.IO.DirectoryInfo("../../LuceneDocuments"), null);
         public static List<Product> allProducts;
 
+
+        //We need an index to search through the database.
+        //We specify which fields can be used in the search.
         public static void createIndex()
         {
             allProducts = new List<Product>();

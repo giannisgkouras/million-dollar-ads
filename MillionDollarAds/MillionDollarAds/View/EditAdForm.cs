@@ -75,8 +75,8 @@ namespace MillionDollarAds.View
             var res = MessageBox.Show(this, "You really want to delete this ad?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
             {
-                Database.deleteteAdInViewHistory(productId);
-                Database.deleteteAd(productId);
+                Database.deleteAdInViewHistory(productId);
+                Database.deleteAd(productId);
                 MessageBox.Show("Your ad removed!");
                 this.Close();
             }

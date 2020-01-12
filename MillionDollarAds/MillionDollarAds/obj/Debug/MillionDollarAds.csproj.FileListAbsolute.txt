@@ -996,3 +996,5 @@ C:\Users\User\Desktop\Νέος φάκελος (2)\MillionDollarAds\MillionDollar
 C:\Users\User\Desktop\Νέος φάκελος (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.csproj.CopyComplete
 C:\Users\User\Desktop\Νέος φάκελος (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.exe
 C:\Users\User\Desktop\Νέος φάκελος (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.pdb
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.EditAdForm.resources
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.PasswordRecoveryForm.resources

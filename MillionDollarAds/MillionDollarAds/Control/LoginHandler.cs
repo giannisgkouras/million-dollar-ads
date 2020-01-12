@@ -21,7 +21,5 @@ namespace MillionDollarAds.Control
         {
             return Database.checkIfUserExists(username, password);
         }
-
-
     }
 }

@@ -324,7 +324,6 @@
             this.Controls.Add(this.listViewHomePage);
             this.Name = "HomePage";
             this.Size = new System.Drawing.Size(771, 603);
-            this.Load += new System.EventHandler(this.HomePage_Load);
             this.showAdPanel.ResumeLayout(false);
             this.showAdPanel.PerformLayout();
             this.ResumeLayout(false);

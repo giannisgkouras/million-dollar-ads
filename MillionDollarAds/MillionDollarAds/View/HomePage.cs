@@ -11,9 +11,6 @@ using MillionDollarAds.Control;
 using System.Drawing.Printing;
 
 namespace MillionDollarAds.View
-
-
-
 {
     public partial class HomePage : UserControl
     {
@@ -21,7 +18,6 @@ namespace MillionDollarAds.View
         {
             InitializeComponent();
             Initialize();         
-            
         }
 
         public string id = null;
@@ -40,11 +36,9 @@ namespace MillionDollarAds.View
         {
             get { return id; }
         }
-       
 
         private void showAdButton_Click(object sender, EventArgs e)
         {
-            //string id = null;
             showAdPanel.Visible = true;
 
             string id;
@@ -167,7 +161,6 @@ namespace MillionDollarAds.View
 
         public void refreshAllAds()
         {
-           // ListView showAllAds = homePage1.getListViewHomePage;
             listViewHomePage.Items.Clear();
             listViewHomePage.Columns.Clear();
 
@@ -207,12 +200,6 @@ namespace MillionDollarAds.View
                     listViewHomePage.Items.Add(itm);
                 });
             }
-
-        }
-
-        private void HomePage_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -42,11 +42,6 @@ namespace MillionDollarAds.Control
             }
             catch (MySqlException ex)
             {
-                //When handling errors, you can your application's response based 
-                //on the error number.
-                //The two most common error numbers when connecting are as follows:
-                //0: Cannot connect to server.
-                //1045: Invalid user name and/or password.
                 switch (ex.Number)
                 {
                     case 0:
@@ -76,7 +71,7 @@ namespace MillionDollarAds.Control
             }
         }
 
-        // About User
+        //implements the Log In Function
         public static bool checkIfUserExists(string username, string password)
         {
             Initialize();
@@ -89,13 +84,6 @@ namespace MillionDollarAds.Control
             {
                 while (dataReader.Read())
                 {
-                    Console.WriteLine("EEEEEEEEEEEEEEEEEEEEEEEEE   " + dataReader.GetString(0));
-                    Console.WriteLine("EEEEEEEEEEEEEEEEEEEEEEEEE   " + dataReader.GetString(1));
-                    Console.WriteLine("EEEEEEEEEEEEEEEEEEEEEEEEE   " + dataReader.GetString(2));
-                    Console.WriteLine("EEEEEEEEEEEEEEEEEEEEEEEEE   " + dataReader.GetString(3));
-                    Console.WriteLine("EEEEEEEEEEEEEEEEEEEEEEEEE   " + dataReader.GetString(4));
-
-
                     Arxikh.user = new User()
                     {
                         Id = dataReader.GetInt32(0),
@@ -112,7 +100,6 @@ namespace MillionDollarAds.Control
                 CloseConnection();
                 return false;
             }
-
             dataReader.Close();
             CloseConnection();
             return true;
@@ -150,36 +137,6 @@ namespace MillionDollarAds.Control
             CloseConnection();
             return true;
         }
-
-       /* public ListView getListViewOfLoggedUser()
-        {
-            Initialize();
-            string query = "select idUser,idAd from viewhistory where idUser = " + Arxikh.user.Id;
-            MySqlCommand cmd = new MySqlCommand(query, connection);
-            MySqlDataReader dataReader = cmd.ExecuteReader();
-
-            List<Product> products = new List<Product>();
-            Product product = null;
-            List<Category> categories = new List<Category>();
-            Category category = null;
-
-            while (dataReader.HasRows)
-            {
-                while (dataReader.Read())
-                {
-                    category = new Category(dataReader.GetInt32(0), dataReader.GetString(1), dataReader.GetInt32(2));
-                    categories.Add(category);
-                }
-                dataReader.NextResult();
-            }
-
-            dataReader.Close();
-            CloseConnection();
-
-            return categories;
-        }*/
-
-
 
         //During SignUp checks if the given username already exists
         public static bool checkIfUsernameIsDuplicate(string username)
@@ -219,47 +176,9 @@ namespace MillionDollarAds.Control
             msc.ExecuteNonQuery();
         }
 
-        MySqlCommand cmd = null;
-        public static bool checkIfOldPasswordIsCorrect(string username, string email, string oldPassword)
-        {
-            Initialize();
-            string query = "SELECT * FROM User WHERE username = '" + username +
-                "' AND email = '" + email + "' AND password ='"+ oldPassword+"'";
-            MySqlCommand cmd = new MySqlCommand(query, connection);
-            MySqlDataReader dataReader = cmd.ExecuteReader();
-
-            if (dataReader.HasRows)
-            {
-                while (dataReader.Read())
-                {
-                    Arxikh.user = new User()
-                    {
-                        Id = dataReader.GetInt32(0),
-                        Username = dataReader.GetString(1),
-                        Password = dataReader.GetString(2),
-                        Phone = dataReader.GetInt32(3),
-                        Email = dataReader.GetString(4)
-                    };
-                }
-            }
-            else
-            {
-                dataReader.Close();
-                CloseConnection();
-                return false;
-            }      
-            
-            dataReader.Close();
-            CloseConnection();
-            
-            
-            return true;
-        }
         public static void changeUserPassoword(string username, string email,string oldPassword, string newPassword)
         {
             Initialize();
-            //if(checkIfOldPasswordIsCorrect(username, email, oldPassword))
-          //  {
                 string query = "update user set password = '" +newPassword + "' where username = @username";
 
                 MySqlCommand msc = new MySqlCommand(query, connection);
@@ -268,9 +187,6 @@ namespace MillionDollarAds.Control
                 msc.Prepare();
 
                 msc.ExecuteNonQuery();
-                
-          //  }
-           
         }
         
 
@@ -356,23 +272,12 @@ namespace MillionDollarAds.Control
                         Date = dataReader.GetString(5),
                         CategoryId = dataReader.GetInt32(7),
                         Owner = cuser
-                
-                
-                    /*Owner = new User()
-                    {
-                        Id = dataReader.GetInt32(8),
-                        Username = dataReader.GetString(9),
-                        Phone = dataReader.GetInt32(11),
-                        Email = dataReader.GetString(12)
-                    }*/
                     };
 
                     allProducts.Add(product);
                 }
                     dataReader.NextResult();
             }
-            
-
             dataReader.Close();
             CloseConnection();
 
@@ -425,15 +330,6 @@ namespace MillionDollarAds.Control
                         Date = dataReader.GetString(8),
                         CategoryId = dataReader.GetInt32(10),
                         Owner = cuser
-
-
-                        /*Owner = new User()
-                        {
-                            Id = dataReader.GetInt32(8),
-                            Username = dataReader.GetString(9),
-                            Phone = dataReader.GetInt32(11),
-                            Email = dataReader.GetString(12)
-                        }*/
                     };
 
                     productsinViewHistory.Add(product);
@@ -516,14 +412,6 @@ namespace MillionDollarAds.Control
                         Date = dataReader.GetString(5),
                         CategoryId = dataReader.GetInt32(7),
                         Owner = cuser,
-
-                        /*Owner = new User()
-                        {
-                            Id = dataReader.GetInt32(8),
-                            Username = dataReader.GetString(9),
-                            Phone = dataReader.GetInt32(11),
-                            Email = dataReader.GetString(12)
-                        }*/
                     };
 
                     allProducts.Add(product);
@@ -571,14 +459,6 @@ namespace MillionDollarAds.Control
                         Date = dataReader.GetString(5),
                         CategoryId = dataReader.GetInt32(7),
                         Owner = cuser,
-
-                        /*Owner = new User()
-                        {
-                            Id = dataReader.GetInt32(8),
-                            Username = dataReader.GetString(9),
-                            Phone = dataReader.GetInt32(11),
-                            Email = dataReader.GetString(12)
-                        }*/
                     };
 
                     allProducts.Add(product);
@@ -626,14 +506,6 @@ namespace MillionDollarAds.Control
                         Date = dataReader.GetString(5),
                         CategoryId = dataReader.GetInt32(7),
                         Owner = cuser,
-
-                        /*Owner = new User()
-                        {
-                            Id = dataReader.GetInt32(8),
-                            Username = dataReader.GetString(9),
-                            Phone = dataReader.GetInt32(11),
-                            Email = dataReader.GetString(12)
-                        }*/
                     };
 
                     allProducts.Add(product);
@@ -726,14 +598,6 @@ namespace MillionDollarAds.Control
                         Date = dataReader.GetString(5),
                         CategoryId = dataReader.GetInt32(7),
                         Owner = cuser
-
-                        /*Owner = new User()
-                        {
-                            Id = dataReader.GetInt32(8),
-                            Username = dataReader.GetString(9),
-                            Phone = dataReader.GetInt32(11),
-                            Email = dataReader.GetString(12)
-                        }*/
                     };
                     
             }
@@ -772,7 +636,6 @@ namespace MillionDollarAds.Control
                 "property = '" + product.Type + "' " +
                 "where idAd =" + productId;
 
-
             MySqlCommand msc = new MySqlCommand(query, connection);
 
             msc.Prepare();
@@ -780,7 +643,7 @@ namespace MillionDollarAds.Control
             msc.ExecuteNonQuery();
         }
 
-        public static void deleteteAd(int productId)
+        public static void deleteAd(int productId)
         {
             Initialize();
             string query = "delete from ad where idAd =" + productId;
@@ -791,7 +654,7 @@ namespace MillionDollarAds.Control
             msc.ExecuteNonQuery();
         }
 
-        public static void deleteteAdInViewHistory(int productId)
+        public static void deleteAdInViewHistory(int productId)
         {
             Initialize();
             string query = "delete from viewhistory where idAd =" + productId;
