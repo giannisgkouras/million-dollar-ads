@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Arxikh));
             this.sidePanel = new System.Windows.Forms.Panel();
             this.viewHistoryButton = new System.Windows.Forms.Button();
             this.sub2 = new System.Windows.Forms.Button();
@@ -41,6 +42,7 @@
             this.homeButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.topPanel = new System.Windows.Forms.Panel();
+            this.logOutButton = new System.Windows.Forms.Button();
             this.searchButton = new System.Windows.Forms.Button();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
@@ -239,6 +241,7 @@
             // topPanel
             // 
             this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.topPanel.Controls.Add(this.logOutButton);
             this.topPanel.Controls.Add(this.searchButton);
             this.topPanel.Controls.Add(this.searchTextBox);
             this.topPanel.Controls.Add(this.loginButton);
@@ -247,6 +250,17 @@
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(789, 43);
             this.topPanel.TabIndex = 11;
+            // 
+            // logOutButton
+            // 
+            this.logOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logOutButton.Image = ((System.Drawing.Image)(resources.GetObject("logOutButton.Image")));
+            this.logOutButton.Location = new System.Drawing.Point(757, 5);
+            this.logOutButton.Name = "logOutButton";
+            this.logOutButton.Size = new System.Drawing.Size(29, 35);
+            this.logOutButton.TabIndex = 5;
+            this.logOutButton.UseVisualStyleBackColor = true;
+            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
             // 
             // searchButton
             // 
@@ -370,5 +384,6 @@
         private System.Windows.Forms.Button viewHistoryButton;
         private View.ViewHistoryPage viewHistoryPage1;
         private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Button logOutButton;
     }
 }

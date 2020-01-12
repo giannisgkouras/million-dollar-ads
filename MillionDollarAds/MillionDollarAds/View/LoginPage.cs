@@ -44,7 +44,7 @@ namespace MillionDollarAds.View
                 mainForm.getCreateAdButton.Visible = true;
                 mainForm.getMyAdsButton.Visible = true;
                 mainForm.getViewHistoryButton.Visible = true;
-
+                mainForm.getLogOutButton.Visible = true;
             }
             else
             {
@@ -54,13 +54,17 @@ namespace MillionDollarAds.View
 
         private void changeLogInAndRegisterButtons()
         {
+            usernameTextBox.Text = "";
+            passwordTextBox.Text = "";
+
             Button loginButton = this.mainForm.getLoginButton;
             Button registerButton = this.mainForm.getRegisterButton;
 
             registerButton.Visible = false;
             loginButton.Text = "Welcome " + Arxikh.user.Username;
             loginButton.Width = 175;
-            loginButton.Enabled = true;
+            loginButton.Location = new Point(loginButton.Location.X - 20, loginButton.Location.Y);
+            loginButton.Enabled = false;
             this.mainForm.getHomePage.BringToFront();
         }
 

@@ -31,13 +31,11 @@ namespace MillionDollarAds
         private void loginButton_Click(object sender, EventArgs e)
         {
             loginPage1.BringToFront();
-            
         }
 
         private void signupButton_Click(object sender, EventArgs e)
         {
             signUpPage1.BringToFront();
-           
         }
 
         private void homeButton_Click(object sender, EventArgs e)
@@ -109,6 +107,11 @@ namespace MillionDollarAds
                 return viewHistoryPage1; }
         }
 
+        public Button getLogOutButton
+        {
+            get { return logOutButton; }
+        }
+
         private void createAdButton_Click(object sender, EventArgs e)
         {
             redPanel.Height = createAdButton.Height;
@@ -121,6 +124,7 @@ namespace MillionDollarAds
             createAdButton.Visible = false;
             myAdsButton.Visible = false;
             viewHistoryButton.Visible = false;
+            logOutButton.Visible = false;
         }
 
         private void homePage1_Load(object sender, EventArgs e)
@@ -535,6 +539,26 @@ namespace MillionDollarAds
             homePage1.Initialize();
             refreshAllAdsByUser(user.Id);
             homePage1.BringToFront();
+        }
+
+        private void logOutButton_Click(object sender, EventArgs e)
+        {
+            user = null;
+            createAdButton.Visible = false;
+            myAdsButton.Visible = false;
+            viewHistoryButton.Visible = false;
+            logOutButton.Visible = false;
+
+            signupButton.Visible = true;
+            loginButton.Width = 87;
+            loginButton.Location = new Point(loginButton.Location.X + 20, loginButton.Location.Y);
+            loginButton.Text = "Log In";
+            loginButton.Enabled = true;
+
+            homePage1.BringToFront();
+            homePage1.Initialize();
+            refreshAllAds();
+            MessageBox.Show("You have logged out.");
         }
     }
 }
