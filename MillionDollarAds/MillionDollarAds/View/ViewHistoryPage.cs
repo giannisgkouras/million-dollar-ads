@@ -136,5 +136,26 @@ namespace MillionDollarAds.View
                 });
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string id = null;
+
+            if (listViewHistoryPage.SelectedItems.Count > 0)
+            {
+                id = listViewHistoryPage.SelectedItems[0].SubItems[0].Text;
+            }
+            else
+            {
+                MessageBox.Show("Choose an ad.");
+                return;
+            }
+
+            AdHandler handler = new AdHandler();
+            Product product = handler.getSelectedAd(id);
+
+            Database.removeEntryFromViewHistroy(product);
+            refreshViewHistory();
+        }
     }
 }

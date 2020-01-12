@@ -806,5 +806,19 @@ namespace MillionDollarAds.Control
 
             msc.ExecuteNonQuery();
         }
+
+        public static void removeEntryFromViewHistroy(Product product)
+        {
+            Initialize();
+            string query = "delete from viewhistory where idUser = @idUser and idAd = @idAd";
+            MySqlCommand msc = new MySqlCommand(query, connection);
+
+            msc.Parameters.AddWithValue("@idUser", Arxikh.user.Id);
+            msc.Parameters.AddWithValue("@idAd", product.Id);
+
+            msc.Prepare();
+
+            msc.ExecuteNonQuery();
+        }
     }
 }
