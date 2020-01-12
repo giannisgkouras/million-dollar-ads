@@ -118,17 +118,12 @@
     <Compile Include="Model\Category.cs" />
     <Compile Include="Control\LoginHandler.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\ViewHistory.cs" />
     <Compile Include="View\CreateAdPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\CreateAdPage.Designer.cs">
       <DependentUpon>CreateAdPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Exp2Page.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\Exp2Page.Designer.cs">
-      <DependentUpon>Exp2Page.cs</DependentUpon>
     </Compile>
     <Compile Include="View\HomePage.cs">
       <SubType>UserControl</SubType>
@@ -151,14 +146,17 @@
     <Compile Include="View\SignUpPage.Designer.cs">
       <DependentUpon>SignUpPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ViewHistoryPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ViewHistoryPage.Designer.cs">
+      <DependentUpon>ViewHistoryPage.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Arxikh.resx">
       <DependentUpon>Arxikh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CreateAdPage.resx">
       <DependentUpon>CreateAdPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Exp2Page.resx">
-      <DependentUpon>Exp2Page.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
@@ -177,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\SignUpPage.resx">
       <DependentUpon>SignUpPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewHistoryPage.resx">
+      <DependentUpon>ViewHistoryPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

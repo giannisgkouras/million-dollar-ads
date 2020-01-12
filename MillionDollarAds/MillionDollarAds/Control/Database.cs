@@ -111,6 +111,36 @@ namespace MillionDollarAds.Control
             return true;
         }
 
+       /* public ListView getListViewOfLoggedUser()
+        {
+            Initialize();
+            string query = "select idUser,idAd from viewhistory where idUser = " + Arxikh.user.Id;
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+
+            List<Product> products = new List<Product>();
+            Product product = null;
+            List<Category> categories = new List<Category>();
+            Category category = null;
+
+            while (dataReader.HasRows)
+            {
+                while (dataReader.Read())
+                {
+                    category = new Category(dataReader.GetInt32(0), dataReader.GetString(1), dataReader.GetInt32(2));
+                    categories.Add(category);
+                }
+                dataReader.NextResult();
+            }
+
+            dataReader.Close();
+            CloseConnection();
+
+            return categories;
+        }*/
+
+
+
         //During SignUp checks if the given username already exists
         public static bool checkIfUsernameIsDuplicate(string username)
         {
@@ -213,7 +243,7 @@ namespace MillionDollarAds.Control
             {
                 while (dataReader.Read())
                 {
-                    cuser = new User()
+                    cuser = new User()  
                     {
                         Id = dataReader.GetInt32(8),
                         Username = dataReader.GetString(9),
@@ -252,6 +282,98 @@ namespace MillionDollarAds.Control
             CloseConnection();
 
             return allProducts;
+        }
+
+        public static List<Product> getProductsInViewHistoryOfLoggedUser()
+        {
+            Initialize();
+            string query = "select * from viewhistory inner join ad on ad.idAd = viewhistory.idAd  " +
+                "inner join user on viewhistory.idUser = user.idUser " +
+                "where viewhistory.idUser = " + Arxikh.user.Id + " order by viewhistory.dateSeen DESC";
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            List<Product> productsinViewHistory = new List<Product>();
+            Product product = null;
+            User cuser = null;
+
+            while (dataReader.HasRows)
+            {
+                while (dataReader.Read())
+                {
+                    cuser = new User()
+                    {
+                        Id = dataReader.GetInt32(11),
+                        Username = dataReader.GetString(12),
+                        Password = dataReader.GetString(13),
+                        Phone = dataReader.GetInt32(14),
+                        Email = dataReader.GetString(15)
+                    };
+                    product = new Product()
+                    {
+                        Id = dataReader.GetInt32(3),
+                        Title = dataReader.GetString(4),
+                        Desc = dataReader.GetString(5),
+                        Price = dataReader.GetString(6),
+                        Type = dataReader.GetString(7),
+                        Date = dataReader.GetString(8),
+                        CategoryId = dataReader.GetInt32(10),
+                        Owner = cuser
+
+
+                        /*Owner = new User()
+                        {
+                            Id = dataReader.GetInt32(8),
+                            Username = dataReader.GetString(9),
+                            Phone = dataReader.GetInt32(11),
+                            Email = dataReader.GetString(12)
+                        }*/
+                    };
+
+                    productsinViewHistory.Add(product);
+                }
+                dataReader.NextResult();
+            }
+
+
+            dataReader.Close();
+            CloseConnection();
+
+            return productsinViewHistory;
+        }
+
+        public static bool checkIfEntryInViewHistoryExists(Product product)
+        {
+            Initialize();
+            string query = "select * from viewhistory where idUser =" + Arxikh.user.Id + " AND idAd= " + product.Id;
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+
+            if (dataReader.HasRows)
+            {
+                
+            }
+            else
+            {
+                dataReader.Close();
+                CloseConnection();
+                return false;
+            }
+
+            dataReader.Close();
+            CloseConnection();
+            return true;
+        }
+
+        public static void updateEntryInViewHistory(Product product)
+        {
+            Initialize();
+            string query = "UPDATE viewhistory SET dateSeen = @dateSeen where viewhistory.idUser = " + Arxikh.user.Id + " and viewhistory.idAd = " + product.Id;
+            MySqlCommand msc = new MySqlCommand(query, connection);
+
+            msc.Parameters.AddWithValue("@dateSeen", DateTime.Now);
+            msc.Prepare();
+
+            msc.ExecuteNonQuery();
         }
 
         public static List<Product> getAllProductsByCategory(int fathersId)
@@ -308,7 +430,6 @@ namespace MillionDollarAds.Control
 
             return allProducts;
         }
-
 
         public static List<Product> getAllProductsBySubCategory(int categoryId)
         {
@@ -476,6 +597,21 @@ namespace MillionDollarAds.Control
             msc.Parameters.AddWithValue("@idUser", product.Owner.Id);
             msc.Parameters.AddWithValue("@idCategory", product.CategoryId);
             
+            msc.Prepare();
+
+            msc.ExecuteNonQuery();
+        }
+
+        public static void createNewEntryInViewHistory(Product product)
+        {
+            Initialize();
+            string query = "insert into viewhistory(idUser,idAD,dateSeen) values (@idUser,@idAd,@dateSeen);";
+            MySqlCommand msc = new MySqlCommand(query, connection);
+
+            msc.Parameters.AddWithValue("@idUser", Arxikh.user.Id);
+            msc.Parameters.AddWithValue("@idAd", product.Id);
+            msc.Parameters.AddWithValue("dateSeen", DateTime.Now);
+
             msc.Prepare();
 
             msc.ExecuteNonQuery();

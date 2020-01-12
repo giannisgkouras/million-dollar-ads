@@ -8,15 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MillionDollarAds.View;
-
 using MillionDollarAds.Control;
 using Lucene.Net.Documents;
+using MillionDollarAds.Model;
 
 namespace MillionDollarAds
 {
     public partial class Arxikh : Form
     {
         public static User user = null;
+        public static ViewHistory viewhistory = null;
+
         List<Category> categories;
         List<Category> subCategories;
         public int selectedCategoryId = 0;
@@ -88,11 +90,11 @@ namespace MillionDollarAds
             get { return createAdPage1; }
         }
 
-        private void exp2Button_Click(object sender, EventArgs e)
+        public ViewHistoryPage getViewHistoryPage
         {
-            redPanel.Height = exp2Button.Height;
-            redPanel.Top = exp2Button.Top;
-            exp2Page1.BringToFront();
+            get {
+                viewHistoryPage1.Initialize();
+                return viewHistoryPage1; }
         }
 
         private void createAdButton_Click(object sender, EventArgs e)
@@ -251,7 +253,52 @@ namespace MillionDollarAds
             }
         }
 
+        public void refreshViewHistory()
+        {
+            ListView showViewHistoryListView = viewHistoryPage1.getListViewHistoryPage;
+            showViewHistoryListView.Items.Clear();
+            showViewHistoryListView.Columns.Clear();
 
+            showViewHistoryListView.View = System.Windows.Forms.View.Details;
+            showViewHistoryListView.GridLines = true;
+            showViewHistoryListView.FullRowSelect = true;
+
+            var list = new List<Product>();
+
+            List<Product> allProducts = Database.getProductsInViewHistoryOfLoggedUser();
+
+
+            showViewHistoryListView.Columns.Add("Id", 25);
+            showViewHistoryListView.Columns.Add("Title", 100);
+            showViewHistoryListView.Columns.Add("Description", 200);
+            showViewHistoryListView.Columns.Add("Price", 50);
+            showViewHistoryListView.Columns.Add("Type", 50);
+            showViewHistoryListView.Columns.Add("Category", 100);
+            showViewHistoryListView.Columns.Add("Date", 100);
+
+            ListViewItem itm;
+
+            List<Category> categories = Database.getAllCategories();
+            Category[] categoriesArray = categories.ToArray();
+            Category category = null;
+
+            foreach (Product products in allProducts)
+            {
+                Invoke((MethodInvoker)delegate
+                {
+                    for (int i = 0; i < categories.Count; i++)
+                    {
+                        if (products.CategoryId == categoriesArray[i].Id)
+                        {
+                            category = categoriesArray[i];
+                        }
+                    }
+                    Console.WriteLine(products.Id);
+                    itm = new ListViewItem(new string[] { products.Id.ToString(), products.Title, products.Desc, products.Price, products.Type, category.Title, products.Date, });
+                    showViewHistoryListView.Items.Add(itm);
+                });
+            }
+        }
 
         private void category1_Click(object sender, EventArgs e)
         {
@@ -387,8 +434,13 @@ namespace MillionDollarAds
 
         private void searchButton_Click(object sender, EventArgs e)
         {
+            refreshAllAds();
+            redPanel.Height = homeButton.Height;
+            redPanel.Top = homeButton.Top;
+            homePage1.Initialize();
+            homePage1.BringToFront();
+
             SearchHandler.createIndex();
-            
 
             List<Document> list = null;
             list = SearchHandler.searchViaTextInTitle(searchTextBox.Text, homePage1.getListViewHomePage);
@@ -421,7 +473,17 @@ namespace MillionDollarAds
                     Console.WriteLine(doc.GetField("ad_id").StringValue + "     aaaaaaaaaa      " + doc.GetField("ad_title").StringValue);
                 }
             }
-
+            homePage1.Initialize();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            refreshViewHistory();
+            viewHistoryPage1.Initialize();
+            redPanel.Height = viewHistoryButton.Height;
+            redPanel.Top = viewHistoryButton.Top;
+            viewHistoryPage1.BringToFront();
+        }
+
     }
 }

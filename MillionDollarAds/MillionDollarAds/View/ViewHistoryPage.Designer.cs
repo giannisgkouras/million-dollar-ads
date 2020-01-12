@@ -1,7 +1,6 @@
 ﻿namespace MillionDollarAds.View
-
 {
-    partial class HomePage
+    partial class ViewHistoryPage
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listViewHomePage = new System.Windows.Forms.ListView();
-            this.showAdButton = new System.Windows.Forms.Button();
             this.showAdPanel = new System.Windows.Forms.Panel();
             this.dateTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -47,31 +44,13 @@
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.showAdButton = new System.Windows.Forms.Button();
+            this.listViewHistoryPage = new System.Windows.Forms.ListView();
             this.showAdPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // listViewHomePage
-            // 
-            this.listViewHomePage.HideSelection = false;
-            this.listViewHomePage.Location = new System.Drawing.Point(16, 18);
-            this.listViewHomePage.Name = "listViewHomePage";
-            this.listViewHomePage.Size = new System.Drawing.Size(496, 232);
-            this.listViewHomePage.TabIndex = 1;
-            this.listViewHomePage.UseCompatibleStateImageBehavior = false;
-            // 
-            // showAdButton
-            // 
-            this.showAdButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showAdButton.Location = new System.Drawing.Point(549, 215);
-            this.showAdButton.Name = "showAdButton";
-            this.showAdButton.Size = new System.Drawing.Size(137, 35);
-            this.showAdButton.TabIndex = 2;
-            this.showAdButton.Text = "Show Ad";
-            this.showAdButton.UseVisualStyleBackColor = true;
-            this.showAdButton.Click += new System.EventHandler(this.showAdButton_Click);
             // 
             // showAdPanel
             // 
@@ -90,13 +69,13 @@
             this.showAdPanel.Controls.Add(this.titleTextBox);
             this.showAdPanel.Controls.Add(this.label5);
             this.showAdPanel.Controls.Add(this.label4);
-            this.showAdPanel.Controls.Add(this.label2);
             this.showAdPanel.Controls.Add(this.label1);
             this.showAdPanel.Controls.Add(this.label3);
-            this.showAdPanel.Location = new System.Drawing.Point(3, 277);
+            this.showAdPanel.Controls.Add(this.label10);
+            this.showAdPanel.Location = new System.Drawing.Point(8, 276);
             this.showAdPanel.Name = "showAdPanel";
             this.showAdPanel.Size = new System.Drawing.Size(755, 309);
-            this.showAdPanel.TabIndex = 3;
+            this.showAdPanel.TabIndex = 6;
             // 
             // dateTextBox
             // 
@@ -237,47 +216,67 @@
             this.label4.TabIndex = 15;
             this.label4.Text = "Price";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(-2, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 29);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Category";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 98);
+            this.label1.Location = new System.Drawing.Point(-2, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 29);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Description";
+            this.label1.Size = new System.Drawing.Size(110, 29);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Category";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 11);
+            this.label3.Location = new System.Drawing.Point(8, 98);
             this.label3.Name = "label3";
-            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label3.Size = new System.Drawing.Size(61, 29);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Title";
+            this.label3.Size = new System.Drawing.Size(135, 29);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Description";
             // 
-            // HomePage
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(3, 11);
+            this.label10.Name = "label10";
+            this.label10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label10.Size = new System.Drawing.Size(61, 29);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Title";
+            // 
+            // showAdButton
+            // 
+            this.showAdButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showAdButton.Location = new System.Drawing.Point(554, 214);
+            this.showAdButton.Name = "showAdButton";
+            this.showAdButton.Size = new System.Drawing.Size(137, 35);
+            this.showAdButton.TabIndex = 5;
+            this.showAdButton.Text = "Show Ad";
+            this.showAdButton.UseVisualStyleBackColor = true;
+            this.showAdButton.Click += new System.EventHandler(this.showAdButton_Click);
+            // 
+            // listViewHistoryPage
+            // 
+            this.listViewHistoryPage.HideSelection = false;
+            this.listViewHistoryPage.Location = new System.Drawing.Point(21, 17);
+            this.listViewHistoryPage.Name = "listViewHistoryPage";
+            this.listViewHistoryPage.Size = new System.Drawing.Size(496, 232);
+            this.listViewHistoryPage.TabIndex = 4;
+            this.listViewHistoryPage.UseCompatibleStateImageBehavior = false;
+            // 
+            // ViewHistoryPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.showAdPanel);
             this.Controls.Add(this.showAdButton);
-            this.Controls.Add(this.listViewHomePage);
-            this.Name = "HomePage";
+            this.Controls.Add(this.listViewHistoryPage);
+            this.Name = "ViewHistoryPage";
             this.Size = new System.Drawing.Size(771, 603);
-            this.Load += new System.EventHandler(this.HomePage_Load);
+            this.Load += new System.EventHandler(this.ViewHistoryPage_Load);
             this.showAdPanel.ResumeLayout(false);
             this.showAdPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -285,9 +284,16 @@
         }
 
         #endregion
-        private System.Windows.Forms.ListView listViewHomePage;
-        public System.Windows.Forms.Button showAdButton;
+
         private System.Windows.Forms.Panel showAdPanel;
+        private System.Windows.Forms.TextBox dateTextBox;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox phoneTextBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox emailTextBox;
+        private System.Windows.Forms.TextBox ownerTextBox;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox typeTextBox;
         private System.Windows.Forms.TextBox categoryTextBox;
         private System.Windows.Forms.TextBox descriptionTextBox;
@@ -295,16 +301,10 @@
         private System.Windows.Forms.TextBox titleTextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox phoneTextBox;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox ownerTextBox;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox emailTextBox;
-        private System.Windows.Forms.TextBox dateTextBox;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        public System.Windows.Forms.Button showAdButton;
+        private System.Windows.Forms.ListView listViewHistoryPage;
     }
 }

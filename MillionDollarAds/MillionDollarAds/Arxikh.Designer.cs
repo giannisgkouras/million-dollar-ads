@@ -35,7 +35,6 @@
             this.category2 = new System.Windows.Forms.Button();
             this.category1 = new System.Windows.Forms.Button();
             this.createAdButton = new System.Windows.Forms.Button();
-            this.exp2Button = new System.Windows.Forms.Button();
             this.redPanel = new System.Windows.Forms.Panel();
             this.homeButton = new System.Windows.Forms.Button();
             this.topPanel = new System.Windows.Forms.Panel();
@@ -43,11 +42,12 @@
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.signupButton = new System.Windows.Forms.Button();
+            this.viewHistoryButton = new System.Windows.Forms.Button();
             this.homePage1 = new MillionDollarAds.View.HomePage();
-            this.exp2Page1 = new MillionDollarAds.View.Exp2Page();
             this.loginPage1 = new MillionDollarAds.View.LoginPage(this);
             this.signUpPage1 = new MillionDollarAds.View.SignUpPage(this);
             this.createAdPage1 = new MillionDollarAds.View.CreateAdPage(this);
+            this.viewHistoryPage1 = new MillionDollarAds.View.ViewHistoryPage();
             this.sidePanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.SuspendLayout();
@@ -55,13 +55,13 @@
             // sidePanel
             // 
             this.sidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.sidePanel.Controls.Add(this.viewHistoryButton);
             this.sidePanel.Controls.Add(this.sub2);
             this.sidePanel.Controls.Add(this.sub1);
             this.sidePanel.Controls.Add(this.category3);
             this.sidePanel.Controls.Add(this.category2);
             this.sidePanel.Controls.Add(this.category1);
             this.sidePanel.Controls.Add(this.createAdButton);
-            this.sidePanel.Controls.Add(this.exp2Button);
             this.sidePanel.Controls.Add(this.redPanel);
             this.sidePanel.Controls.Add(this.homeButton);
             this.sidePanel.Location = new System.Drawing.Point(0, 0);
@@ -167,22 +167,6 @@
             this.createAdButton.UseVisualStyleBackColor = false;
             this.createAdButton.Click += new System.EventHandler(this.createAdButton_Click);
             // 
-            // exp2Button
-            // 
-            this.exp2Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.exp2Button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.exp2Button.FlatAppearance.BorderSize = 0;
-            this.exp2Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exp2Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exp2Button.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.exp2Button.Location = new System.Drawing.Point(20, 602);
-            this.exp2Button.Name = "exp2Button";
-            this.exp2Button.Size = new System.Drawing.Size(161, 47);
-            this.exp2Button.TabIndex = 13;
-            this.exp2Button.Text = "Exmpl 2";
-            this.exp2Button.UseVisualStyleBackColor = false;
-            this.exp2Button.Click += new System.EventHandler(this.exp2Button_Click);
-            // 
             // redPanel
             // 
             this.redPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
@@ -260,6 +244,22 @@
             this.signupButton.UseVisualStyleBackColor = true;
             this.signupButton.Click += new System.EventHandler(this.signupButton_Click);
             // 
+            // viewHistoryButton
+            // 
+            this.viewHistoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.viewHistoryButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.viewHistoryButton.FlatAppearance.BorderSize = 0;
+            this.viewHistoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewHistoryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewHistoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.viewHistoryButton.Location = new System.Drawing.Point(20, 602);
+            this.viewHistoryButton.Name = "viewHistoryButton";
+            this.viewHistoryButton.Size = new System.Drawing.Size(161, 47);
+            this.viewHistoryButton.TabIndex = 20;
+            this.viewHistoryButton.Text = "View History";
+            this.viewHistoryButton.UseVisualStyleBackColor = false;
+            this.viewHistoryButton.Click += new System.EventHandler(this.button1_Click);
+            // 
             // homePage1
             // 
             this.homePage1.Location = new System.Drawing.Point(211, 46);
@@ -267,13 +267,6 @@
             this.homePage1.Size = new System.Drawing.Size(771, 603);
             this.homePage1.TabIndex = 12;
             this.homePage1.Load += new System.EventHandler(this.homePage1_Load);
-            // 
-            // exp2Page1
-            // 
-            this.exp2Page1.Location = new System.Drawing.Point(211, 46);
-            this.exp2Page1.Name = "exp2Page1";
-            this.exp2Page1.Size = new System.Drawing.Size(771, 603);
-            this.exp2Page1.TabIndex = 13;
             // 
             // loginPage1
             // 
@@ -296,6 +289,13 @@
             this.createAdPage1.Size = new System.Drawing.Size(771, 603);
             this.createAdPage1.TabIndex = 21;
             // 
+            // viewHistoryPage1
+            // 
+            this.viewHistoryPage1.Location = new System.Drawing.Point(211, 46);
+            this.viewHistoryPage1.Name = "viewHistoryPage1";
+            this.viewHistoryPage1.Size = new System.Drawing.Size(771, 603);
+            this.viewHistoryPage1.TabIndex = 22;
+            // 
             // Arxikh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,10 +304,10 @@
             this.Controls.Add(this.sidePanel);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.homePage1);
-            this.Controls.Add(this.exp2Page1);
             this.Controls.Add(this.loginPage1);
             this.Controls.Add(this.signUpPage1);
             this.Controls.Add(this.createAdPage1);
+            this.Controls.Add(this.viewHistoryPage1);
             this.Name = "Arxikh";
             this.Text = "index";
             this.Load += new System.EventHandler(this.Arxikh_Load);
@@ -324,10 +324,8 @@
         private System.Windows.Forms.Panel redPanel;
         private System.Windows.Forms.Panel sidePanel;
         private System.Windows.Forms.Button homeButton;
-        private System.Windows.Forms.Button exp2Button;
         private System.Windows.Forms.Panel topPanel;
         private View.HomePage homePage1;
-        private View.Exp2Page exp2Page1;
         private View.LoginPage loginPage1;
         private View.SignUpPage signUpPage1;
         private System.Windows.Forms.Button createAdButton;
@@ -339,5 +337,7 @@
         private System.Windows.Forms.Button category1;
         private System.Windows.Forms.Button sub2;
         private System.Windows.Forms.Button sub1;
+        private System.Windows.Forms.Button viewHistoryButton;
+        private View.ViewHistoryPage viewHistoryPage1;
     }
 }
