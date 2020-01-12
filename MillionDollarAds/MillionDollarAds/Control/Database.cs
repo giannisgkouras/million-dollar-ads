@@ -284,6 +284,18 @@ namespace MillionDollarAds.Control
             return allProducts;
         }
 
+        public static void clearViewHistory()
+        {
+            Initialize();
+            string query = "delete from viewhistory where idUser = @idUser";
+            MySqlCommand msc = new MySqlCommand(query, connection);
+
+            msc.Parameters.AddWithValue("@idUser", Arxikh.user.Id);
+
+            msc.Prepare();
+
+            msc.ExecuteNonQuery();
+        }
         public static List<Product> getProductsInViewHistoryOfLoggedUser()
         {
             Initialize();

@@ -49,6 +49,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.showAdButton = new System.Windows.Forms.Button();
             this.listViewHistoryPage = new System.Windows.Forms.ListView();
+            this.clearHistoryButton = new System.Windows.Forms.Button();
             this.showAdPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -267,10 +268,22 @@
             this.listViewHistoryPage.TabIndex = 4;
             this.listViewHistoryPage.UseCompatibleStateImageBehavior = false;
             // 
+            // clearHistoryButton
+            // 
+            this.clearHistoryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearHistoryButton.Location = new System.Drawing.Point(554, 17);
+            this.clearHistoryButton.Name = "clearHistoryButton";
+            this.clearHistoryButton.Size = new System.Drawing.Size(137, 35);
+            this.clearHistoryButton.TabIndex = 7;
+            this.clearHistoryButton.Text = "Clear History";
+            this.clearHistoryButton.UseVisualStyleBackColor = true;
+            this.clearHistoryButton.Click += new System.EventHandler(this.clearHistoryButton_Click);
+            // 
             // ViewHistoryPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.clearHistoryButton);
             this.Controls.Add(this.showAdPanel);
             this.Controls.Add(this.showAdButton);
             this.Controls.Add(this.listViewHistoryPage);
@@ -306,5 +319,6 @@
         private System.Windows.Forms.Label label10;
         public System.Windows.Forms.Button showAdButton;
         private System.Windows.Forms.ListView listViewHistoryPage;
+        public System.Windows.Forms.Button clearHistoryButton;
     }
 }
