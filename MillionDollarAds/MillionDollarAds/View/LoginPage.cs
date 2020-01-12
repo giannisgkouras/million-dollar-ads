@@ -43,6 +43,7 @@ namespace MillionDollarAds.View
 
                 mainForm.getCreateAdButton.Visible = true;
                 mainForm.getMyAdsButton.Visible = true;
+                mainForm.getViewHistoryButton.Visible = true;
 
             }
             else

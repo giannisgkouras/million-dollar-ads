@@ -47,6 +47,7 @@ namespace MillionDollarAds.View
             //string id = null;
             showAdPanel.Visible = true;
 
+            string id;
             if (listViewHomePage.SelectedItems.Count > 0)
             {
                 id = listViewHomePage.SelectedItems[0].SubItems[0].Text;
@@ -56,7 +57,7 @@ namespace MillionDollarAds.View
                 MessageBox.Show("Choose an ad.");
                 return;
             }
-
+            showAdPanel.Visible = true;
             AdHandler handler = new AdHandler();
             Product product = handler.getSelectedAd(id);
             
@@ -71,6 +72,8 @@ namespace MillionDollarAds.View
             phoneTextBox.Text = product.Owner.Phone.ToString();
             emailTextBox.Text = product.Owner.Email;
 
+            if (Arxikh.user != null)
+                handler.addToViewHistoryIfDoesntExist(product);
         }
 
         public void Initialize()
@@ -161,6 +164,11 @@ namespace MillionDollarAds.View
                 }
             };
             PrintDocument.Print();
+        }
+
+        private void HomePage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

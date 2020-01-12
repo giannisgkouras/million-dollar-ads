@@ -31,7 +31,6 @@ C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Mi
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\System.Net.Http.Extensions.xml
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\System.Net.Http.Primitives.xml
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.csproj.App.config
-C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.Exp2Page.resources
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.HomePage.resources
 C:\Users\User\Desktop\ads\MillionDollarAds\MillionDollarAds\bin\Debug\MillionDollarAds.exe.config
 C:\Users\User\Desktop\ads\MillionDollarAds\MillionDollarAds\bin\Debug\MillionDollarAds.exe
@@ -695,3 +694,8 @@ C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDo
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.EditAdForm.resources
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.PasswordRecoveryForm.resources
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.csprojAssemblyReference.cache
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Lucene.Net.dll
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Lucene.Net.pdb
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Lucene.Net.xml
+C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.ViewHistoryPage.resources

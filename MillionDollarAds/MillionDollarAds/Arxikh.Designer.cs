@@ -40,13 +40,18 @@
             this.homeButton = new System.Windows.Forms.Button();
             this.topPanel = new System.Windows.Forms.Panel();
             this.searchButton = new System.Windows.Forms.Button();
-            this.usernameTextBox = new System.Windows.Forms.TextBox();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.signupButton = new System.Windows.Forms.Button();
             this.loginPage1 = new MillionDollarAds.View.LoginPage(this);
             this.signUpPage1 = new MillionDollarAds.View.SignUpPage(this);
             this.createAdPage1 = new MillionDollarAds.View.CreateAdPage(this);
+            this.viewHistoryButton = new System.Windows.Forms.Button();
             this.homePage1 = new MillionDollarAds.View.HomePage();
+            this.loginPage1 = new MillionDollarAds.View.LoginPage(this);
+            this.signUpPage1 = new MillionDollarAds.View.SignUpPage(this);
+            this.createAdPage1 = new MillionDollarAds.View.CreateAdPage(this);
+            this.viewHistoryPage1 = new MillionDollarAds.View.ViewHistoryPage();
             this.sidePanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +59,7 @@
             // sidePanel
             // 
             this.sidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.sidePanel.Controls.Add(this.viewHistoryButton);
             this.sidePanel.Controls.Add(this.sub2);
             this.sidePanel.Controls.Add(this.sub1);
             this.sidePanel.Controls.Add(this.category3);
@@ -65,7 +71,7 @@
             this.sidePanel.Controls.Add(this.homeButton);
             this.sidePanel.Location = new System.Drawing.Point(0, 0);
             this.sidePanel.Name = "sidePanel";
-            this.sidePanel.Size = new System.Drawing.Size(205, 658);
+            this.sidePanel.Size = new System.Drawing.Size(205, 664);
             this.sidePanel.TabIndex = 10;
             // 
             // sub2
@@ -211,7 +217,7 @@
             // 
             this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.topPanel.Controls.Add(this.searchButton);
-            this.topPanel.Controls.Add(this.usernameTextBox);
+            this.topPanel.Controls.Add(this.searchTextBox);
             this.topPanel.Controls.Add(this.loginButton);
             this.topPanel.Controls.Add(this.signupButton);
             this.topPanel.Location = new System.Drawing.Point(196, 0);
@@ -228,14 +234,15 @@
             this.searchButton.TabIndex = 4;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
-            // usernameTextBox
+            // searchTextBox
             // 
-            this.usernameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameTextBox.Location = new System.Drawing.Point(49, 13);
-            this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(281, 22);
-            this.usernameTextBox.TabIndex = 3;
+            this.searchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTextBox.Location = new System.Drawing.Point(49, 13);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(281, 22);
+            this.searchTextBox.TabIndex = 3;
             // 
             // loginButton
             // 
@@ -259,6 +266,30 @@
             this.signupButton.UseVisualStyleBackColor = true;
             this.signupButton.Click += new System.EventHandler(this.signupButton_Click);
             // 
+            // viewHistoryButton
+            // 
+            this.viewHistoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.viewHistoryButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.viewHistoryButton.FlatAppearance.BorderSize = 0;
+            this.viewHistoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewHistoryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewHistoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.viewHistoryButton.Location = new System.Drawing.Point(20, 602);
+            this.viewHistoryButton.Name = "viewHistoryButton";
+            this.viewHistoryButton.Size = new System.Drawing.Size(161, 47);
+            this.viewHistoryButton.TabIndex = 20;
+            this.viewHistoryButton.Text = "View History";
+            this.viewHistoryButton.UseVisualStyleBackColor = false;
+            this.viewHistoryButton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // homePage1
+            // 
+            this.homePage1.Location = new System.Drawing.Point(211, 46);
+            this.homePage1.Name = "homePage1";
+            this.homePage1.Size = new System.Drawing.Size(771, 603);
+            this.homePage1.TabIndex = 12;
+            this.homePage1.Load += new System.EventHandler(this.homePage1_Load);
+            // 
             // loginPage1
             // 
             this.loginPage1.Location = new System.Drawing.Point(211, 46);
@@ -281,12 +312,17 @@
             this.createAdPage1.TabIndex = 21;
             // 
             // homePage1
+            // viewHistoryPage1
             // 
             this.homePage1.Location = new System.Drawing.Point(211, 46);
             this.homePage1.Name = "homePage1";
             this.homePage1.Size = new System.Drawing.Size(771, 603);
             this.homePage1.TabIndex = 12;
             this.homePage1.Load += new System.EventHandler(this.homePage1_Load);
+            this.viewHistoryPage1.Location = new System.Drawing.Point(211, 46);
+            this.viewHistoryPage1.Name = "viewHistoryPage1";
+            this.viewHistoryPage1.Size = new System.Drawing.Size(771, 603);
+            this.viewHistoryPage1.TabIndex = 22;
             // 
             // Arxikh
             // 
@@ -299,6 +335,7 @@
             this.Controls.Add(this.loginPage1);
             this.Controls.Add(this.signUpPage1);
             this.Controls.Add(this.createAdPage1);
+            this.Controls.Add(this.viewHistoryPage1);
             this.Name = "Arxikh";
             this.Text = "index";
             this.Load += new System.EventHandler(this.Arxikh_Load);
@@ -317,17 +354,20 @@
         private System.Windows.Forms.Button homeButton;
         private System.Windows.Forms.Button myAdsButton;
         private System.Windows.Forms.Panel topPanel;
+        private View.HomePage homePage1;
         private View.LoginPage loginPage1;
         private View.SignUpPage signUpPage1;
         private System.Windows.Forms.Button createAdButton;
         private View.CreateAdPage createAdPage1;
         public System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.TextBox usernameTextBox;
+        private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button category3;
         private System.Windows.Forms.Button category2;
         private System.Windows.Forms.Button category1;
         private System.Windows.Forms.Button sub2;
         private System.Windows.Forms.Button sub1;
         private View.HomePage homePage1;
+        private System.Windows.Forms.Button viewHistoryButton;
+        private View.ViewHistoryPage viewHistoryPage1;
     }
 }

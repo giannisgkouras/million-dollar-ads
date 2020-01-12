@@ -36,5 +36,19 @@ namespace MillionDollarAds.Control
         {
             return Database.getAdbyId(id);
         }
+
+        public void addToViewHistoryIfDoesntExist(Product product)
+        {
+            bool checkDuplicate = Database.checkIfEntryInViewHistoryExists(product);
+
+            if (checkDuplicate)
+            {
+                Database.updateEntryInViewHistory(product);
+            }
+            else
+            {
+                Database.createNewEntryInViewHistory(product);
+            }
+        }
     }
 }
