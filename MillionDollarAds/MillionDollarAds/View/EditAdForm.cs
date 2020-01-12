@@ -59,13 +59,14 @@ namespace MillionDollarAds.View
             if (handler.createAd())
             {
                 Database.updateAd(product, productId);
-                MessageBox.Show("Your ad was updated!");              
+                MessageBox.Show("Your ad was updated!");
+                this.Close();                
             }
             else
             {
                 MessageBox.Show("Fill all the fields.");
             }
-
+            
 
         }
 
@@ -74,8 +75,10 @@ namespace MillionDollarAds.View
             var res = MessageBox.Show(this, "You really want to delete this ad?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
             {
+                Database.deleteteAdInViewHistory(productId);
                 Database.deleteteAd(productId);
                 MessageBox.Show("Your ad removed!");
+                this.Close();
             }
             else return;
         }

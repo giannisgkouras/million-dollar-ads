@@ -136,13 +136,12 @@ namespace MillionDollarAds.View
                 Product p = Database.getAdbyId(item.Text);
                 EditAdForm editAdForm = new EditAdForm(p);
                 editAdForm.ShowDialog();
-
+                refreshAllAds();
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-           
+        {           
            Print();
         }
 
@@ -164,6 +163,51 @@ namespace MillionDollarAds.View
                 }
             };
             PrintDocument.Print();
+        }
+
+        public void refreshAllAds()
+        {
+           // ListView showAllAds = homePage1.getListViewHomePage;
+            listViewHomePage.Items.Clear();
+            listViewHomePage.Columns.Clear();
+
+            listViewHomePage.View = System.Windows.Forms.View.Details;
+            listViewHomePage.GridLines = true;
+            listViewHomePage.FullRowSelect = true;
+
+            var list = new List<Product>();
+
+            List<Product> allProducts = Database.getAllProducts();
+
+            listViewHomePage.Columns.Add("Id", 25);
+            listViewHomePage.Columns.Add("Title", 100);
+            listViewHomePage.Columns.Add("Description", 200);
+            listViewHomePage.Columns.Add("Price", 50);
+            listViewHomePage.Columns.Add("Type", 50);
+            listViewHomePage.Columns.Add("Category", 100);
+            listViewHomePage.Columns.Add("Date", 100);
+
+            ListViewItem itm;
+
+            List<Category> categories = Database.getAllCategories();
+            Category[] categoriesArray = categories.ToArray();
+            Category category = null;
+            foreach (Product products in allProducts)
+            {
+                Invoke((MethodInvoker)delegate
+                {
+                    for (int i = 0; i < categories.Count; i++)
+                    {
+                        if (products.CategoryId == categoriesArray[i].Id)
+                        {
+                            category = categoriesArray[i];
+                        }
+                    }
+                    itm = new ListViewItem(new string[] { products.Id.ToString(), products.Title, products.Desc, products.Price, products.Type, category.Title, products.Date, });
+                    listViewHomePage.Items.Add(itm);
+                });
+            }
+
         }
 
         private void HomePage_Load(object sender, EventArgs e)

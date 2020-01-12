@@ -791,7 +791,16 @@ namespace MillionDollarAds.Control
             msc.ExecuteNonQuery();
         }
 
+        public static void deleteteAdInViewHistory(int productId)
+        {
+            Initialize();
+            string query = "delete from viewhistory where idAd =" + productId;
+            MySqlCommand msc = new MySqlCommand(query, connection);
 
+            msc.Prepare();
+
+            msc.ExecuteNonQuery();
+        }
         public static void createNewEntryInViewHistory(Product product)
         {
             Initialize();
