@@ -693,4 +693,5 @@ C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDo
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.exe
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.pdb
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.EditAdForm.resources
+C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.PasswordRecoveryForm.resources
 C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.csprojAssemblyReference.cache

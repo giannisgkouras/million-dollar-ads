@@ -132,7 +132,7 @@ namespace MillionDollarAds.View
                 ListViewItem item = listViewHomePage.SelectedItems[0];
                 Product p = Database.getAdbyId(item.Text);
                 EditAdForm editAdForm = new EditAdForm(p);
-                editAdForm.Show();
+                editAdForm.ShowDialog();
 
             }
         }
@@ -157,8 +157,7 @@ namespace MillionDollarAds.View
                     offset += (font.GetHeight() + 10.0f);
                     PointF location = new System.Drawing.PointF(e.MarginBounds.Left, offset);
                     e.Graphics.DrawString("*** " + p.Title + " ***\t"+p.Desc + "\t" + p.Price + "\t" + p.Owner.Phone + "(" + p.Owner.Email + ")\n", font, Brushes.Black, location);
-                    e.Graphics.DrawString("______________________________________________________________________________\n", font, Brushes.Black, location);
-                    
+                    e.Graphics.DrawString("______________________________________________________________________________\n", font, Brushes.Black, location);                    
                 }
             };
             PrintDocument.Print();

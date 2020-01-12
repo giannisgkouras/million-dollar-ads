@@ -107,6 +107,7 @@
     </Compile>
     <Compile Include="Control\AdHandler.cs" />
     <Compile Include="Control\Database.cs" />
+    <Compile Include="Control\PasswordRecoveryHandler.cs" />
     <Compile Include="Control\SignUpHandler.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Control\LoginHandler.cs" />
@@ -138,6 +139,12 @@
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\User.cs" />
+    <Compile Include="View\PasswordRecoveryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PasswordRecoveryForm.Designer.cs">
+      <DependentUpon>PasswordRecoveryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\SignUpPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -167,6 +174,9 @@
     </Compile>
     <EmbeddedResource Include="View\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PasswordRecoveryForm.resx">
+      <DependentUpon>PasswordRecoveryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SignUpPage.resx">
       <DependentUpon>SignUpPage.cs</DependentUpon>

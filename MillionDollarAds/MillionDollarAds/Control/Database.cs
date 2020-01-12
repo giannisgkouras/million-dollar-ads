@@ -77,7 +77,7 @@ namespace MillionDollarAds.Control
             }
         }
 
-
+        // About User
         public static bool checkIfUserExists(string username, string password)
         {
             Initialize();
@@ -119,7 +119,39 @@ namespace MillionDollarAds.Control
             return true;
         }
 
-     
+        public static bool checkIfUserExistsByEmail(string username, string email)
+        {
+            Initialize();
+            string query = "SELECT * FROM User WHERE username = '" + username +
+                "' AND email = '" + email + "'";
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+
+            if (dataReader.HasRows)
+            {
+                while (dataReader.Read())
+                {                   
+                    Arxikh.user = new User()
+                    {
+                        Id = dataReader.GetInt32(0),
+                        Username = dataReader.GetString(1),
+                        Password = dataReader.GetString(2),
+                        Phone = dataReader.GetInt32(3),
+                        Email = dataReader.GetString(4)
+                    };
+                }
+            }
+            else
+            {
+                dataReader.Close();
+                CloseConnection();
+                return false;
+            }
+            dataReader.Close();
+            CloseConnection();
+            return true;
+        }
+
         //During SignUp checks if the given username already exists
         public static bool checkIfUsernameIsDuplicate(string username)
         {
@@ -158,6 +190,59 @@ namespace MillionDollarAds.Control
             msc.ExecuteNonQuery();
         }
 
+        MySqlCommand cmd = null;
+        public static bool checkIfOldPasswordIsCorrect(string username, string email, string oldPassword)
+        {
+            Initialize();
+            string query = "SELECT * FROM User WHERE username = '" + username +
+                "' AND email = '" + email + "' AND password ='"+ oldPassword+"'";
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+
+            if (dataReader.HasRows)
+            {
+                while (dataReader.Read())
+                {
+                    Arxikh.user = new User()
+                    {
+                        Id = dataReader.GetInt32(0),
+                        Username = dataReader.GetString(1),
+                        Password = dataReader.GetString(2),
+                        Phone = dataReader.GetInt32(3),
+                        Email = dataReader.GetString(4)
+                    };
+                }
+            }
+            else
+            {
+                dataReader.Close();
+                CloseConnection();
+                return false;
+            }      
+            
+            dataReader.Close();
+            CloseConnection();
+            
+            
+            return true;
+        }
+        public static void changeUserPassoword(string username, string email,string oldPassword, string newPassword)
+        {
+            Initialize();
+            //if(checkIfOldPasswordIsCorrect(username, email, oldPassword))
+          //  {
+                string query = "update user set password = '" +newPassword + "' where username = @username";
+
+                MySqlCommand msc = new MySqlCommand(query, connection);
+                msc.Parameters.AddWithValue("@username", username);
+
+                msc.Prepare();
+
+                msc.ExecuteNonQuery();
+                
+          //  }
+           
+        }
         
 
         public static List<Category> getAllCategories()

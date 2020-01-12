@@ -62,5 +62,15 @@ namespace MillionDollarAds.View
             loginButton.Enabled = true;
             this.mainForm.getHomePage.BringToFront();
         }
+
+        private void passwordRecoveyPage1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void forgotPassword_Click(object sender, EventArgs e)
+        {
+            new PasswordRecoveryForm().ShowDialog();            
+        }
     }
 }
