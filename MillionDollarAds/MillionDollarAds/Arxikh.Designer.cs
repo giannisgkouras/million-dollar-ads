@@ -44,10 +44,10 @@
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.signupButton = new System.Windows.Forms.Button();
-            this.loginPage1 = new MillionDollarAds.View.LoginPage(this);
-            this.signUpPage1 = new MillionDollarAds.View.SignUpPage(this);
-            this.createAdPage1 = new MillionDollarAds.View.CreateAdPage(this);
             this.homePage1 = new MillionDollarAds.View.HomePage();
+            this.loginPage1 = new MillionDollarAds.View.LoginPage();
+            this.signUpPage1 = new MillionDollarAds.View.SignUpPage();
+            this.createAdPage1 = new MillionDollarAds.View.CreateAdPage();
             this.viewHistoryPage1 = new MillionDollarAds.View.ViewHistoryPage();
             this.sidePanel.SuspendLayout();
             this.topPanel.SuspendLayout();
@@ -79,7 +79,7 @@
             this.viewHistoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.viewHistoryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewHistoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.viewHistoryButton.Location = new System.Drawing.Point(20, 549);
+            this.viewHistoryButton.Location = new System.Drawing.Point(20, 175);
             this.viewHistoryButton.Name = "viewHistoryButton";
             this.viewHistoryButton.Size = new System.Drawing.Size(161, 47);
             this.viewHistoryButton.TabIndex = 20;
@@ -95,7 +95,7 @@
             this.sub2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sub2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.sub2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.sub2.Location = new System.Drawing.Point(20, 424);
+            this.sub2.Location = new System.Drawing.Point(20, 593);
             this.sub2.Name = "sub2";
             this.sub2.Size = new System.Drawing.Size(161, 47);
             this.sub2.TabIndex = 19;
@@ -112,7 +112,7 @@
             this.sub1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sub1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.sub1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.sub1.Location = new System.Drawing.Point(20, 371);
+            this.sub1.Location = new System.Drawing.Point(20, 540);
             this.sub1.Name = "sub1";
             this.sub1.Size = new System.Drawing.Size(161, 47);
             this.sub1.TabIndex = 18;
@@ -127,9 +127,9 @@
             this.category3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.category3.FlatAppearance.BorderSize = 0;
             this.category3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.category3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.category3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.category3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.category3.Location = new System.Drawing.Point(20, 281);
+            this.category3.Location = new System.Drawing.Point(20, 472);
             this.category3.Name = "category3";
             this.category3.Size = new System.Drawing.Size(161, 47);
             this.category3.TabIndex = 17;
@@ -143,9 +143,9 @@
             this.category2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.category2.FlatAppearance.BorderSize = 0;
             this.category2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.category2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.category2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.category2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.category2.Location = new System.Drawing.Point(20, 228);
+            this.category2.Location = new System.Drawing.Point(20, 419);
             this.category2.Name = "category2";
             this.category2.Size = new System.Drawing.Size(161, 47);
             this.category2.TabIndex = 16;
@@ -159,11 +159,11 @@
             this.category1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.category1.FlatAppearance.BorderSize = 0;
             this.category1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.category1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.category1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.category1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.category1.Location = new System.Drawing.Point(20, 175);
+            this.category1.Location = new System.Drawing.Point(7, 366);
             this.category1.Name = "category1";
-            this.category1.Size = new System.Drawing.Size(161, 47);
+            this.category1.Size = new System.Drawing.Size(198, 47);
             this.category1.TabIndex = 15;
             this.category1.Text = "cat1";
             this.category1.UseVisualStyleBackColor = false;
@@ -191,9 +191,9 @@
             this.myAdsButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.myAdsButton.FlatAppearance.BorderSize = 0;
             this.myAdsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.myAdsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myAdsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myAdsButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.myAdsButton.Location = new System.Drawing.Point(20, 602);
+            this.myAdsButton.Location = new System.Drawing.Point(20, 228);
             this.myAdsButton.Name = "myAdsButton";
             this.myAdsButton.Size = new System.Drawing.Size(161, 47);
             this.myAdsButton.TabIndex = 13;
@@ -260,7 +260,7 @@
             // loginButton
             // 
             this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginButton.Location = new System.Drawing.Point(606, 5);
+            this.loginButton.Location = new System.Drawing.Point(601, 5);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(87, 35);
             this.loginButton.TabIndex = 1;
@@ -271,13 +271,21 @@
             // signupButton
             // 
             this.signupButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signupButton.Location = new System.Drawing.Point(699, 5);
+            this.signupButton.Location = new System.Drawing.Point(694, 5);
             this.signupButton.Name = "signupButton";
             this.signupButton.Size = new System.Drawing.Size(87, 35);
             this.signupButton.TabIndex = 2;
             this.signupButton.Text = "Sign Up";
             this.signupButton.UseVisualStyleBackColor = true;
             this.signupButton.Click += new System.EventHandler(this.signupButton_Click);
+            // 
+            // homePage1
+            // 
+            this.homePage1.Location = new System.Drawing.Point(211, 46);
+            this.homePage1.Name = "homePage1";
+            this.homePage1.Size = new System.Drawing.Size(771, 603);
+            this.homePage1.TabIndex = 12;
+            this.homePage1.Load += new System.EventHandler(this.homePage1_Load);
             // 
             // loginPage1
             // 
@@ -299,14 +307,6 @@
             this.createAdPage1.Name = "createAdPage1";
             this.createAdPage1.Size = new System.Drawing.Size(771, 603);
             this.createAdPage1.TabIndex = 21;
-            // 
-            // homePage1
-            // 
-            this.homePage1.Location = new System.Drawing.Point(211, 46);
-            this.homePage1.Name = "homePage1";
-            this.homePage1.Size = new System.Drawing.Size(771, 603);
-            this.homePage1.TabIndex = 12;
-            this.homePage1.Load += new System.EventHandler(this.homePage1_Load);
             // 
             // viewHistoryPage1
             // 

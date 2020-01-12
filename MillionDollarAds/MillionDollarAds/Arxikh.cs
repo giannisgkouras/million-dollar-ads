@@ -352,11 +352,11 @@ namespace MillionDollarAds
         private void category1_Click(object sender, EventArgs e)
         {
             selectedCategoryId = Database.getCategoryIdByName(category1.Text);
-            category1.Location = new Point(20, 175);
-            category2.Location = new Point(20, 371);
-            category3.Location = new Point(20, 424);
-            sub1.Location = new Point(20, 228);
-            sub2.Location = new Point(20, 281);
+           /* category1.Location = new Point(20, 354);
+            category2.Location = new Point(20, 500);
+            category3.Location = new Point(20, 550);
+            sub1.Location = new Point(20, 407);
+            sub2.Location = new Point(20, 460);*/
             sub1.Visible = true;
             sub2.Visible = true;
             redPanel.Height = category1.Height;
@@ -365,10 +365,9 @@ namespace MillionDollarAds
             subCategories = Database.getSubCategoriesByFather(Database.getCategoryIdByName(category1.Text));
             refreshAllAdsByCategory(Database.getCategoryIdByName(category1.Text));        
             homePage1.BringToFront();
+            refreshAllAdsBySubCategory(Database.getCategoryIdByName(category1.Text));
 
-
-     
-            for(int i=0; i<subCategories.Count; i++)
+            for (int i=0; i<subCategories.Count; i++)
             {
                 switch (i)
                 {
@@ -382,17 +381,16 @@ namespace MillionDollarAds
                         break;                          
                 }
             }
-
         }
 
         private void category2_Click(object sender, EventArgs e)
         {
             selectedCategoryId = Database.getCategoryIdByName(category2.Text);
-            category2.Location = new Point(20, 175);
-            category1.Location = new Point(20, 371);
-            category3.Location = new Point(20, 424);
-            sub1.Location = new Point(20, 228);
-            sub2.Location = new Point(20, 281);
+            /*category2.Location = new Point(20, 354);
+            category1.Location = new Point(20, 500);
+            category3.Location = new Point(20, 550);
+            sub1.Location = new Point(20, 407);
+            sub2.Location = new Point(20, 460);*/
             sub1.Visible = true;
             sub2.Visible = true;
             redPanel.Height = category2.Height;
@@ -401,9 +399,7 @@ namespace MillionDollarAds
             subCategories = Database.getSubCategoriesByFather(Database.getCategoryIdByName(category2.Text));
             refreshAllAdsByCategory(Database.getCategoryIdByName(category2.Text));
             homePage1.BringToFront();
-
-
-
+            refreshAllAdsBySubCategory(Database.getCategoryIdByName(category2.Text));
 
             for (int i = 0; i < subCategories.Count; i++)
             {
@@ -424,13 +420,12 @@ namespace MillionDollarAds
         private void category3_Click(object sender, EventArgs e)
         {
             selectedCategoryId = Database.getCategoryIdByName(category3.Text);
+          /*  category3.Location = new Point(20, 354);
+            category1.Location = new Point(20, 500);
+            category2.Location = new Point(20, 550);
 
-            category3.Location = new Point(20, 175);
-            category1.Location = new Point(20, 371);
-            category2.Location = new Point(20, 424);
-
-            sub1.Location = new Point(20, 228);
-            sub2.Location = new Point(20, 281);
+            sub1.Location = new Point(20, 407);
+            sub2.Location = new Point(20, 460);*/
             sub1.Visible = true;
             sub2.Visible = true;
             redPanel.Height = category3.Height;
@@ -439,8 +434,7 @@ namespace MillionDollarAds
             subCategories = Database.getSubCategoriesByFather(Database.getCategoryIdByName(category3.Text));
             refreshAllAdsByCategory(Database.getCategoryIdByName(category3.Text));
             homePage1.BringToFront();
-
-
+            refreshAllAdsBySubCategory(Database.getCategoryIdByName(category3.Text));
 
             for (int i = 0; i < subCategories.Count; i++)
             {
@@ -456,7 +450,6 @@ namespace MillionDollarAds
                         break;
                 }
             }
-
         }
 
         private void sub1_Click_1(object sender, EventArgs e)
