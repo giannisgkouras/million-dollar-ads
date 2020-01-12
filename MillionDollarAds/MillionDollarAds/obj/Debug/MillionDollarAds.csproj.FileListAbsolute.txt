@@ -699,3 +699,8 @@ C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Lu
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Lucene.Net.pdb
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\bin\Debug\Lucene.Net.xml
 C:\Users\arist\Desktop\New folder\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.ViewHistoryPage.resources
+C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\obj\Debug\MillionDollarAds.View.ViewHistoryPage.resources
+C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\bin\Debug\Lucene.Net.dll
+C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\bin\Debug\Lucene.Net.pdb
+C:\Users\User\Desktop\Νέος φάκελος - Αντιγραφή (2)\MillionDollarAds\MillionDollarAds\bin\Debug\Lucene.Net.xml

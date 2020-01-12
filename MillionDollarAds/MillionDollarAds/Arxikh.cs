@@ -75,10 +75,7 @@ namespace MillionDollarAds
                 return homePage1; }
         }
 
-        public ChooseCategorypage getChooseCategoryPage
-        {
-            get { return chooseCategorypage1; }
-        }
+       
 
         public LoginPage getLoginPage
         {
@@ -537,5 +534,14 @@ namespace MillionDollarAds
             viewHistoryPage1.BringToFront();
         }
 
+        private void myAdsButton_Click(object sender, EventArgs e)
+        {
+            redPanel.Height = myAdsButton.Height;
+            redPanel.Top = myAdsButton.Top;
+
+
+            refreshAllAdsByUser(user.Id);
+            homePage1.BringToFront();
+        }
     }
 }

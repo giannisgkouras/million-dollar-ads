@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.sidePanel = new System.Windows.Forms.Panel();
+            this.viewHistoryButton = new System.Windows.Forms.Button();
             this.sub2 = new System.Windows.Forms.Button();
             this.sub1 = new System.Windows.Forms.Button();
             this.category3 = new System.Windows.Forms.Button();
@@ -46,11 +47,7 @@
             this.loginPage1 = new MillionDollarAds.View.LoginPage(this);
             this.signUpPage1 = new MillionDollarAds.View.SignUpPage(this);
             this.createAdPage1 = new MillionDollarAds.View.CreateAdPage(this);
-            this.viewHistoryButton = new System.Windows.Forms.Button();
             this.homePage1 = new MillionDollarAds.View.HomePage();
-            this.loginPage1 = new MillionDollarAds.View.LoginPage(this);
-            this.signUpPage1 = new MillionDollarAds.View.SignUpPage(this);
-            this.createAdPage1 = new MillionDollarAds.View.CreateAdPage(this);
             this.viewHistoryPage1 = new MillionDollarAds.View.ViewHistoryPage();
             this.sidePanel.SuspendLayout();
             this.topPanel.SuspendLayout();
@@ -73,6 +70,22 @@
             this.sidePanel.Name = "sidePanel";
             this.sidePanel.Size = new System.Drawing.Size(205, 664);
             this.sidePanel.TabIndex = 10;
+            // 
+            // viewHistoryButton
+            // 
+            this.viewHistoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.viewHistoryButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.viewHistoryButton.FlatAppearance.BorderSize = 0;
+            this.viewHistoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewHistoryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewHistoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.viewHistoryButton.Location = new System.Drawing.Point(20, 549);
+            this.viewHistoryButton.Name = "viewHistoryButton";
+            this.viewHistoryButton.Size = new System.Drawing.Size(161, 47);
+            this.viewHistoryButton.TabIndex = 20;
+            this.viewHistoryButton.Text = "View History";
+            this.viewHistoryButton.UseVisualStyleBackColor = false;
+            this.viewHistoryButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // sub2
             // 
@@ -266,30 +279,6 @@
             this.signupButton.UseVisualStyleBackColor = true;
             this.signupButton.Click += new System.EventHandler(this.signupButton_Click);
             // 
-            // viewHistoryButton
-            // 
-            this.viewHistoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.viewHistoryButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.viewHistoryButton.FlatAppearance.BorderSize = 0;
-            this.viewHistoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.viewHistoryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewHistoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.viewHistoryButton.Location = new System.Drawing.Point(20, 602);
-            this.viewHistoryButton.Name = "viewHistoryButton";
-            this.viewHistoryButton.Size = new System.Drawing.Size(161, 47);
-            this.viewHistoryButton.TabIndex = 20;
-            this.viewHistoryButton.Text = "View History";
-            this.viewHistoryButton.UseVisualStyleBackColor = false;
-            this.viewHistoryButton.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // homePage1
-            // 
-            this.homePage1.Location = new System.Drawing.Point(211, 46);
-            this.homePage1.Name = "homePage1";
-            this.homePage1.Size = new System.Drawing.Size(771, 603);
-            this.homePage1.TabIndex = 12;
-            this.homePage1.Load += new System.EventHandler(this.homePage1_Load);
-            // 
             // loginPage1
             // 
             this.loginPage1.Location = new System.Drawing.Point(211, 46);
@@ -312,13 +301,15 @@
             this.createAdPage1.TabIndex = 21;
             // 
             // homePage1
-            // viewHistoryPage1
             // 
             this.homePage1.Location = new System.Drawing.Point(211, 46);
             this.homePage1.Name = "homePage1";
             this.homePage1.Size = new System.Drawing.Size(771, 603);
             this.homePage1.TabIndex = 12;
             this.homePage1.Load += new System.EventHandler(this.homePage1_Load);
+            // 
+            // viewHistoryPage1
+            // 
             this.viewHistoryPage1.Location = new System.Drawing.Point(211, 46);
             this.viewHistoryPage1.Name = "viewHistoryPage1";
             this.viewHistoryPage1.Size = new System.Drawing.Size(771, 603);
@@ -366,7 +357,6 @@
         private System.Windows.Forms.Button category1;
         private System.Windows.Forms.Button sub2;
         private System.Windows.Forms.Button sub1;
-        private View.HomePage homePage1;
         private System.Windows.Forms.Button viewHistoryButton;
         private View.ViewHistoryPage viewHistoryPage1;
     }
