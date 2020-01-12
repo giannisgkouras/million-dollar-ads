@@ -41,6 +41,7 @@ namespace MillionDollarAds.View
                 changeLogInAndRegisterButtons();
 
                 mainForm.getCreateAdButton.Visible = true;
+                mainForm.getViewHistoryButton.Visible = true;
 
             }
             else

@@ -85,6 +85,11 @@ namespace MillionDollarAds
             get { return createAdButton; }
         }
 
+        public Button getViewHistoryButton
+        {
+            get { return viewHistoryButton; }
+        }
+
         public CreateAdPage getCreateAdPage
         {
             get { return createAdPage1; }
@@ -107,6 +112,7 @@ namespace MillionDollarAds
         private void Arxikh_Load(object sender, EventArgs e)
         {
             createAdButton.Visible = false;
+            viewHistoryButton.Visible = false;
         }
 
         private void homePage1_Load(object sender, EventArgs e)
